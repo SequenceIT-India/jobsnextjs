@@ -1,0 +1,15 @@
+@import "../../vars.module.scss";
+
+.required {
+  margin-bottom: 0.25rem;
+  color: $text-light;
+  font-size: 15;
+}
+.required:after {
+  content: " *";
+  color: red;
+}
+
+.label {
+  margin-bottom: 0.25rem;
+}

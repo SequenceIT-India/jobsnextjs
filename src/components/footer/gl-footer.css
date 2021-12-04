@@ -1,0 +1,11 @@
+.follow-us-icons-div {
+  margin-top: 12px;
+  width: 6vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+/*# sourceMappingURL=gl-footer.css.map */

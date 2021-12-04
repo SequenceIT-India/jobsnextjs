@@ -1,0 +1,34 @@
+@import "../../vars.module.scss";
+
+.job-detail-header {
+  flex-wrap: nowrap !important;
+  .breadcrumb-wrapper {
+    overflow: hidden;
+    flex: 1;
+    margin-top: auto;
+    ol.MuiBreadcrumbs-ol {
+      flex-wrap: nowrap;
+      li.MuiBreadcrumbs-li {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        .breadcrumb-item.active {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+
+  .top-actions {
+    button {
+      min-width: 32px !important;
+      width: 32px;
+      height: 32px;
+      padding: 5px !important;
+      background-color: $off-white;
+      border-color: $grey;
+    }
+  }
+}

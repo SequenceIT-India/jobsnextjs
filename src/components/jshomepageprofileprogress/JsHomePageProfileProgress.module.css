@@ -1,0 +1,154 @@
+:export {
+  primaryColor: #3d8a94;
+  primaryDarkColor: #1f5776;
+  primaryLightColor: #eef9fb;
+  defaultColor: #ffffff;
+  secondaryColor: #e7873b;
+  disableColor: #5b5b5b;
+  offWhiteColor: #f9f9f9;
+  greyColor: #dcdcdc;
+  textLightColor: #8d8d8d;
+  primaryColorShade: #367982;
+  deleteBtnColor: #ff3138;
+  blackColor: #000;
+  lightWhiteColor: #ecf9fc;
+  whiteColor: #fff;
+  headingColor: #567377;
+  linkedInColor: #0a66c2;
+  twitterColor: #55acee;
+  facebookColor: #395185;
+  publicColor: #5b5b5b;
+  nonMandatoryColor: #646e70;
+  paidJobRightIconColor: #9fc1c5;
+  paidJobCardColor: #e2f0f0;
+  displayJobFirstCardColor: #edefde;
+  boldJobTitleCardColor: #fdf7ed;
+  freeJobsCardColor: #dee4e9;
+  urgentHiringCardColor: #f2e4ed;
+  nationWideCardColor: #dbd9e8;
+  blackColor: #000;
+}
+
+.progress-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 3.5rem;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.progress-container .progress-details {
+  border: 1px solid lightgrey;
+  width: 85%;
+  border-radius: 5px;
+  padding-top: 1.5rem;
+}
+
+.progress-container .progress-details .title {
+  font-weight: 500;
+  padding: 0px 1rem;
+  margin-top: 2rem;
+}
+
+.progress-container .progress-bar-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+}
+
+.progress-container .progress-bar-div .progress-percentage {
+  font-weight: 400;
+  font-size: small;
+  padding-left: 1rem;
+  padding-right: 0.5rem;
+}
+
+.progress-container .divider {
+  margin: 0px 1rem;
+}
+
+.progress-container .progress-status-div {
+  padding: 0.75rem 1rem;
+  font-size: smaller;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.progress-container .progress-status-div .checkIcon,
+.progress-container .progress-status-div .radioIcon,
+.progress-container .progress-status-div .closeIcon {
+  margin-right: 0.25rem;
+  font-size: 17px;
+}
+
+.progress-container .progress-status-div .checkIcon {
+  color: green;
+}
+
+.progress-container .progress-status-div .closeIcon {
+  color: red;
+}
+
+.progress-container .progress-status-div .radioIcon {
+  color: gray;
+}
+
+.progress-container .progress-status-div .email-status,
+.progress-container .progress-status-div .employment-type-status,
+.progress-container .progress-status-div .work-auth-status,
+.progress-container .progress-status-div .skills-status,
+.progress-container .progress-status-div .preferred-location-status {
+  font-weight: bold;
+}
+
+.progress-container .progress-status-div .link {
+  text-decoration: none;
+  color: black;
+}
+
+.progress-container .progress-status-div .link:hover {
+  text-decoration: underline;
+  color: #3d8a94;
+}
+
+@media (max-width: 599px) {
+  .progress-container {
+    margin-right: 1rem;
+    margin-left: 1rem;
+    font-size: small;
+    position: relative;
+    top: -52.5rem;
+  }
+  .progress-container .progress-details {
+    height: 4rem;
+    overflow: hidden;
+    width: 100%;
+  }
+  .progress-container .expand-progress-details {
+    border: 1px solid lightgrey;
+    width: 100%;
+    border-radius: 5px;
+    padding-top: 1.5rem;
+  }
+  .progress-container .expand-progress-details .title {
+    font-weight: 500;
+    padding: 0px 1rem;
+    margin-top: 2rem;
+  }
+}
+/*# sourceMappingURL=JsHomePageProfileProgress.module.css.map */

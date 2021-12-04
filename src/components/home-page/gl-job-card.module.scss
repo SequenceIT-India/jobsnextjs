@@ -1,0 +1,145 @@
+@import "../../vars.module.scss";
+.job-card {
+  &.selected {
+    background-color: rgb(238, 249, 251);
+    border: 1px solid rgb(142, 197, 204);
+  }
+  margin: 15px auto;
+  width: 100%;
+  .job-title,
+  .company-logo,
+  .job-location,
+  .job-type {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .company-logo {
+    float: right;
+  }
+  .job-card-inline-content-item {
+    display: flex;
+    flex-wrap: nowrap;
+    &.center {
+      justify-content: center;
+    }
+
+    .text {
+      line-height: 1;
+      margin-left: 5px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 0.8rem;
+      color: $disable-color;
+      &.secondary {
+        color: $secondary;
+      }
+    }
+  }
+  .job-description {
+    margin: 0.3rem 0px;
+  }
+  .job-title {
+    font-weight: 600;
+    font-size: 16px;
+    color: $disable-color;
+    @media only screen and (min-width: 960px) {
+      font-size: 18px;
+    }
+  }
+  .post-time-like {
+    display: flex;
+    justify-content: flex-end;
+    .job-icon {
+      padding: 4px;
+      margin-left: 10px;
+    }
+  }
+  .job-icon {
+    color: $disable-color;
+    font-size: 1rem;
+    &.saved {
+      color: $primary;
+    }
+    &.secondary {
+      color: $secondary;
+    }
+  }
+  .job-icon-text {
+    font-weight: 600;
+    font-size: 16px;
+    @media only screen and (min-width: 960px) {
+      font-size: 14px;
+    }
+    color: $disable-color;
+  }
+  .applied-jobs-row {
+    margin-top: 0.5rem;
+  }
+  .delete-btn {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .btn-col {
+    text-align: right;
+  }
+  .second-row {
+    margin-top: 0.5rem;
+  }
+  .third-row {
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+  }
+  .apply-btn-div {
+    margin-right: 1.25rem;
+  }
+  .save-btn {
+    background-color: rgb(243, 132, 10);
+    border: 1px solid rgb(243, 132, 10);
+  }
+  .apply-btn {
+    background-color: #069;
+    border: 1px solid #069;
+  }
+  .reject-btn {
+    background-color: #86242a;
+    border: 1px solid #86242a;
+  }
+}
+
+@media (max-width: 599px) {
+  .job-card {
+    .second-row {
+      justify-content: flex-end;
+    }
+    .third-row {
+      justify-content: space-between;
+      .btn-col {
+        width: auto;
+        margin-bottom: 0.5rem;
+        text-align: left;
+      }
+    }
+    .delete-btn {
+      justify-content: flex-start;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .job-card {
+    .action-col {
+      margin-top: 0.5rem;
+    }
+    .third-row {
+      .btn-col {
+        width: 20%;
+      }
+    }
+  }
+}
+
+.job-detail-drawer {
+  margin: 1rem;
+}

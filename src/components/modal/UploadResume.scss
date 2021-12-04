@@ -1,0 +1,73 @@
+@import "../../vars.module.scss";
+
+.upload-resume {
+  .MuiDropzoneArea-root {
+    border-color: $primary;
+    min-height: 76px;
+
+    border-width: 1px;
+    background-color: $primary-light;
+    .MuiDropzoneArea-textContainer {
+      text-align: left;
+      display: flex;
+      padding: 10px;
+    }
+  }
+  .uploaded {
+    border: 1px dashed $primary;
+    min-height: 50px;
+    background-color: $primary-light;
+    padding: 10px;
+    .uploaded-file {
+      text-decoration: none;
+      color: $disable-color;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+    .attached-file-icon {
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  .uploaded,
+  .MuiDropzoneArea-root .MuiDropzoneArea-textContainer {
+    .upload-area-container {
+      display: flex;
+      flex: 1;
+      .upload-btn-wrapper {
+        display: flex;
+        margin-left: 5px;
+        .upload-btn {
+          margin: auto;
+          padding: 5px !important;
+          min-width: auto;
+        }
+      }
+      .upload-btn {
+        background-color: $primary;
+        border-color: $primary;
+        color: $default;
+        padding: 4px 10px !important;
+        &:focus {
+          outline: none;
+          box-shadow: none !important;
+        }
+      }
+      .upload-text {
+        flex: 1;
+        .upload-text-header {
+          color: $primary-dark;
+          font-weight: 700;
+        }
+        .upload-text-subtitle {
+          color: $disable-color;
+          font-size: 12px;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}

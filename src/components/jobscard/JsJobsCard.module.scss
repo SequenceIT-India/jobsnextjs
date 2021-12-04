@@ -1,0 +1,108 @@
+@import "../../vars.module.scss";
+.locationDetails {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  .locationIcon {
+    font-size: small;
+    margin-left: -0.1rem;
+    padding-right: 0.2rem;
+    fill: $disable-color;
+  }
+}
+
+.jobtypeDetails {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  .jobTypeIcon {
+    font-size: small;
+    fill: $disable-color;
+    padding-right: 0.2rem;
+  }
+}
+
+.actionButtonsGrid {
+  display: flex;
+  justify-content: flex-end;
+  .deleteIcon {
+    padding: 0;
+  }
+}
+
+.appliedJobsDetails {
+  display: flex;
+  justify-content: flex-start;
+  .jobStatusDetails {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    .checkImage {
+      width: 0.75rem;
+      padding-right: 0.2rem;
+    }
+  }
+}
+
+.actionButtonsGrid {
+  .savedJobIcon {
+    color: $primary;
+  }
+}
+
+.jobStatusDetailsGrid {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cardHeaderTitleGrid {
+  display: flex;
+  align-items: center;
+}
+
+.cardContent {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dateGrid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 599px) {
+  .actionButtonsGrid {
+    .deleteJobIcon {
+      font-size: small;
+    }
+    .savedJobIcon {
+      font-size: small;
+    }
+    .unsavedJobIcon {
+      font-size: small;
+    }
+  }
+  .appliedJobsDetails {
+    .jobStatusDetails {
+      font-size: small;
+      .checkImage {
+        width: 0.55rem;
+      }
+    }
+  }
+  .cardContent {
+    .locationDetails {
+      font-size: small;
+      .locationIcon {
+        font-size: x-small;
+      }
+    }
+    .jobtypeDetails {
+      font-size: small;
+      .jobTypeIcon {
+        font-size: x-small;
+      }
+    }
+  }
+}

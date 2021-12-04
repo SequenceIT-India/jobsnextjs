@@ -1,0 +1,123 @@
+:export {
+  primaryColor: #3d8a94;
+  primaryDarkColor: #1f5776;
+  primaryLightColor: #eef9fb;
+  defaultColor: #ffffff;
+  secondaryColor: #e7873b;
+  disableColor: #5b5b5b;
+  offWhiteColor: #f9f9f9;
+  greyColor: #dcdcdc;
+  textLightColor: #8d8d8d;
+  primaryColorShade: #367982;
+  deleteBtnColor: #ff3138;
+  blackColor: #000;
+  lightWhiteColor: #ecf9fc;
+  whiteColor: #fff;
+  headingColor: #567377;
+  linkedInColor: #0a66c2;
+  twitterColor: #55acee;
+  facebookColor: #395185;
+  publicColor: #5b5b5b;
+  nonMandatoryColor: #646e70;
+  paidJobRightIconColor: #9fc1c5;
+  paidJobCardColor: #e2f0f0;
+  displayJobFirstCardColor: #edefde;
+  boldJobTitleCardColor: #fdf7ed;
+  freeJobsCardColor: #dee4e9;
+  urgentHiringCardColor: #f2e4ed;
+  nationWideCardColor: #dbd9e8;
+  blackColor: #000;
+}
+
+.jobseeker-home {
+  margin-top: 40px !important;
+}
+
+.jobseeker-home .pagination-container > * {
+  padding: 4px;
+}
+
+.jobseeker-home .pagination-container > * .MuiTablePagination-root {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.jobseeker-home .pagination-container > * .MuiTablePagination-toolbar {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.jobseeker-home .partition {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 900px) {
+  .jobseeker-home .partition {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .jobseeker-home .partition.desktop-left {
+    margin-bottom: 70px;
+  }
+  .jobseeker-home .partition.desktop-left .cards {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .jobseeker-home .partition.desktop-right {
+    margin-bottom: 40px;
+  }
+  .jobseeker-home .partition.desktop-right.job-selected {
+    display: none;
+  }
+}
+
+.jobseeker-home .partition.desktop-right {
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.jobseeker-home .partition.desktop-right .divider {
+  margin: 1rem 0px;
+}
+
+.jobseeker-home .partition .page-header {
+  color: #576366;
+  font-weight: 600;
+  text-align: left;
+  font-size: 18px;
+}
+
+.jobseeker-home .partition .page-header.large {
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: #1f5776;
+}
+
+.jobseeker-home .partition .subscribe-form {
+  margin-top: 20px !important;
+}
+
+.jobseeker-home .partition .subscribe-form .icon {
+  color: #5b5b5b;
+  font-size: 22px;
+  opacity: 0.75;
+}
+
+.jobseeker-home .partition .subscribe-form .subscribe-btn {
+  background-color: #3d8a94;
+  border-color: #3d8a94;
+  color: #ffffff;
+}
+
+.jobseeker-home .partition .subscribe-form .subscribe-btn.MuiButton-root.Mui-disabled {
+  opacity: 0.5;
+}
+/*# sourceMappingURL=gl-home.css.map */

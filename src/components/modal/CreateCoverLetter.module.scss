@@ -1,0 +1,81 @@
+@import "../../vars.module.scss";
+
+.title-div {
+  display: flex;
+  padding: 1rem 0px;
+  justify-content: space-between;
+  align-items: center;
+  .title {
+    color: $primary-dark;
+    font-size: 22px;
+    font-weight: 700;
+  }
+}
+.label {
+  color: $disable-color;
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 0.1rem;
+}
+.label:after {
+  content: " *";
+  color: red;
+}
+.cover-letter-div {
+  display: flex;
+  justify-content: space-between;
+}
+.actions {
+  display: flex;
+  width: 15%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.cover-letter-name {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.input-form-control {
+  width: 55%;
+  .helper-text {
+    margin-left: 0;
+  }
+}
+.editorClass {
+  border: 1px solid gray;
+  height: 10rem;
+}
+.btns-div {
+  width: 20%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  .btn {
+    color: $white-color;
+    background-color: $primary;
+    &:hover {
+      background-color: $primary;
+    }
+  }
+}
+
+.file-edit-icon-div,
+.delete-icon-div {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid $disable-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $light-white;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.delete-icon,
+.file-edit {
+  color: $primary;
+}

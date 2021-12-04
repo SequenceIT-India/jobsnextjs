@@ -1,0 +1,9 @@
+.comboboxInput {
+  width: -webkit-fill-available;
+  width: -moz-available;
+  border-radius: 4px;
+  border: 1px solid darkgray;
+  &:hover {
+    border-color: black;
+  }
+}

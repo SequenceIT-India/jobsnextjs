@@ -1,0 +1,97 @@
+@import "../../vars.module.scss";
+
+.app-header {
+  display: flex;
+  background-color: $default;
+  padding: 7px 10px;
+  .menu-button-mix {
+    color: $primary;
+  }
+  .link {
+    color: $primary;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .link,
+  .notifications {
+    margin-right: 10px;
+    padding: 10px 8px;
+  }
+  .nav-logo {
+    max-height: 45px;
+  }
+  .main-header-space {
+    flex: 1;
+  }
+  .header-actions {
+    margin-left: 15px;
+    box-shadow: none;
+    &.menu {
+      background-color: $default;
+      color: $primary;
+      border: none !important;
+    }
+    &.login-btn {
+      border-color: $primary;
+    }
+    &.register-btn {
+      background-color: $primary;
+      color: $default;
+    }
+  }
+}
+
+.mobile-dialog {
+  .mobile-dialog-title {
+    padding: 0px;
+    .MuiPaper-root {
+      box-shadow: none;
+    }
+  }
+  .accordion-menu {
+    margin-top: 30px;
+    box-shadow: none;
+    &:before {
+      display: none;
+    }
+    .accordion-menu-summary {
+      display: inline-flex;
+      .accordion-menu-title {
+        font-size: 24px;
+        font-weight: 600;
+        color: $primary;
+      }
+      .MuiSvgIcon-root {
+        font-size: 2rem;
+        color: $primary;
+      }
+    }
+    .accordion-menu-details {
+      flex-direction: column;
+      > li {
+        .sub-menu > span {
+          font-size: 20px;
+          font-style: 400;
+        }
+      }
+    }
+  }
+  .mobile-dialog-actions {
+    flex-direction: column;
+    .header-actions {
+      margin-top: 15px;
+      font-size: 18px;
+      box-shadow: none;
+      &.login-btn {
+        border-color: $primary;
+      }
+      &.register-btn {
+        background-color: $primary;
+        color: $default;
+      }
+    }
+  }
+}

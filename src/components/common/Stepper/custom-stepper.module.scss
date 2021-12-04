@@ -1,0 +1,67 @@
+@import "../../../vars.module.scss";
+
+.CustomStepperMain {
+  padding: 0px !important;
+}
+
+.active {
+  background-color: $primary !important;
+
+  * {
+    color: $default !important;
+    font-weight: 400 !important;
+  }
+}
+
+.CustomStepperMuiStep {
+  padding: 0px !important;
+
+  button {
+    width: 200px;
+    height: 40px;
+    position: relative;
+    background-color: $off-white;
+    color: $text-light;
+    margin: 0px 20px 0px 0px;
+    padding: 0px;
+    .rightActive {
+      z-index: 20;
+      position: absolute;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      right: -20px;
+      border-left: 20px solid $primary;
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+    }
+    .right {
+      z-index: 20;
+      position: absolute;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      right: -20px;
+      border-left: 20px solid #d9e4e5;
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+    }
+  }
+  &:not(:first-child) {
+    button {
+      margin: 0px 20px 0px -18px;
+      .left {
+        z-index: 10;
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        border-left: 20px solid white;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+      }
+    }
+  }
+}

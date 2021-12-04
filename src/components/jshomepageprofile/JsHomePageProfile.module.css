@@ -1,0 +1,326 @@
+:export {
+  primaryColor: #3d8a94;
+  primaryDarkColor: #1f5776;
+  primaryLightColor: #eef9fb;
+  defaultColor: #ffffff;
+  secondaryColor: #e7873b;
+  disableColor: #5b5b5b;
+  offWhiteColor: #f9f9f9;
+  greyColor: #dcdcdc;
+  textLightColor: #8d8d8d;
+  primaryColorShade: #367982;
+  deleteBtnColor: #ff3138;
+  blackColor: #000;
+  lightWhiteColor: #ecf9fc;
+  whiteColor: #fff;
+  headingColor: #567377;
+  linkedInColor: #0a66c2;
+  twitterColor: #55acee;
+  facebookColor: #395185;
+  publicColor: #5b5b5b;
+  nonMandatoryColor: #646e70;
+  paidJobRightIconColor: #9fc1c5;
+  paidJobCardColor: #e2f0f0;
+  displayJobFirstCardColor: #edefde;
+  boldJobTitleCardColor: #fdf7ed;
+  freeJobsCardColor: #dee4e9;
+  urgentHiringCardColor: #f2e4ed;
+  nationWideCardColor: #dbd9e8;
+  blackColor: #000;
+}
+
+.home-page-profile-container,
+.expanded-home-page-profile-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0px 2.5rem;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home-page-profile-container .icon-button-div,
+.expanded-home-page-profile-container .icon-button-div {
+  display: none;
+}
+
+.home-page-profile-container .user-details,
+.expanded-home-page-profile-container .user-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home-page-profile-container .user-details .fullname,
+.expanded-home-page-profile-container .user-details .fullname {
+  color: #3d8a94;
+  font-weight: 500;
+  margin-bottom: 0.15rem;
+}
+
+.home-page-profile-container .user-details .designation,
+.home-page-profile-container .user-details .location,
+.expanded-home-page-profile-container .user-details .designation,
+.expanded-home-page-profile-container .user-details .location {
+  font-weight: 400;
+}
+
+.home-page-profile-container .user-details .location,
+.expanded-home-page-profile-container .user-details .location {
+  margin-bottom: 1rem;
+}
+
+.home-page-profile-container .divider,
+.expanded-home-page-profile-container .divider {
+  width: 100%;
+}
+
+.home-page-profile-container .profile-visibility-div,
+.expanded-home-page-profile-container .profile-visibility-div {
+  width: 100%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 1rem 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: medium;
+}
+
+.home-page-profile-container .jobs-div,
+.home-page-profile-container .alerts-div,
+.home-page-profile-container .resume-coverletter-div,
+.home-page-profile-container .profile-div,
+.home-page-profile-container .additional-info-div,
+.expanded-home-page-profile-container .jobs-div,
+.expanded-home-page-profile-container .alerts-div,
+.expanded-home-page-profile-container .resume-coverletter-div,
+.expanded-home-page-profile-container .profile-div,
+.expanded-home-page-profile-container .additional-info-div {
+  padding: 1rem 0px;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.home-page-profile-container .jobs-div .alerts-icon,
+.home-page-profile-container .jobs-div .description-icon,
+.home-page-profile-container .alerts-div .alerts-icon,
+.home-page-profile-container .alerts-div .description-icon,
+.home-page-profile-container .resume-coverletter-div .alerts-icon,
+.home-page-profile-container .resume-coverletter-div .description-icon,
+.home-page-profile-container .profile-div .alerts-icon,
+.home-page-profile-container .profile-div .description-icon,
+.home-page-profile-container .additional-info-div .alerts-icon,
+.home-page-profile-container .additional-info-div .description-icon,
+.expanded-home-page-profile-container .jobs-div .alerts-icon,
+.expanded-home-page-profile-container .jobs-div .description-icon,
+.expanded-home-page-profile-container .alerts-div .alerts-icon,
+.expanded-home-page-profile-container .alerts-div .description-icon,
+.expanded-home-page-profile-container .resume-coverletter-div .alerts-icon,
+.expanded-home-page-profile-container .resume-coverletter-div .description-icon,
+.expanded-home-page-profile-container .profile-div .alerts-icon,
+.expanded-home-page-profile-container .profile-div .description-icon,
+.expanded-home-page-profile-container .additional-info-div .alerts-icon,
+.expanded-home-page-profile-container .additional-info-div .description-icon {
+  margin-left: 1rem;
+  margin-right: 0.75rem;
+  color: #3d8a94;
+}
+
+.home-page-profile-container .jobs-div .image,
+.home-page-profile-container .alerts-div .image,
+.home-page-profile-container .resume-coverletter-div .image,
+.home-page-profile-container .profile-div .image,
+.home-page-profile-container .additional-info-div .image,
+.expanded-home-page-profile-container .jobs-div .image,
+.expanded-home-page-profile-container .alerts-div .image,
+.expanded-home-page-profile-container .resume-coverletter-div .image,
+.expanded-home-page-profile-container .profile-div .image,
+.expanded-home-page-profile-container .additional-info-div .image {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 1.2rem;
+  margin-right: 0.75rem;
+  width: 20px;
+  height: 20px;
+}
+
+.home-page-profile-container .jobs-div .link,
+.home-page-profile-container .alerts-div .link,
+.home-page-profile-container .resume-coverletter-div .link,
+.home-page-profile-container .profile-div .link,
+.home-page-profile-container .additional-info-div .link,
+.expanded-home-page-profile-container .jobs-div .link,
+.expanded-home-page-profile-container .alerts-div .link,
+.expanded-home-page-profile-container .resume-coverletter-div .link,
+.expanded-home-page-profile-container .profile-div .link,
+.expanded-home-page-profile-container .additional-info-div .link {
+  text-decoration: none;
+  color: #3d8a94;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.heading-div {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 2.5rem;
+}
+
+.heading-div .heading {
+  color: #3d8a94;
+  font-weight: 600;
+}
+
+@media (max-width: 599px) {
+  .heading-div {
+    margin-left: 1rem;
+  }
+  .heading-div .heading {
+    font-size: smaller;
+  }
+  .home-page-profile-container,
+  .expanded-home-page-profile-container {
+    margin: 0px 1rem;
+    height: 15rem;
+    overflow: hidden;
+  }
+  .home-page-profile-container .icon-button-div,
+  .expanded-home-page-profile-container .icon-button-div {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .home-page-profile-container .icon-button-div .info,
+  .expanded-home-page-profile-container .icon-button-div .info {
+    padding: 0px 0.5rem;
+    font-size: small;
+    margin-left: 1rem;
+    font-weight: 500;
+  }
+  .home-page-profile-container .alerts-div .alerts-icon,
+  .home-page-profile-container .alerts-div .description-icon,
+  .home-page-profile-container .resume-coverletter-div .alerts-icon,
+  .home-page-profile-container .resume-coverletter-div .description-icon,
+  .expanded-home-page-profile-container .alerts-div .alerts-icon,
+  .expanded-home-page-profile-container .alerts-div .description-icon,
+  .expanded-home-page-profile-container .resume-coverletter-div .alerts-icon,
+  .expanded-home-page-profile-container .resume-coverletter-div .description-icon {
+    font-size: medium;
+    margin-left: 1.25rem;
+  }
+  .home-page-profile-container .alerts-div .alerts-icon .link,
+  .home-page-profile-container .alerts-div .description-icon .link,
+  .home-page-profile-container .resume-coverletter-div .alerts-icon .link,
+  .home-page-profile-container .resume-coverletter-div .description-icon .link,
+  .expanded-home-page-profile-container .alerts-div .alerts-icon .link,
+  .expanded-home-page-profile-container .alerts-div .description-icon .link,
+  .expanded-home-page-profile-container .resume-coverletter-div .alerts-icon .link,
+  .expanded-home-page-profile-container .resume-coverletter-div .description-icon .link {
+    font-size: smaller;
+  }
+  .home-page-profile-container .user-details .fullname,
+  .home-page-profile-container .user-details .designation,
+  .home-page-profile-container .user-details .location,
+  .expanded-home-page-profile-container .user-details .fullname,
+  .expanded-home-page-profile-container .user-details .designation,
+  .expanded-home-page-profile-container .user-details .location {
+    font-size: smaller;
+  }
+  .home-page-profile-container .user-details .location,
+  .expanded-home-page-profile-container .user-details .location {
+    margin-bottom: 0px;
+  }
+  .home-page-profile-container .profile-visibility-div,
+  .expanded-home-page-profile-container .profile-visibility-div {
+    font-size: smaller;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .home-page-profile-container .jobs-div .alerts-icon,
+  .home-page-profile-container .jobs-div .description-icon,
+  .home-page-profile-container .additional-info-div .alerts-icon,
+  .home-page-profile-container .additional-info-div .description-icon,
+  .home-page-profile-container .profile-div .alerts-icon,
+  .home-page-profile-container .profile-div .description-icon,
+  .home-page-profile-container .alerts-div .alerts-icon,
+  .home-page-profile-container .alerts-div .description-icon,
+  .home-page-profile-container .resume-coverletter-div .alerts-icon,
+  .home-page-profile-container .resume-coverletter-div .description-icon,
+  .expanded-home-page-profile-container .jobs-div .alerts-icon,
+  .expanded-home-page-profile-container .jobs-div .description-icon,
+  .expanded-home-page-profile-container .additional-info-div .alerts-icon,
+  .expanded-home-page-profile-container .additional-info-div .description-icon,
+  .expanded-home-page-profile-container .profile-div .alerts-icon,
+  .expanded-home-page-profile-container .profile-div .description-icon,
+  .expanded-home-page-profile-container .alerts-div .alerts-icon,
+  .expanded-home-page-profile-container .alerts-div .description-icon,
+  .expanded-home-page-profile-container .resume-coverletter-div .alerts-icon,
+  .expanded-home-page-profile-container .resume-coverletter-div .description-icon {
+    margin-left: 0.2rem;
+    margin-right: 0.75rem;
+    color: #3d8a94;
+  }
+  .home-page-profile-container .jobs-div .image,
+  .home-page-profile-container .additional-info-div .image,
+  .home-page-profile-container .profile-div .image,
+  .home-page-profile-container .alerts-div .image,
+  .home-page-profile-container .resume-coverletter-div .image,
+  .expanded-home-page-profile-container .jobs-div .image,
+  .expanded-home-page-profile-container .additional-info-div .image,
+  .expanded-home-page-profile-container .profile-div .image,
+  .expanded-home-page-profile-container .alerts-div .image,
+  .expanded-home-page-profile-container .resume-coverletter-div .image {
+    height: 13px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0.2rem;
+    margin-right: 0.75rem;
+    width: 20px;
+  }
+  .home-page-profile-container .jobs-div .link,
+  .home-page-profile-container .additional-info-div .link,
+  .home-page-profile-container .profile-div .link,
+  .home-page-profile-container .alerts-div .link,
+  .home-page-profile-container .resume-coverletter-div .link,
+  .expanded-home-page-profile-container .jobs-div .link,
+  .expanded-home-page-profile-container .additional-info-div .link,
+  .expanded-home-page-profile-container .profile-div .link,
+  .expanded-home-page-profile-container .alerts-div .link,
+  .expanded-home-page-profile-container .resume-coverletter-div .link {
+    margin-top: 0.01rem;
+    font-size: smaller;
+  }
+  .expanded-home-page-profile-container {
+    height: auto;
+  }
+}
+/*# sourceMappingURL=JsHomePageProfile.module.css.map */

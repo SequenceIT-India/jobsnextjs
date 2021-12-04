@@ -1,0 +1,80 @@
+@import "../../vars.module.scss";
+
+.searchbar-row {
+  padding: 15px;
+  .inputwithoutRightBorder {
+    background-color: #ffffff;
+    border-right: 0px;
+    border-radius: 5px;
+  }
+  background-color: $search-bar;
+  .searchbar-inputs-row {
+    justify-content: center;
+  }
+  .inputwithoutRightBorder:focus {
+    border-color: rgba(102, 175, 233, 0.6);
+    box-shadow: none !important;
+  }
+  .input-group-icon {
+    background-color: white;
+    border-left: 0px;
+  }
+  .icon {
+    opacity: 0.75;
+    font-size: 22px;
+    color: $disable-color;
+  }
+  .combobox-input {
+    width: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
+    width: -moz-available; /* WebKit-based browsers will ignore this. */
+  }
+  .findjobs-btn-col {
+    padding-left: 0px;
+    margin-bottom: 2vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    .findjobs-btn {
+      background-color: $primary;
+      border-color: $primary;
+      color: $default;
+      padding: 8px 10px !important;
+    }
+    .findjobs-btn:focus {
+      outline: none;
+      box-shadow: none !important;
+    }
+  }
+  .input-group:focus-within .input-group-prepend .input-group-text,
+  .form-control:focus ~ .input-group-append .input-group-text {
+    border-color: rgba(102, 175, 233, 0.6);
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .searchbar-row {
+    .searchbar-input1-col {
+      margin-bottom: 0px;
+      min-width: 36%;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .searchbar-row {
+    padding: 15px;
+    .inputwithoutRightBorder {
+      background-color: #ffffff;
+    }
+    .searchbar-input1-col {
+      padding-right: 0px;
+    }
+    .findjobs-btn-col {
+      padding-left: 0px;
+      margin-bottom: 0px;
+      .findjobs-btn {
+        float: left;
+      }
+    }
+  }
+}

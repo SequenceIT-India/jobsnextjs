@@ -1,0 +1,131 @@
+:export {
+  primaryColor: #3d8a94;
+  primaryDarkColor: #1f5776;
+  primaryLightColor: #eef9fb;
+  defaultColor: #ffffff;
+  secondaryColor: #e7873b;
+  disableColor: #5b5b5b;
+  offWhiteColor: #f9f9f9;
+  greyColor: #dcdcdc;
+  textLightColor: #8d8d8d;
+  primaryColorShade: #367982;
+  deleteBtnColor: #ff3138;
+  blackColor: #000;
+  lightWhiteColor: #ecf9fc;
+  whiteColor: #fff;
+  headingColor: #567377;
+  linkedInColor: #0a66c2;
+  twitterColor: #55acee;
+  facebookColor: #395185;
+  publicColor: #5b5b5b;
+  nonMandatoryColor: #646e70;
+  paidJobRightIconColor: #9fc1c5;
+  paidJobCardColor: #e2f0f0;
+  displayJobFirstCardColor: #edefde;
+  boldJobTitleCardColor: #fdf7ed;
+  freeJobsCardColor: #dee4e9;
+  urgentHiringCardColor: #f2e4ed;
+  nationWideCardColor: #dbd9e8;
+  blackColor: #000;
+}
+
+.searchbar-row {
+  padding: 15px;
+  background-color: #1f5776;
+}
+
+.searchbar-row .inputwithoutRightBorder {
+  background-color: #ffffff;
+  border-right: 0px;
+  border-radius: 5px;
+}
+
+.searchbar-row .searchbar-inputs-row {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.searchbar-row .inputwithoutRightBorder:focus {
+  border-color: rgba(102, 175, 233, 0.6);
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.searchbar-row .input-group-icon {
+  background-color: white;
+  border-left: 0px;
+}
+
+.searchbar-row .icon {
+  opacity: 0.75;
+  font-size: 22px;
+  color: #5b5b5b;
+}
+
+.searchbar-row .combobox-input {
+  width: -webkit-fill-available;
+  /* Mozilla-based browsers will ignore this. */
+  width: -moz-available;
+  /* WebKit-based browsers will ignore this. */
+}
+
+.searchbar-row .findjobs-btn-col {
+  padding-left: 0px;
+  margin-bottom: 2vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.searchbar-row .findjobs-btn-col .findjobs-btn {
+  background-color: #3d8a94;
+  border-color: #3d8a94;
+  color: #ffffff;
+  padding: 8px 10px !important;
+}
+
+.searchbar-row .findjobs-btn-col .findjobs-btn:focus {
+  outline: none;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.searchbar-row .input-group:focus-within .input-group-prepend .input-group-text,
+.searchbar-row .form-control:focus ~ .input-group-append .input-group-text {
+  border-color: rgba(102, 175, 233, 0.6);
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .searchbar-row .searchbar-input1-col {
+    margin-bottom: 0px;
+    min-width: 36%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .searchbar-row {
+    padding: 15px;
+  }
+  .searchbar-row .inputwithoutRightBorder {
+    background-color: #ffffff;
+  }
+  .searchbar-row .searchbar-input1-col {
+    padding-right: 0px;
+  }
+  .searchbar-row .findjobs-btn-col {
+    padding-left: 0px;
+    margin-bottom: 0px;
+  }
+  .searchbar-row .findjobs-btn-col .findjobs-btn {
+    float: left;
+  }
+}
+/*# sourceMappingURL=gl-search-bar.css.map */

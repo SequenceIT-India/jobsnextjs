@@ -1,0 +1,100 @@
+:export {
+  primaryColor: #3d8a94;
+  primaryDarkColor: #1f5776;
+  primaryLightColor: #eef9fb;
+  defaultColor: #ffffff;
+  secondaryColor: #e7873b;
+  disableColor: #5b5b5b;
+  offWhiteColor: #f9f9f9;
+  greyColor: #dcdcdc;
+  textLightColor: #8d8d8d;
+  primaryColorShade: #367982;
+  deleteBtnColor: #ff3138;
+  blackColor: #000;
+  lightWhiteColor: #ecf9fc;
+  whiteColor: #fff;
+  headingColor: #567377;
+  linkedInColor: #0a66c2;
+  twitterColor: #55acee;
+  facebookColor: #395185;
+  publicColor: #5b5b5b;
+  nonMandatoryColor: #646e70;
+  paidJobRightIconColor: #9fc1c5;
+  paidJobCardColor: #e2f0f0;
+  displayJobFirstCardColor: #edefde;
+  boldJobTitleCardColor: #fdf7ed;
+  freeJobsCardColor: #dee4e9;
+  urgentHiringCardColor: #f2e4ed;
+  nationWideCardColor: #dbd9e8;
+  blackColor: #000;
+}
+
+.delete-modal {
+  padding: 1rem;
+  padding-top: 3rem;
+}
+
+.delete-modal .modal-icon-and-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.delete-modal .modal-title {
+  font-weight: 700;
+  font-size: 22px;
+  margin: 1rem 0px;
+  color: #1f5776;
+}
+
+.delete-modal .modal-subtitle-div {
+  width: 25rem;
+  text-align: center;
+  margin: 1rem 0px;
+}
+
+.delete-modal .modal-subtitle {
+  font-weight: 400;
+  font-size: 14px;
+  color: #5b5b5b;
+}
+
+.delete-modal .confirm-password-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.delete-modal .label {
+  color: #5b5b5b;
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 0.25rem;
+}
+
+@media (max-width: 599px) {
+  .delete-modal .modal-title {
+    font-size: small;
+  }
+  .delete-modal .modal-subtitle-div {
+    width: 18rem;
+  }
+  .delete-modal .modal-subtitle {
+    font-size: small;
+  }
+  .delete-modal .label {
+    font-size: small;
+  }
+}
+/*# sourceMappingURL=DeleteAccountModal.module.css.map */

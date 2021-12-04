@@ -1,0 +1,81 @@
+$primary: #3d8a94;
+$primary-dark: #1f5776;
+$primary-light: #eef9fb;
+$default: #ffffff;
+$search-bar: $primary-dark;
+$secondary: #e7873b;
+$disable-color: #5b5b5b;
+$heading-color: #567377;
+
+$label-font-size: 12px;
+$label-large-font-size: 16px;
+
+$md: 900px;
+
+$off-white: #f9f9f9;
+$grey: #dcdcdc;
+
+$text-light: #8d8d8d;
+$primary-shade: #367982;
+
+$delete-btn-color: #ff3138;
+$additional-info-btns-color: #10a449;
+
+$back-color: #000;
+$light-white: rgb(236, 249, 252);
+$white-color: #fff;
+$linkedin-color: #0a66c2;
+$twitter-color: #55acee;
+$facebook-color: #395185;
+$public-color: #5b5b5b;
+$non-mandatory-color: #646e70;
+$additional-info-btns-color: #10a449;
+
+$paid-job-right-icon-color: #9fc1c5;
+$display-job-right-icon-color: #cdd2ad;
+$bold-job-right-icon-color: #e7d1b8;
+$free-job-right-icon-color: #bbcfe0;
+$urgent-job-right-icon-color: #c69eb6;
+$nation-job-right-icon-color: #9693ad;
+
+$paid-job-card-color: #e2f0f0;
+$display-job-first-card-color: #edefde;
+$bold-job-title-card-color: #fdf7ed;
+$free-jobs-card-color: #dee4e9;
+$urgent-hiring-card-color: #f2e4ed;
+$nation-wide-card-color: #dbd9e8;
+
+$ag-grid-action-btns-bg-color: hsl(207, 90%, 94%);
+$ag-grid-header-color: rgb(236, 249, 252);
+$ag-grid-selected-row-bg-color: hsl(207, 87%, 86%);
+
+:export {
+  primaryColor: $primary;
+  primaryDarkColor: $primary-dark;
+  primaryLightColor: $primary-light;
+  defaultColor: $default;
+  secondaryColor: $secondary;
+  disableColor: $disable-color;
+  offWhiteColor: $off-white;
+  greyColor: $grey;
+  textLightColor: $text-light;
+  primaryColorShade: $primary-shade;
+  deleteBtnColor: $delete-btn-color;
+  blackColor: $back-color;
+  lightWhiteColor: $light-white;
+  whiteColor: $white-color;
+  headingColor: $heading-color;
+  linkedInColor: $linkedin-color;
+  twitterColor: $twitter-color;
+  facebookColor: $facebook-color;
+  publicColor: $public-color;
+  nonMandatoryColor: $non-mandatory-color;
+  paidJobRightIconColor: $paid-job-right-icon-color;
+  paidJobCardColor: $paid-job-card-color;
+  displayJobFirstCardColor: $display-job-first-card-color;
+  boldJobTitleCardColor: $bold-job-title-card-color;
+  freeJobsCardColor: $free-jobs-card-color;
+  urgentHiringCardColor: $urgent-hiring-card-color;
+  nationWideCardColor: $nation-wide-card-color;
+  blackColor: $back-color;
+}

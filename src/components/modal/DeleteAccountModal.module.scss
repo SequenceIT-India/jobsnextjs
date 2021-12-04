@@ -1,0 +1,54 @@
+@import "../../vars.module.scss";
+
+.delete-modal {
+  padding: 1rem;
+  padding-top: 3rem;
+  .modal-icon-and-title {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .modal-title {
+    font-weight: 700;
+    font-size: 22px;
+    margin: 1rem 0px;
+    color: $primary-dark;
+  }
+  .modal-subtitle-div {
+    width: 25rem;
+    text-align: center;
+    margin: 1rem 0px;
+  }
+  .modal-subtitle {
+    font-weight: 400;
+    font-size: 14px;
+    color: $disable-color;
+  }
+  .confirm-password-div {
+    display: flex;
+    flex-direction: column;
+  }
+  .label {
+    color: $disable-color;
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 0.25rem;
+  }
+}
+
+@media (max-width: 599px) {
+  .delete-modal {
+    .modal-title {
+      font-size: small;
+    }
+    .modal-subtitle-div {
+      width: 18rem;
+    }
+    .modal-subtitle {
+      font-size: small;
+    }
+    .label {
+      font-size: small;
+    }
+  }
+}

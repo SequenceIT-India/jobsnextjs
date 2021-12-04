@@ -1,0 +1,162 @@
+:export {
+  primaryColor: #3d8a94;
+  primaryDarkColor: #1f5776;
+  primaryLightColor: #eef9fb;
+  defaultColor: #ffffff;
+  secondaryColor: #e7873b;
+  disableColor: #5b5b5b;
+  offWhiteColor: #f9f9f9;
+  greyColor: #dcdcdc;
+  textLightColor: #8d8d8d;
+  primaryColorShade: #367982;
+  deleteBtnColor: #ff3138;
+  blackColor: #000;
+  lightWhiteColor: #ecf9fc;
+  whiteColor: #fff;
+  headingColor: #567377;
+  linkedInColor: #0a66c2;
+  twitterColor: #55acee;
+  facebookColor: #395185;
+  publicColor: #5b5b5b;
+  nonMandatoryColor: #646e70;
+  paidJobRightIconColor: #9fc1c5;
+  paidJobCardColor: #e2f0f0;
+  displayJobFirstCardColor: #edefde;
+  boldJobTitleCardColor: #fdf7ed;
+  freeJobsCardColor: #dee4e9;
+  urgentHiringCardColor: #f2e4ed;
+  nationWideCardColor: #dbd9e8;
+  blackColor: #000;
+}
+
+.locationDetails {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.locationDetails .locationIcon {
+  font-size: small;
+  margin-left: -0.1rem;
+  padding-right: 0.2rem;
+  fill: #5b5b5b;
+}
+
+.jobtypeDetails {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.jobtypeDetails .jobTypeIcon {
+  font-size: small;
+  fill: #5b5b5b;
+  padding-right: 0.2rem;
+}
+
+.actionButtonsGrid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.actionButtonsGrid .deleteIcon {
+  padding: 0;
+}
+
+.appliedJobsDetails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.appliedJobsDetails .jobStatusDetails {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.appliedJobsDetails .jobStatusDetails .checkImage {
+  width: 0.75rem;
+  padding-right: 0.2rem;
+}
+
+.actionButtonsGrid .savedJobIcon {
+  color: #3d8a94;
+}
+
+.jobStatusDetailsGrid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.cardHeaderTitleGrid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cardContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.dateGrid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (max-width: 599px) {
+  .actionButtonsGrid .deleteJobIcon {
+    font-size: small;
+  }
+  .actionButtonsGrid .savedJobIcon {
+    font-size: small;
+  }
+  .actionButtonsGrid .unsavedJobIcon {
+    font-size: small;
+  }
+  .appliedJobsDetails .jobStatusDetails {
+    font-size: small;
+  }
+  .appliedJobsDetails .jobStatusDetails .checkImage {
+    width: 0.55rem;
+  }
+  .cardContent .locationDetails {
+    font-size: small;
+  }
+  .cardContent .locationDetails .locationIcon {
+    font-size: x-small;
+  }
+  .cardContent .jobtypeDetails {
+    font-size: small;
+  }
+  .cardContent .jobtypeDetails .jobTypeIcon {
+    font-size: x-small;
+  }
+}
+/*# sourceMappingURL=JsJobsCard.module.css.map */

@@ -1,0 +1,161 @@
+:export {
+  primaryColor: #3d8a94;
+  primaryDarkColor: #1f5776;
+  primaryLightColor: #eef9fb;
+  defaultColor: #ffffff;
+  secondaryColor: #e7873b;
+  disableColor: #5b5b5b;
+  offWhiteColor: #f9f9f9;
+  greyColor: #dcdcdc;
+  textLightColor: #8d8d8d;
+  primaryColorShade: #367982;
+  deleteBtnColor: #ff3138;
+  blackColor: #000;
+  lightWhiteColor: #ecf9fc;
+  whiteColor: #fff;
+  headingColor: #567377;
+  linkedInColor: #0a66c2;
+  twitterColor: #55acee;
+  facebookColor: #395185;
+  publicColor: #5b5b5b;
+  nonMandatoryColor: #646e70;
+  paidJobRightIconColor: #9fc1c5;
+  paidJobCardColor: #e2f0f0;
+  displayJobFirstCardColor: #edefde;
+  boldJobTitleCardColor: #fdf7ed;
+  freeJobsCardColor: #dee4e9;
+  urgentHiringCardColor: #f2e4ed;
+  nationWideCardColor: #dbd9e8;
+  blackColor: #000;
+}
+
+.app-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #ffffff;
+  padding: 7px 10px;
+}
+
+.app-header .menu-button-mix {
+  color: #3d8a94;
+}
+
+.app-header .link {
+  color: #3d8a94;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.app-header .link:hover {
+  text-decoration: none;
+}
+
+.app-header .link,
+.app-header .notifications {
+  margin-right: 10px;
+  padding: 10px 8px;
+}
+
+.app-header .nav-logo {
+  max-height: 45px;
+}
+
+.app-header .main-header-space {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.app-header .header-actions {
+  margin-left: 15px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.app-header .header-actions.menu {
+  background-color: #ffffff;
+  color: #3d8a94;
+  border: none !important;
+}
+
+.app-header .header-actions.login-btn {
+  border-color: #3d8a94;
+}
+
+.app-header .header-actions.register-btn {
+  background-color: #3d8a94;
+  color: #ffffff;
+}
+
+.mobile-dialog .mobile-dialog-title {
+  padding: 0px;
+}
+
+.mobile-dialog .mobile-dialog-title .MuiPaper-root {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.mobile-dialog .accordion-menu {
+  margin-top: 30px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.mobile-dialog .accordion-menu:before {
+  display: none;
+}
+
+.mobile-dialog .accordion-menu .accordion-menu-summary {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.mobile-dialog .accordion-menu .accordion-menu-summary .accordion-menu-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #3d8a94;
+}
+
+.mobile-dialog .accordion-menu .accordion-menu-summary .MuiSvgIcon-root {
+  font-size: 2rem;
+  color: #3d8a94;
+}
+
+.mobile-dialog .accordion-menu .accordion-menu-details {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.mobile-dialog .accordion-menu .accordion-menu-details > li .sub-menu > span {
+  font-size: 20px;
+  font-style: 400;
+}
+
+.mobile-dialog .mobile-dialog-actions {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.mobile-dialog .mobile-dialog-actions .header-actions {
+  margin-top: 15px;
+  font-size: 18px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.mobile-dialog .mobile-dialog-actions .header-actions.login-btn {
+  border-color: #3d8a94;
+}
+
+.mobile-dialog .mobile-dialog-actions .header-actions.register-btn {
+  background-color: #3d8a94;
+  color: #ffffff;
+}
+/*# sourceMappingURL=gl-header.css.map */

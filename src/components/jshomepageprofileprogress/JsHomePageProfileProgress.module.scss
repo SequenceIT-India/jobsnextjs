@@ -1,0 +1,97 @@
+@import "../../vars.module.scss";
+
+.progress-container {
+  display: flex;
+  margin-top: 3.5rem;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+  justify-content: center;
+  .progress-details {
+    border: 1px solid lightgrey;
+    width: 85%;
+    border-radius: 5px;
+    padding-top: 1.5rem;
+    .title {
+      font-weight: 500;
+      padding: 0px 1rem;
+      margin-top: 2rem;
+    }
+  }
+  .progress-bar-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    .progress-percentage {
+      font-weight: 400;
+      font-size: small;
+      padding-left: 1rem;
+      padding-right: 0.5rem;
+    }
+  }
+  .divider {
+    margin: 0px 1rem;
+  }
+  .progress-status-div {
+    padding: 0.75rem 1rem;
+    font-size: smaller;
+    display: flex;
+    align-items: center;
+    .checkIcon,
+    .radioIcon,
+    .closeIcon {
+      margin-right: 0.25rem;
+      font-size: 17px;
+    }
+    .checkIcon {
+      color: green;
+    }
+    .closeIcon {
+      color: red;
+    }
+    .radioIcon {
+      color: gray;
+    }
+    .email-status,
+    .employment-type-status,
+    .work-auth-status,
+    .skills-status,
+    .preferred-location-status {
+      font-weight: bold;
+    }
+    .link {
+      text-decoration: none;
+      color: black;
+      &:hover {
+        text-decoration: underline;
+        color: $primary;
+      }
+    }
+  }
+}
+
+@media (max-width: 599px) {
+  .progress-container {
+    margin-right: 1rem;
+    margin-left: 1rem;
+    font-size: small;
+    position: relative;
+    top: -52.5rem;
+    .progress-details {
+      height: 4rem;
+      overflow: hidden;
+      width: 100%;
+    }
+    .expand-progress-details {
+      border: 1px solid lightgrey;
+      width: 100%;
+      border-radius: 5px;
+      padding-top: 1.5rem;
+      .title {
+        font-weight: 500;
+        padding: 0px 1rem;
+        margin-top: 2rem;
+      }
+    }
+  }
+}
