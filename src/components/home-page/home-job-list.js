@@ -73,7 +73,7 @@ const HomeListItem = (props) => {
   const [cityOpts, setCityOpts] = useState([]);
   const [open, setOpen] = useState(false);
   const router = useRouter();
-  const auth = useSelector((stateItem) => stateItem?.['auth']);
+  const auth = useSelector((stateItem) => stateItem?.["auth"]);
   const snackbar = auth?.snackbar;
 
   useEffect(() => {
@@ -82,6 +82,7 @@ const HomeListItem = (props) => {
       headers: {},
     })
       .then((res) => {
+        // console.log(res.text(), "---");
         return res.text();
       })
       .then((location) => {
@@ -151,7 +152,7 @@ const HomeListItem = (props) => {
     }
   };
 
-  const onFindJobsBtnHandler = () => { };
+  const onFindJobsBtnHandler = () => {};
 
   const selectJob = (job) => {
     setSelectedJob(job);
@@ -196,8 +197,9 @@ const HomeListItem = (props) => {
           item
           md={4}
           xs={12}
-          className={`${selectedJob ? null : classes.jobList
-            } desktop-left partition`}
+          className={`${
+            selectedJob ? null : classes.jobList
+          } desktop-left partition`}
         >
           <Typography className="page-header large" display="block">
             Latest jobs
@@ -273,8 +275,9 @@ const HomeListItem = (props) => {
           item
           md={4}
           xs={12}
-          className={`${classes.search} ${selectedJob ? "job-selected" : ""
-            } partition desktop-right`}
+          className={`${classes.search} ${
+            selectedJob ? "job-selected" : ""
+          } partition desktop-right`}
         >
           <Typography className="page-header" display="block">
             Subscribe for new jobs

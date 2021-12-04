@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-with-typescript",
+  "name": "jobsnextjs",
   "version": "5.0.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@babel/plugin-proposal-do-expressions": "^7.16.0",
     "@emotion/cache": "latest",
     "@emotion/react": "latest",
     "@emotion/server": "latest",
