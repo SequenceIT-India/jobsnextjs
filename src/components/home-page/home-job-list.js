@@ -35,6 +35,7 @@ import {
   validateField,
 } from "../../util/helper";
 import style from "./gl-home.module.scss";
+import axios from "axios";
 
 const styles = (theme) => ({
   jobList: {
@@ -77,19 +78,20 @@ const HomeListItem = (props) => {
   const snackbar = auth?.snackbar;
 
   useEffect(() => {
-    fetch("https://geolocation-db.com/json/", {
-      method: "GET",
-      headers: {},
-    })
-      .then((res) => {
-        // console.log(res.text(), "---");
-        return res.text();
-      })
-      .then((location) => {
-        let response = JSON.parse(location);
-        sessionStorage.setItem("ip", response.IPv4);
-        sessionStorage.setItem("country_code", response.country_code);
-      });
+    async function fetchGeoLocation() {
+      await axios
+        .get("https://geolocation-db.com/json/", {
+          method: "GET",
+        })
+        .then((res) => {
+          console.log(res.data, "location");
+          let response = JSON.parse(res.data);
+          sessionStorage.setItem("ip", response.IPv4);
+          sessionStorage.setItem("country_code", response.country_code);
+        });
+    }
+
+    fetchGeoLocation();
   }, []);
   const getJobs = async () => {
     // const response = await getDefaultJobs();
@@ -110,15 +112,16 @@ const HomeListItem = (props) => {
 
   useEffect(() => {
     let cts = [];
-    csc?.getAllCountries().forEach((cntry) => {
-      cts = [
-        ...cts,
-        ...csc.getStatesOfCountry(cntry.id).map((city) => {
-          city.country = cntry.name;
-          return city;
-        }),
-      ];
-    });
+    csc &&
+      csc?.getAllCountries().forEach((cntry) => {
+        cts = [
+          ...cts,
+          ...csc.getStatesOfCountry(cntry.id).map((city) => {
+            city.country = cntry.name;
+            return city;
+          }),
+        ];
+      });
     setCities(cts);
     getJobs();
   }, []);
