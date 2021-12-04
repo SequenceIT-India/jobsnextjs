@@ -19,7 +19,7 @@ import {
 } from "@mui/material";
 import { useSelector } from "react-redux";
 import withStyles from "@mui/styles/withStyles";
-import csc from "country-state-city";
+import csc, { Country, State, City } from "country-state-city";
 import { default as React, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import JobCard from "./gl-job-card";
@@ -112,11 +112,17 @@ const HomeListItem = (props) => {
 
   useEffect(() => {
     let cts = [];
-    csc &&
-      csc?.getAllCountries().forEach((cntry) => {
-        cts = [
+    Country &&
+      Country?.getAllCountries().forEach(async (cntry) => {
+        console.log(
+          State.getStatesOfCountry(cntry.isoCode),
+          cntry,
+          "get all countries"
+        );
+
+        cts = await [
           ...cts,
-          ...csc.getStatesOfCountry(cntry.id).map((city) => {
+          ...State?.getStatesOfCountry(cntry.isoCode).map((city) => {
             city.country = cntry.name;
             return city;
           }),
@@ -124,6 +130,10 @@ const HomeListItem = (props) => {
       });
     setCities(cts);
     getJobs();
+  }, []);
+
+  useEffect(() => {
+    console.log(cities);
   }, []);
 
   const handleChangePage = (evt, newPage) => {
