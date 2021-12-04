@@ -10,7 +10,7 @@ import HomeListItem from "../components/home-page/home-job-list.js";
 
 const HomeList: NextPage = () => {
   return (
-    <HomeListItem></HomeListItem>
+    <HomeListItem />
   );
 };
 

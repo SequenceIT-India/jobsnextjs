@@ -99,8 +99,9 @@ export const validateField = (
   return "";
 };
 
-export const getJobLocation = (job) => {
-  return `${csc?.getCityById(job?.cityId?.toString()).name || ""} ${
+export const getJobLocation = async (job) => {
+  console.log(await csc?.getCityById(job?.cityId?.toString()), "job");
+  return await `${csc?.getCityById(job?.cityId?.toString()).name || ""} ${
     csc?.getStateById(job?.stateId?.toString()).name || ""
   }, ${csc?.getCountryById(job?.cntryId?.toString()).name || ""}`;
 };

@@ -84,8 +84,8 @@ const HomeListItem = (props) => {
           method: "GET",
         })
         .then((res) => {
-          console.log(res.data, "location");
-          let response = JSON.parse(res.data);
+          console.log(res?.data, "location");
+          let response = JSON.stringify(res?.data);
           sessionStorage.setItem("ip", response.IPv4);
           sessionStorage.setItem("country_code", response.country_code);
         });
@@ -96,7 +96,7 @@ const HomeListItem = (props) => {
   const getJobs = async () => {
     // const response = await getDefaultJobs();
 
-    const response = { data: latestJobs };
+    const response = await { data: latestJobs };
 
     if (response) {
       setJobs(response.data);
