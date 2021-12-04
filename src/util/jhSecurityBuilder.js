@@ -77,7 +77,6 @@ class JobsHornEncryptAndDecrypt {
   };
   getFinalOutput = (values, DATETIMEFORMAT, type, comingFromProfile = false) => {
     type = type !== "EMP" ? sessionStorage.getItem('isEmployee') ? 'EMP' : 'CAND' : type;
-    console.log('type', type)
     const { REACT_APP_RandamString_Length } = process.env;
     const saltRandom20Char = this.randomKey(REACT_APP_RandamString_Length);
     const timeStamp = moment

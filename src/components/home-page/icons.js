@@ -92,7 +92,7 @@ export const Money = (props) => {
   return (
     <SvgIcon {...props}>
       <rect {...props} fill="#E5E5E5" />
-      <g clip-path="url(#clip0_141_490)">
+      <g clippath="url(#clip0_141_490)">
         <rect
           width="1440"
           height="2463"
@@ -126,9 +126,9 @@ export const Money = (props) => {
           width="403"
           height="236"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorinterpolation-filters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodopacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -247,8 +247,8 @@ export const DragHandleLine = (props) => {
         x2="38"
         y2="2"
         stroke="#8C9697"
-        stroke-width="4"
-        stroke-linecap="round"
+        strokewidth="4"
+        strokelinecap="round"
       />
     </SvgIcon>
   );
