@@ -25,7 +25,7 @@ const JsHomePageProfile = (props) => {
   return (
     <>
       <div className={classes["heading-div"]}>
-        <span className={classes.heading}>Your's JobsHorn</span>
+        <span className={classes.heading}>{`Your's JobsHorn`}</span>
       </div>
       <div
         className={

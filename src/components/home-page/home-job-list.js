@@ -90,7 +90,6 @@ const HomeListItem = (props) => {
           sessionStorage.setItem("country_code", response.country_code);
         });
     }
-
     fetchGeoLocation();
   }, []);
   const getJobs = async () => {

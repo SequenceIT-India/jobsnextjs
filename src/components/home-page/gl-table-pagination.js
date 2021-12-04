@@ -20,7 +20,6 @@ const useStyles1 = makeStyles(theme => ({
 const TablePaginationActions = (props) => {
   const classes = useStyles1();
   const theme = useTheme();
-  console.log('theme', theme, classes)
   const { count, page, rowsPerPage, onChangePage } = props;
 
   const handleFirstPageButtonClick = (event) => {
