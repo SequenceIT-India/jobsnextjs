@@ -164,7 +164,7 @@ const HomeListItem = (props) => {
     }
   };
 
-  const onFindJobsBtnHandler = () => {};
+  const onFindJobsBtnHandler = () => { };
 
   const selectJob = (job) => {
     setSelectedJob(job);
@@ -209,9 +209,8 @@ const HomeListItem = (props) => {
           item
           md={4}
           xs={12}
-          className={`${
-            selectedJob ? null : classes.jobList
-          } desktop-left partition`}
+          className={`${selectedJob ? null : classes.jobList
+            } desktop-left partition`}
         >
           <Typography className="page-header large" display="block">
             Latest jobs
@@ -253,7 +252,7 @@ const HomeListItem = (props) => {
             <Grid item lg={12}>
               <TablePagination
                 component="div"
-                count={jobs.length}
+                count={jobs?.length || 0}
                 page={page}
                 rowsPerPageOptions={[10, 25, 50, 100]}
                 rowsPerPage={rowsPerPage}
@@ -287,9 +286,8 @@ const HomeListItem = (props) => {
           item
           md={4}
           xs={12}
-          className={`${classes.search} ${
-            selectedJob ? "job-selected" : ""
-          } partition desktop-right`}
+          className={`${classes.search} ${selectedJob ? "job-selected" : ""
+            } partition desktop-right`}
         >
           <Typography className="page-header" display="block">
             Subscribe for new jobs
@@ -304,14 +302,14 @@ const HomeListItem = (props) => {
                 fullWidth
                 variant="outlined"
                 size="small"
-                error={errors.category}
+                error={errors?.category}
               >
                 <OutlinedInput
                   name="category"
                   id="search-category"
                   onChange={onSubscribeDataChange}
                   className="inputwithoutRightBorder"
-                  value={subscribeData.category}
+                  value={subscribeData?.category}
                   required
                   type="text"
                   placeholder="Skill or Job Title"
@@ -321,9 +319,9 @@ const HomeListItem = (props) => {
                     </InputAdornment>
                   }
                 />
-                {errors.category ? (
+                {errors?.category ? (
                   <FormHelperText id="search-email-text">
-                    {errors.category}
+                    {errors?.category}
                   </FormHelperText>
                 ) : (
                   ""
@@ -361,7 +359,6 @@ const HomeListItem = (props) => {
                       required
                       placeholder="City, Country"
                       InputProps={{
-                        ...params.InputProps,
                         startAdornment: (
                           <InputAdornment position="start">
                             <LocationOnOutlined className="icon" />
@@ -378,14 +375,14 @@ const HomeListItem = (props) => {
                 fullWidth
                 variant="outlined"
                 size="small"
-                error={errors.email}
+                error={errors?.email}
               >
                 <OutlinedInput
                   name="email"
                   id="search-email"
                   onChange={onSubscribeDataChange}
                   className="inputwithoutRightBorder"
-                  value={subscribeData.email}
+                  value={subscribeData?.email || ''}
                   required
                   type="email"
                   placeholder="Email"
@@ -395,9 +392,9 @@ const HomeListItem = (props) => {
                     </InputAdornment>
                   }
                 />
-                {errors.email ? (
+                {errors?.email ? (
                   <FormHelperText id="search-email-text">
-                    {errors.email}
+                    {errors?.email}
                   </FormHelperText>
                 ) : (
                   ""
