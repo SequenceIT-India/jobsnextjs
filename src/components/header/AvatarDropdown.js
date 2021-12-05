@@ -83,7 +83,7 @@ export default function AvatarDropdown(props) {
           paper: classes.paper,
         }}
         open={open}
-        getContentAnchorEl={null}
+        getcontentanchorel={null}
         anchorEl={anchorEl}
         anchorOrigin={{
           vertical: "bottom",

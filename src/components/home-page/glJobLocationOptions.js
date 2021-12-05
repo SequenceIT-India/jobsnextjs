@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function App() {
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_API,
+    googleMapsApiKey: 'AIzaSyDEif-fvOkXkd2iSSfuPUljxDRyzL_uTqI',
     libraries,
   });
 

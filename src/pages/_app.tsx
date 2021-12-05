@@ -29,7 +29,9 @@ export default function MyApp(props: MyAppProps) {
   return (
     <CacheProvider value={emotionCache}>
       <Head>
-        <title>Change title in _app.tsx</title>
+        <title>Jobs horn | SohanIT Inc</title>
+        <meta name="description" content="USA IT Jobs" />
+        <link rel="shortcut icon" href="https://www.hottohire.com/favicon.ico" />
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <Provider store={store}>

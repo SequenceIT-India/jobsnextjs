@@ -4,7 +4,7 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import CopyRightFooter from "./gl-copy-right-footer";
-import "./gl-footer.module.scss";
+import styles from "./gl-footer.module.scss";
 import Link from 'next/link'
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";

@@ -92,7 +92,7 @@ export const Money = (props) => {
   return (
     <SvgIcon {...props}>
       <rect {...props} fill="#E5E5E5" />
-      <g clippath="url(#clip0_141_490)">
+      <g clipPath="url(#clip0_141_490)">
         <rect
           width="1440"
           height="2463"
@@ -128,7 +128,7 @@ export const Money = (props) => {
           filterUnits="userSpaceOnUse"
           colorinterpolation-filters="sRGB"
         >
-          <feFlood floodopacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
