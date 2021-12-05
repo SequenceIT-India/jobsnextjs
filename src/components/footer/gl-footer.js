@@ -67,17 +67,27 @@ export default function Footer() {
                   Jobseeker
                 </Typography>
                 <div className={classes.sectionItems}>
-                  <Link className={classes.link} href={"#"}>
-                    Search Jobs
+                  <Link href={"#"}>
+                    <a className={classes.link}>
+                      Search Jobs
+                    </a>
                   </Link>
                   <Link className={classes.link} href={"#"}>
-                    Upload Resume
+                    <a className={classes.link}>
+                      Upload Resume
+                    </a>
                   </Link>
                   <Link className={classes.link} href={"#"}>
-                    Company Profile
+                    <a className={classes.link}>
+
+                      Company Profile
+                    </a>
                   </Link>
                   <Link className={classes.link} href={"#"}>
-                    Help
+                    <a className={classes.link}>
+
+                      Help
+                    </a>
                   </Link>
                 </div>
               </Grid>
@@ -87,19 +97,34 @@ export default function Footer() {
                 </Typography>
                 <div className={classes.sectionItems}>
                   <Link className={classes.link} href={"#"}>
-                    Solutions
+                    <a className={classes.link}>
+
+                      Solutions
+                    </a>
                   </Link>
                   <Link className={classes.link} href={"#"}>
-                    Pricing
+                    <a className={classes.link}>
+
+                      Pricing
+                    </a>
                   </Link>
                   <Link className={classes.link} href={"#"}>
-                    Contacts Management
+                    <a className={classes.link}>
+
+                      Contacts Management
+                    </a>
                   </Link>
                   <Link className={classes.link} href={"#"}>
-                    Search Talent
+                    <a className={classes.link}>
+
+                      Search Talent
+                    </a>
                   </Link>
                   <Link className={classes.link} href={"#"}>
-                    Help
+                    <a className={classes.link}>
+
+                      Help
+                    </a>
                   </Link>
                 </div>
               </Grid>
@@ -109,16 +134,28 @@ export default function Footer() {
                 </Typography>
                 <div className={classes.sectionItems}>
                   <Link className={classes.link} href={"#"}>
-                    Site Map
+                    <a className={classes.link}>
+
+                      Site Map
+                    </a>
                   </Link>
                   <Link className={classes.link} href={"#"}>
-                    Contact Us
+                    <a className={classes.link}>
+
+                      Contact Us
+                    </a>
                   </Link>
                   <Link className={classes.link} href={"#"}>
-                    Contact Sales
+                    <a className={classes.link}>
+
+                      Contact Sales
+                    </a>
                   </Link>
                   <Link className={classes.link} href={"#"}>
-                    Schedule Demo
+                    <a className={classes.link}>
+
+                      Schedule Demo
+                    </a>
                   </Link>
                 </div>
               </Grid>
@@ -128,16 +165,28 @@ export default function Footer() {
                 </Typography>
                 <div className={classes.sectionItems}>
                   <Link className={classes.link} href={"#"}>
-                    About Us
+                    <a className={classes.link}>
+
+                      About Us
+                    </a>
                   </Link>
                   <Link className={classes.link} href={"#"}>
-                    Partner with Us
+                    <a className={classes.link}>
+
+                      Partner with Us
+                    </a>
                   </Link>
                   <Link className={classes.link} href={"#"}>
-                    VMS Integration
+                    <a className={classes.link}>
+
+                      VMS Integration
+                    </a>
                   </Link>
                   <Link className={classes.link} href={"#"}>
-                    API Integration
+                    <a className={classes.link}>
+
+                      API Integration
+                    </a>
                   </Link>
                 </div>
               </Grid>
