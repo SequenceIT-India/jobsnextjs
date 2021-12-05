@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
-import type { NextPage } from 'next';
-import HomeListItem from "../components/home-page/home-job-list.js";
+
+import { default as React, useEffect, useState } from "react";
+import HomeListItem from "../../components/home-page/home-job-list.js";
 import axios from "axios";
 
-const HomeList: NextPage = (props) => {
+const DetailPage = (props) => {
   const [selectedJob, setSelectedJob] = useState(null);
-  const selectJob = (job: any) => {
+  const selectJob = (job) => {
+    debugger
     setSelectedJob(job);
   };
   console.log('props', props)
   return (
-    <HomeListItem {...props} selectedJob={null} selectJob={selectJob}/>
+    <HomeListItem {...props} selectedJob={selectedJob} selectJob={selectJob} />
   );
-};
-
-export async function getServerSideProps(context: any) {
+}
+export async function getServerSideProps(context) {
   const { id = 0 } = context.query;
   // Fetch data from external API
   const options = {
@@ -37,8 +37,9 @@ export async function getServerSideProps(context: any) {
   }, options);
   console.log('context', res.data?.jobs)
 
-  const jd = res.data?.jobs?.find((job: any) => job.jobID == id);
+  const jd = res.data?.jobs?.find((job) => job.jobID == id);
 
-  return { props: { jd: null, jobs: res.data?.jobs } }
+  return { props: { jd: jd || {}, jobs: res.data?.jobs } }
+
 }
-export default HomeList;
+export default DetailPage

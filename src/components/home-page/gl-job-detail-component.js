@@ -30,7 +30,7 @@ import {
   WhatsappShareButton,
 } from "react-share";
 import { getJobLocation, getJobType, validateField } from "../../util/helper";
-import ApplyJobDetail from "../job-detail/apply-job-detail";
+//import ApplyJobDetail from "../job-detail/apply-job-detail";
 import ReportJobDetail from "../job-detail/report-job-detail";
 import GetRemainderModal from "../modal/GetRemainderModal";
 import styles from "./gl-job-detail-component.module.scss";
@@ -733,7 +733,7 @@ const JobDetailComponent = (props) => {
         }}
       />
       <ReportJobDetail open={showReportJob} handleClose={onReportJobClose} />
-      <ApplyJobDetail open={showApplyJob} handleClose={onApplyJobClose} />
+     {/* <ApplyJobDetail open={showApplyJob} handleClose={onApplyJobClose} />*/}
       <GetRemainderModal
         cancelBtnClickHandler={cancelBtnClickHandler}
         values={values}

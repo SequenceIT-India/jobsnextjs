@@ -26,9 +26,10 @@ import { Close, ExpandLess, ExpandMore, Search } from "@mui/icons-material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { default as React, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
+import Image from "next/image";
 import { useRouter } from "next/router";
-import logo from "../../../public/assets/images/logo.png";
+const logo = "/assets/images/logo.png";
+
 import { logoutAction } from "../../redux/actions";
 import { getUserProfilePhoto } from "../../service/profile";
 import "./gl-header.module.scss";
@@ -45,7 +46,7 @@ const StyledMenu = withStyles({
 })((props) => (
   <Menu
     elevation={0}
-    getContentAnchorEl={null}
+    getcontentanchorel={null}
     anchorOrigin={{
       vertical: "bottom",
       horizontal: "center",
@@ -202,7 +203,7 @@ const Header = (props) => {
   const [photo, setPhoto] = useState("");
 
   const getPhoto = async () => {
-    const result = await getUserProfilePhoto(sessionStorage.getItem("email"));
+    const result = '';//await getUserProfilePhoto(sessionStorage.getItem("email"));
     setPhoto(result ? `data:image/png;base64,${result}` : "");
   };
 
@@ -210,7 +211,7 @@ const Header = (props) => {
     getPhoto();
   }, []);
 
-  const onFindJobsBtnHandler = () => {};
+  const onFindJobsBtnHandler = () => { };
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const toggleDrawer = () => {
@@ -228,7 +229,7 @@ const Header = (props) => {
       >
         <Toolbar className="app-header">
           <Link href="/">
-            <img className="nav-logo" src={'https://www.hottohire.com/static/media/JH-logo.00c9760e.png'}  alt="logo" />
+            <Image className="nav-logo" width="100px" height="45px" src={logo} alt="logo" />
           </Link>
           <div className="main-header-space"></div>
           {auth.token ? (

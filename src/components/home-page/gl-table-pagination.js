@@ -92,4 +92,4 @@ TablePaginationActions.propTypes = {
 };
 
 
-export default withStyles(useStyles1)(TablePaginationActions);
+export default TablePaginationActions;
