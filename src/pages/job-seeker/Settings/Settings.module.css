@@ -1,0 +1,237 @@
+:export {
+  primaryColor: #3d8a94;
+  primaryDarkColor: #1f5776;
+  primaryLightColor: #eef9fb;
+  defaultColor: #ffffff;
+  secondaryColor: #e7873b;
+  disableColor: #5b5b5b;
+  offWhiteColor: #f9f9f9;
+  greyColor: #dcdcdc;
+  textLightColor: #8d8d8d;
+  primaryColorShade: #367982;
+  deleteBtnColor: #ff3138;
+  blackColor: #000;
+  lightWhiteColor: #ecf9fc;
+  whiteColor: #fff;
+  headingColor: #567377;
+  linkedInColor: #0a66c2;
+  twitterColor: #55acee;
+  facebookColor: #395185;
+  publicColor: #5b5b5b;
+  nonMandatoryColor: #646e70;
+  paidJobRightIconColor: #9fc1c5;
+  paidJobCardColor: #e2f0f0;
+  displayJobFirstCardColor: #edefde;
+  boldJobTitleCardColor: #fdf7ed;
+  freeJobsCardColor: #dee4e9;
+  urgentHiringCardColor: #f2e4ed;
+  nationWideCardColor: #dbd9e8;
+  blackColor: #000;
+}
+
+.main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0px 1rem 1rem;
+}
+
+.main-container .page-title {
+  font-weight: 700;
+  font-size: 16px;
+  color: #3d8a94;
+}
+
+.main-container .user-details {
+  font-weight: 400;
+  font-size: 14px;
+  color: #5b5b5b;
+  margin: 0.5rem 0px;
+}
+
+.main-container .verify-email-btn-div {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.main-container .verify-email-btn {
+  background-color: #3d8a94;
+  color: white;
+}
+
+.main-container .verify-email-btn:hover {
+  background-color: #3d8a94;
+  color: white;
+}
+
+.main-container .email-details-div {
+  margin: 0.5rem 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.main-container .email-details-div .email-id {
+  font-weight: 400;
+  font-size: 14px;
+  color: #5b5b5b;
+}
+
+.main-container .delete-account-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main-container .delete-account-text {
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+  color: #5b5b5b;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.main-container .section-title {
+  font-weight: 500;
+  font-size: 18px;
+  padding-bottom: 0.25rem;
+}
+
+.main-container .new-password-grid {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main-container .password-validation-info {
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  color: #5b5b5b;
+  margin: 0.25rem 0px;
+}
+
+.main-container .input-grid {
+  padding-right: 0.25rem;
+}
+
+.main-container .label {
+  font-size: 12px;
+  color: #5b5b5b;
+  font-weight: 400;
+}
+
+.main-container .label:after {
+  content: " *";
+  color: red;
+}
+
+.main-container .input-form-control {
+  width: 100%;
+}
+
+.main-container .helper-text {
+  margin-left: 0px;
+  margin-bottom: 0.5rem;
+}
+
+.main-container .btn-grid {
+  text-align: end;
+}
+
+.main-container .submit-btn-contained,
+.main-container .change-btn-contained {
+  color: white;
+  background-color: #3d8a94;
+  margin-top: 25px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.main-container .submit-btn-contained:hover,
+.main-container .change-btn-contained:hover {
+  background-color: #3d8a94;
+}
+
+.main-container .submit-btn-outlined,
+.main-container .change-btn-outlined {
+  margin-top: 25px;
+}
+
+.main-container .divider {
+  margin: 1.5rem 0px;
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.main-container .delete-account-btn {
+  color: white;
+  font-weight: 400;
+  font-size: 14px;
+  background-color: #ff3138;
+}
+
+.main-container .delete-account-btn:hover {
+  background-color: #ff3138;
+}
+
+@media (max-width: 599px) {
+  .main-container .page-title {
+    font-size: medium;
+  }
+  .main-container .section-title {
+    font-size: small;
+  }
+  .main-container .delete-account-text {
+    font-size: small;
+  }
+  .main-container .label {
+    font-size: small;
+  }
+  .main-container .submit-btn,
+  .main-container .change-btn {
+    margin-top: 0.5rem;
+    font-size: xx-small;
+  }
+  .main-container .new-password-grid {
+    margin-top: 0px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+  .main-container .submit-btn,
+  .main-container .change-btn {
+    font-size: small;
+    margin-top: 7.5px;
+  }
+  .main-container .btn-grid {
+    text-align: left;
+  }
+  .main-container .new-password-grid {
+    margin-top: 0px;
+  }
+}
+
+@media (min-width: 960px) and (max-width: 1279px) {
+  .main-container .submit-btn,
+  .main-container .change-btn {
+    font-size: small;
+  }
+  .main-container .new-password-grid {
+    margin-top: 0px;
+  }
+}
+/*# sourceMappingURL=Settings.module.css.map */

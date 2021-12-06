@@ -1,0 +1,42 @@
+@import "../../../vars.module.scss";
+
+.manage-cover-letter-grid {
+  .routing-and-action-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .manage-resumes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+  }
+  .link {
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+    cursor: pointer;
+    color: $disable-color;
+  }
+  .forward-arrow-icon {
+    font-size: small;
+    margin: 0px 0.5rem;
+  }
+  .section-title {
+    font-size: 18;
+    font-weight: 700;
+    color: $primary-dark;
+  }
+  .action-btns {
+    display: flex;
+    justify-content: space-between;
+  }
+  .btns {
+    margin: 0px 0.3rem;
+    background-color: $primary;
+    color: white;
+    &:hover {
+      background-color: $primary;
+    }
+  }
+}

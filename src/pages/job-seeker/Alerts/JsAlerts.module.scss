@@ -1,0 +1,138 @@
+@import "../../../vars.module.scss";
+
+.alerts-grid {
+  height: 100vh;
+  .routing-and-action-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .link {
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+    cursor: pointer;
+    color: $disable-color;
+  }
+  .forward-arrow-icon {
+    font-size: small;
+    margin: 0px 0.5rem;
+  }
+  .title {
+    display: flex;
+    align-items: center;
+  }
+  .section-title {
+    font-size: 18;
+    font-weight: 700;
+    color: $primary-dark;
+  }
+  .divider {
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .alerts-div {
+    .alert {
+      display: flex;
+    }
+    .alert-data {
+      width: 90%;
+      display: flex;
+    }
+    .alert-details-div {
+      width: 50%;
+    }
+    .alert-actions-div {
+      width: 50%;
+    }
+    .switch {
+      display: flex;
+      justify-content: space-between;
+    }
+    .time {
+      font-size: small;
+      color: $disable-color;
+    }
+    .alert-name-div {
+      display: flex;
+      align-items: center;
+    }
+    .alert-name {
+      font-size: 16px;
+      font-weight: 400;
+      color: $heading-color;
+    }
+    .editIcon {
+      font-size: medium;
+      margin: 0px 1rem;
+    }
+    .delete-icon-div {
+      width: 10%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $disable-color;
+    }
+    .date-range {
+      display: flex;
+      width: 50%;
+      justify-content: space-between;
+      margin: 1rem 0px;
+    }
+    .contained {
+      background-color: $primary;
+      color: white;
+      padding: 5px;
+      font-size: small;
+      &:hover {
+        background-color: $primary;
+      }
+    }
+    .outlined {
+      padding: 5px;
+      font-size: small;
+    }
+    .rangeIcon {
+      font-size: medium;
+      margin-right: 0.25rem;
+    }
+  }
+  .location-div {
+    margin: 1rem 0px;
+    display: flex;
+    flex-direction: row;
+    .chip {
+      margin-right: 1rem;
+    }
+  }
+}
+
+@media (max-width: 599px) {
+  .alerts-grid {
+    .alerts-div {
+      .alert-data {
+        flex-direction: column;
+        width: 85vw;
+      }
+      .alert {
+        justify-content: space-evenly;
+      }
+      .alert-details-div {
+        width: 100%;
+        flex-direction: row;
+      }
+      .alert-actions-div {
+        width: 100%;
+        flex-direction: row;
+      }
+      .delete-icon-div {
+        width: 10vw;
+      }
+      .date-range {
+        width: 55%;
+      }
+    }
+  }
+}

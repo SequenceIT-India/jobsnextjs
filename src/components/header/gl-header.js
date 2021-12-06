@@ -203,7 +203,7 @@ const Header = (props) => {
   const [photo, setPhoto] = useState("");
 
   const getPhoto = async () => {
-    const result = '';//await getUserProfilePhoto(sessionStorage.getItem("email"));
+    const result = ""; //await getUserProfilePhoto(sessionStorage.getItem("email"));
     setPhoto(result ? `data:image/png;base64,${result}` : "");
   };
 
@@ -211,7 +211,7 @@ const Header = (props) => {
     getPhoto();
   }, []);
 
-  const onFindJobsBtnHandler = () => { };
+  const onFindJobsBtnHandler = () => {};
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const toggleDrawer = () => {
@@ -229,7 +229,13 @@ const Header = (props) => {
       >
         <Toolbar className="app-header">
           <Link href="/">
-            <Image className="nav-logo" width="100px" height="45px" src={logo} alt="logo" />
+            <Image
+              className="nav-logo"
+              width="100px"
+              height="45px"
+              src={logo}
+              alt="logo"
+            />
           </Link>
           <div className="main-header-space"></div>
           {auth.token ? (
@@ -270,7 +276,7 @@ const Header = (props) => {
                     title: "Popular Searches",
                   },
                   {
-                    href: "/jobseeker/register",
+                    href: "/job-seeker/register",
                     title: "Register",
                   },
                 ]}

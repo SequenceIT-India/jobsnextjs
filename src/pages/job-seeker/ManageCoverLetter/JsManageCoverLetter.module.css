@@ -1,0 +1,91 @@
+:export {
+  primaryColor: #3d8a94;
+  primaryDarkColor: #1f5776;
+  primaryLightColor: #eef9fb;
+  defaultColor: #ffffff;
+  secondaryColor: #e7873b;
+  disableColor: #5b5b5b;
+  offWhiteColor: #f9f9f9;
+  greyColor: #dcdcdc;
+  textLightColor: #8d8d8d;
+  primaryColorShade: #367982;
+  deleteBtnColor: #ff3138;
+  blackColor: #000;
+  lightWhiteColor: #ecf9fc;
+  whiteColor: #fff;
+  headingColor: #567377;
+  linkedInColor: #0a66c2;
+  twitterColor: #55acee;
+  facebookColor: #395185;
+  publicColor: #5b5b5b;
+  nonMandatoryColor: #646e70;
+  paidJobRightIconColor: #9fc1c5;
+  paidJobCardColor: #e2f0f0;
+  displayJobFirstCardColor: #edefde;
+  boldJobTitleCardColor: #fdf7ed;
+  freeJobsCardColor: #dee4e9;
+  urgentHiringCardColor: #f2e4ed;
+  nationWideCardColor: #dbd9e8;
+  blackColor: #000;
+}
+
+.manage-cover-letter-grid .routing-and-action-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.manage-cover-letter-grid .manage-resumes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 4rem;
+}
+
+.manage-cover-letter-grid .link {
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  cursor: pointer;
+  color: #5b5b5b;
+}
+
+.manage-cover-letter-grid .forward-arrow-icon {
+  font-size: small;
+  margin: 0px 0.5rem;
+}
+
+.manage-cover-letter-grid .section-title {
+  font-size: 18;
+  font-weight: 700;
+  color: #1f5776;
+}
+
+.manage-cover-letter-grid .action-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.manage-cover-letter-grid .btns {
+  margin: 0px 0.3rem;
+  background-color: #3d8a94;
+  color: white;
+}
+
+.manage-cover-letter-grid .btns:hover {
+  background-color: #3d8a94;
+}
+/*# sourceMappingURL=JsManageCoverLetter.module.css.map */

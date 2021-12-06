@@ -2,7 +2,7 @@ import api from "../util/api";
 import { API_URL } from "./urls";
 const { REACT_APP_TOKEN_URL } = process.env;
 
-export const register = async (data) => {
+export const userRegister = async (data) => {
   const options = {
     headers: {
       "Content-Type": "application/json",

@@ -1,0 +1,271 @@
+:export {
+  primaryColor: #3d8a94;
+  primaryDarkColor: #1f5776;
+  primaryLightColor: #eef9fb;
+  defaultColor: #ffffff;
+  secondaryColor: #e7873b;
+  disableColor: #5b5b5b;
+  offWhiteColor: #f9f9f9;
+  greyColor: #dcdcdc;
+  textLightColor: #8d8d8d;
+  primaryColorShade: #367982;
+  deleteBtnColor: #ff3138;
+  blackColor: #000;
+  lightWhiteColor: #ecf9fc;
+  whiteColor: #fff;
+  headingColor: #567377;
+  linkedInColor: #0a66c2;
+  twitterColor: #55acee;
+  facebookColor: #395185;
+  publicColor: #5b5b5b;
+  nonMandatoryColor: #646e70;
+  paidJobRightIconColor: #9fc1c5;
+  paidJobCardColor: #e2f0f0;
+  displayJobFirstCardColor: #edefde;
+  boldJobTitleCardColor: #fdf7ed;
+  freeJobsCardColor: #dee4e9;
+  urgentHiringCardColor: #f2e4ed;
+  nationWideCardColor: #dbd9e8;
+  blackColor: #000;
+}
+
+.title-div,
+.section-title {
+  font-weight: 400;
+  font-size: 18px;
+  color: #567377;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  margin-top: 1rem;
+}
+
+.text-field {
+  width: 100%;
+}
+
+.text-field .public-icon {
+  color: #5b5b5b;
+}
+
+.text-field .facebook-icon {
+  color: #395185;
+}
+
+.text-field .twitter-icon {
+  color: #55acee;
+}
+
+.text-field .linkedin-icon {
+  color: #0a66c2;
+}
+
+.input-label {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 0.25rem;
+}
+
+.editor {
+  border: 1px solid #3d8a94;
+  height: 10rem;
+}
+
+.non-mandatory-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: #646e70;
+}
+
+.veteran-service {
+  margin: 0px !important;
+  color: #5b5b5b;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.veteran-service .formGroup {
+  margin-left: 7rem;
+}
+
+.repeat-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-items: start;
+}
+
+.repeat-item .delete-item {
+  margin: 20px 5px;
+  color: #3d8a94;
+}
+
+.repeat-item:not(:first-child) {
+  margin-top: 20px;
+  border-top: 2px dashed #1f5776;
+}
+
+.field-row-container .add-more-btn-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.field-row-container .add-more-btn-grid .add-more-btn {
+  background-color: #3d8a94;
+  border-color: #3d8a94;
+  color: #ffffff;
+}
+
+.field-row-container .add-more-btn-grid .add-more-btn:focus {
+  outline: none;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.field-row-container .add-more-btn-grid .add-more-btn:hover {
+  background-color: #3d8a94;
+}
+
+.field-row-container.location {
+  border-top: 1px solid #5b5b5b;
+}
+
+.field-row-container .field {
+  margin-top: 10px;
+}
+
+.btns-grid .submit-btn {
+  margin-right: 1rem;
+  background-color: #10a449;
+  color: #ffffff;
+}
+
+.btns-grid .submit-btn:hover {
+  background-color: #10a449;
+}
+
+.btns-grid .previous-btn,
+.btns-grid .cancel-btn,
+.btns-grid .next-btn {
+  margin-right: 1rem;
+  color: #10a449;
+  border-color: #10a449;
+}
+
+.icon {
+  color: #3d8a94;
+}
+
+.locations-grid {
+  margin: 1rem 0px;
+}
+
+.iconImage {
+  width: 20px;
+  height: 20px;
+  color: #5b5b5b;
+}
+
+@media (max-width: 599px) {
+  .section-title,
+  .title-div {
+    margin-left: 1.25rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .go-back {
+    margin-right: 0.5rem;
+    cursor: pointer;
+  }
+  .location-data-grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .location-data-grid .location-fields {
+    width: 92.5%;
+  }
+  .location-data-grid .add-location-btn-grid {
+    width: 92.5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .location-data-grid .add-location-btn-grid .add-btn {
+    background-color: #3d8a94;
+    color: #ffffff;
+  }
+  .location-data-grid .add-location-btn-grid .add-btn:hover {
+    background-color: #3d8a94;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+  .location-data-grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .location-data-grid .location-fields {
+    width: 50%;
+  }
+  .location-data-grid .add-location-btn-grid {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 0.9rem;
+  }
+  .location-data-grid .add-location-btn-grid .add-btn {
+    background-color: #3d8a94;
+    color: #ffffff;
+  }
+  .location-data-grid .add-location-btn-grid .add-btn:hover {
+    background-color: #3d8a94;
+  }
+}
+
+@media (min-width: 960px) and (max-width: 1920px) {
+  .location-data-grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .location-data-grid .location-fields {
+    width: 23%;
+  }
+  .location-data-grid .add-location-btn-grid {
+    width: 8%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 0.6rem;
+  }
+  .location-data-grid .add-location-btn-grid .add-btn {
+    background-color: #3d8a94;
+    color: #ffffff;
+  }
+  .location-data-grid .add-location-btn-grid .add-btn:hover {
+    background-color: #3d8a94;
+  }
+}
+/*# sourceMappingURL=JsAdditionalInfo.module.css.map */

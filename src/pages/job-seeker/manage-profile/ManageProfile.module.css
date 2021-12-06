@@ -1,0 +1,88 @@
+:export {
+  primaryColor: #3d8a94;
+  primaryDarkColor: #1f5776;
+  primaryLightColor: #eef9fb;
+  defaultColor: #ffffff;
+  secondaryColor: #e7873b;
+  disableColor: #5b5b5b;
+  offWhiteColor: #f9f9f9;
+  greyColor: #dcdcdc;
+  textLightColor: #8d8d8d;
+  primaryColorShade: #367982;
+  deleteBtnColor: #ff3138;
+  blackColor: #000;
+  lightWhiteColor: #ecf9fc;
+  whiteColor: #fff;
+  headingColor: #567377;
+  linkedInColor: #0a66c2;
+  twitterColor: #55acee;
+  facebookColor: #395185;
+  publicColor: #5b5b5b;
+  nonMandatoryColor: #646e70;
+  paidJobRightIconColor: #9fc1c5;
+  paidJobCardColor: #e2f0f0;
+  displayJobFirstCardColor: #edefde;
+  boldJobTitleCardColor: #fdf7ed;
+  freeJobsCardColor: #dee4e9;
+  urgentHiringCardColor: #f2e4ed;
+  nationWideCardColor: #dbd9e8;
+  blackColor: #000;
+}
+
+.text_field {
+  width: 100%;
+}
+
+.add_more_btn {
+  background-color: #3d8a94 !important;
+  border-color: #3d8a94 !important;
+  color: #fff;
+}
+
+.add_more_btn:hover {
+  background-color: #3d8a94 !important;
+  border-color: #3d8a94 !important;
+  color: #fff;
+}
+
+.btns-grid .submit-btn {
+  margin-right: 1rem;
+  background-color: #10a449;
+  color: #ffffff;
+}
+
+.btns-grid .submit-btn:hover {
+  background-color: #10a449;
+}
+
+.btns-grid .previous-btn,
+.btns-grid .cancel-btn,
+.btns-grid .next-btn {
+  margin-right: 1rem;
+  color: #10a449;
+  border-color: #10a449;
+}
+
+.input_label {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 0.25rem;
+}
+
+.profile-visibility-div {
+  width: 100%;
+  padding: 1rem 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: smaller;
+}
+
+.profile-visibility-div .custom_switch {
+  margin-left: 1%;
+}
+
+.area_size {
+  min-height: 110px;
+}
+/*# sourceMappingURL=ManageProfile.module.css.map */

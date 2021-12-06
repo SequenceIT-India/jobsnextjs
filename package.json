@@ -21,6 +21,8 @@
     "@react-google-maps/api": "^2.7.0",
     "axios": "^0.24.0",
     "country-state-city": "1.0.5",
+    "crypto-js": "^4.1.1",
+    "moment": "^2.29.1",
     "next": "latest",
     "next-images": "^1.8.4",
     "react": "latest",

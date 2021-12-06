@@ -1,0 +1,232 @@
+:export {
+  primaryColor: #3d8a94;
+  primaryDarkColor: #1f5776;
+  primaryLightColor: #eef9fb;
+  defaultColor: #ffffff;
+  secondaryColor: #e7873b;
+  disableColor: #5b5b5b;
+  offWhiteColor: #f9f9f9;
+  greyColor: #dcdcdc;
+  textLightColor: #8d8d8d;
+  primaryColorShade: #367982;
+  deleteBtnColor: #ff3138;
+  blackColor: #000;
+  lightWhiteColor: #ecf9fc;
+  whiteColor: #fff;
+  headingColor: #567377;
+  linkedInColor: #0a66c2;
+  twitterColor: #55acee;
+  facebookColor: #395185;
+  publicColor: #5b5b5b;
+  nonMandatoryColor: #646e70;
+  paidJobRightIconColor: #9fc1c5;
+  paidJobCardColor: #e2f0f0;
+  displayJobFirstCardColor: #edefde;
+  boldJobTitleCardColor: #fdf7ed;
+  freeJobsCardColor: #dee4e9;
+  urgentHiringCardColor: #f2e4ed;
+  nationWideCardColor: #dbd9e8;
+  blackColor: #000;
+}
+
+.alerts-grid {
+  height: 100vh;
+}
+
+.alerts-grid .routing-and-action-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.alerts-grid .link {
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  cursor: pointer;
+  color: #5b5b5b;
+}
+
+.alerts-grid .forward-arrow-icon {
+  font-size: small;
+  margin: 0px 0.5rem;
+}
+
+.alerts-grid .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.alerts-grid .section-title {
+  font-size: 18;
+  font-weight: 700;
+  color: #1f5776;
+}
+
+.alerts-grid .divider {
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.alerts-grid .alerts-div .alert {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.alerts-grid .alerts-div .alert-data {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.alerts-grid .alerts-div .alert-details-div {
+  width: 50%;
+}
+
+.alerts-grid .alerts-div .alert-actions-div {
+  width: 50%;
+}
+
+.alerts-grid .alerts-div .switch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.alerts-grid .alerts-div .time {
+  font-size: small;
+  color: #5b5b5b;
+}
+
+.alerts-grid .alerts-div .alert-name-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.alerts-grid .alerts-div .alert-name {
+  font-size: 16px;
+  font-weight: 400;
+  color: #567377;
+}
+
+.alerts-grid .alerts-div .editIcon {
+  font-size: medium;
+  margin: 0px 1rem;
+}
+
+.alerts-grid .alerts-div .delete-icon-div {
+  width: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #5b5b5b;
+}
+
+.alerts-grid .alerts-div .date-range {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 1rem 0px;
+}
+
+.alerts-grid .alerts-div .contained {
+  background-color: #3d8a94;
+  color: white;
+  padding: 5px;
+  font-size: small;
+}
+
+.alerts-grid .alerts-div .contained:hover {
+  background-color: #3d8a94;
+}
+
+.alerts-grid .alerts-div .outlined {
+  padding: 5px;
+  font-size: small;
+}
+
+.alerts-grid .alerts-div .rangeIcon {
+  font-size: medium;
+  margin-right: 0.25rem;
+}
+
+.alerts-grid .location-div {
+  margin: 1rem 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.alerts-grid .location-div .chip {
+  margin-right: 1rem;
+}
+
+@media (max-width: 599px) {
+  .alerts-grid .alerts-div .alert-data {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 85vw;
+  }
+  .alerts-grid .alerts-div .alert {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .alerts-grid .alerts-div .alert-details-div {
+    width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .alerts-grid .alerts-div .alert-actions-div {
+    width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .alerts-grid .alerts-div .delete-icon-div {
+    width: 10vw;
+  }
+  .alerts-grid .alerts-div .date-range {
+    width: 55%;
+  }
+}
+/*# sourceMappingURL=JsAlerts.module.css.map */
