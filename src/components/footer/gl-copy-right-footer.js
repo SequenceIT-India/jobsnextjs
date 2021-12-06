@@ -48,7 +48,9 @@ export default function CopyRightFooter() {
       <AppBar position="static" className={classes.copyRightFooter}>
         <Toolbar variant="dense" className={classes.copyRightToolbar}>
           <Typography variant="body2" className={classes.copyRightText}>
-            © copyright 2014 to 2020 sequenceiT
+            © copyright 2014 to 2020 JobsHorn. All rights reserved <br /> Use of
+            this site is subject to certain Terms and Conditions - Do Not Sell
+            My Personal Information - Cookies - Privacy Policy
           </Typography>
         </Toolbar>
       </AppBar>
