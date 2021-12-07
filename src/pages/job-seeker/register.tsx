@@ -90,10 +90,10 @@ function register() {
   const isValid = () => {
     let isValidChk = true;
     Object.keys(errors).forEach((element: any) => {
-      isValidChk = isValidChk && !Boolean(errors?.[`element`]);
+      isValidChk = isValidChk && !Boolean(errors?.[element]);
     });
     Object.keys(values).forEach((element) => {
-      isValidChk = isValidChk && Boolean(values?.[`element`]);
+      isValidChk = isValidChk && Boolean(values?.[element]);
     });
     return isValidChk;
   };
@@ -103,7 +103,7 @@ function register() {
     const { timeStamp, saltRandom20Char, cipherText } =
       aesJobsHorn.getFinalOutput(values, DATETIMEFORMAT, "CAND");
     const { emailId, jobAlerts } = values;
-    const registrationResponse = await userRegister({
+    const registrationResponse: any = await userRegister({
       emailId,
       jobAlerts,
       timeStamp: timeStamp.toString(),
@@ -137,7 +137,7 @@ function register() {
     ) {
       setErrors({
         ...errors,
-        email: messages[registrationResponse.data.message],
+        emailId: registrationResponse.data.message, //messages[registrationResponse.data.message]
       });
     }
   };
@@ -247,7 +247,7 @@ function register() {
                       value="Y"
                       control={
                         <CustomRadio
-                          onChange={(evt, checked) => {
+                          onChange={(evt: any, checked: any) => {
                             setValues({
                               ...values,
                               jobAlerts: checked ? "Y" : "N",
@@ -264,7 +264,7 @@ function register() {
                       value="N"
                       control={
                         <CustomRadio
-                          onChange={(evt, checked) => {
+                          onChange={(evt: any, checked: any) => {
                             setValues({
                               ...values,
                               jobAlerts: checked ? "N" : "Y",
@@ -306,7 +306,7 @@ function register() {
                       }
                       onClick={() => {
                         setValues(initialState);
-                        setErrors({emailId:'', password:''});
+                        setErrors({ emailId: '', password: '' });
                       }}
                       disabled={values.emailId === "" && values.password === ""}
                     >
