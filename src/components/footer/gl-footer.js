@@ -5,7 +5,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import CopyRightFooter from "./gl-copy-right-footer";
 import styles from "./gl-footer.module.scss";
-import Link from 'next/link'
+import Link from "next/link";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -68,26 +68,16 @@ export default function Footer() {
                 </Typography>
                 <div className={classes.sectionItems}>
                   <Link href={"#"}>
-                    <a className={classes.link}>
-                      Search Jobs
-                    </a>
+                    <a className={classes.link}>Search Jobs</a>
                   </Link>
                   <Link className={classes.link} href={"#"}>
-                    <a className={classes.link}>
-                      Upload Resume
-                    </a>
+                    <a className={classes.link}>Upload Resume</a>
                   </Link>
                   <Link className={classes.link} href={"#"}>
-                    <a className={classes.link}>
-
-                      Company Profile
-                    </a>
+                    <a className={classes.link}>Company Profile</a>
                   </Link>
                   <Link className={classes.link} href={"#"}>
-                    <a className={classes.link}>
-
-                      Help
-                    </a>
+                    <a className={classes.link}>Help</a>
                   </Link>
                 </div>
               </Grid>
@@ -97,34 +87,19 @@ export default function Footer() {
                 </Typography>
                 <div className={classes.sectionItems}>
                   <Link className={classes.link} href={"#"}>
-                    <a className={classes.link}>
-
-                      Solutions
-                    </a>
+                    <a className={classes.link}>Solutions</a>
                   </Link>
                   <Link className={classes.link} href={"#"}>
-                    <a className={classes.link}>
-
-                      Pricing
-                    </a>
+                    <a className={classes.link}>Pricing</a>
                   </Link>
                   <Link className={classes.link} href={"#"}>
-                    <a className={classes.link}>
-
-                      Contacts Management
-                    </a>
+                    <a className={classes.link}>Contacts Management</a>
                   </Link>
                   <Link className={classes.link} href={"#"}>
-                    <a className={classes.link}>
-
-                      Search Talent
-                    </a>
+                    <a className={classes.link}>Search Talent</a>
                   </Link>
                   <Link className={classes.link} href={"#"}>
-                    <a className={classes.link}>
-
-                      Help
-                    </a>
+                    <a className={classes.link}>Help</a>
                   </Link>
                 </div>
               </Grid>
@@ -134,28 +109,16 @@ export default function Footer() {
                 </Typography>
                 <div className={classes.sectionItems}>
                   <Link className={classes.link} href={"#"}>
-                    <a className={classes.link}>
-
-                      Site Map
-                    </a>
+                    <a className={classes.link}>Site Map</a>
                   </Link>
                   <Link className={classes.link} href={"#"}>
-                    <a className={classes.link}>
-
-                      Contact Us
-                    </a>
+                    <a className={classes.link}>Contact Us</a>
                   </Link>
                   <Link className={classes.link} href={"#"}>
-                    <a className={classes.link}>
-
-                      Contact Sales
-                    </a>
+                    <a className={classes.link}>Contact Sales</a>
                   </Link>
                   <Link className={classes.link} href={"#"}>
-                    <a className={classes.link}>
-
-                      Schedule Demo
-                    </a>
+                    <a className={classes.link}>Schedule Demo</a>
                   </Link>
                 </div>
               </Grid>
@@ -164,29 +127,17 @@ export default function Footer() {
                   About Jh
                 </Typography>
                 <div className={classes.sectionItems}>
-                  <Link className={classes.link} href={"#"}>
-                    <a className={classes.link}>
-
-                      About Us
-                    </a>
+                  <Link className={classes.link} href={"/about-us"}>
+                    <a className={classes.link}>About Us</a>
                   </Link>
                   <Link className={classes.link} href={"#"}>
-                    <a className={classes.link}>
-
-                      Partner with Us
-                    </a>
+                    <a className={classes.link}>Partner with Us</a>
                   </Link>
                   <Link className={classes.link} href={"#"}>
-                    <a className={classes.link}>
-
-                      VMS Integration
-                    </a>
+                    <a className={classes.link}>VMS Integration</a>
                   </Link>
                   <Link className={classes.link} href={"#"}>
-                    <a className={classes.link}>
-
-                      API Integration
-                    </a>
+                    <a className={classes.link}>API Integration</a>
                   </Link>
                 </div>
               </Grid>
