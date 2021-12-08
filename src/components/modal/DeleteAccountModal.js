@@ -5,8 +5,6 @@ import Backdrop from "@mui/material/Backdrop";
 import { Button, Divider } from "@mui/material";
 import { FormControl, OutlinedInput } from "@mui/material";
 
-import deleteIcon from "../../assets/images/deleteIcon.svg";
-
 import colors from "../../vars.module.scss";
 import styles from "./DeleteAccountModal.module.scss";
 import { useOutlinedInputStyles } from "../../util/CustomInputField";
@@ -68,7 +66,10 @@ function DeleteAccountModal(props) {
         <div className={classes.paper}>
           <div className={styles["delete-modal"]}>
             <div className={styles["modal-icon-and-title"]}>
-              <img src={deleteIcon} alt="delete account" />
+              <img
+                src={"../../assets/images/deleteIcon.svg"}
+                alt="delete account"
+              />
               <span className={styles["modal-title"]}>{props.title}</span>
             </div>
             <Divider />

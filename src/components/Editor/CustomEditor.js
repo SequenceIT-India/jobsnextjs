@@ -1,5 +1,8 @@
 import React from "react";
-import { Editor } from "react-draft-wysiwyg";
+import dynamic from "next/dynamic";
+
+const Editor = dynamic(() => import("react-draft-wysiwyg"), { ssr: false });
+
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 const CustomEditor = (props) => {

@@ -15,8 +15,6 @@ import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import StarIcon from "@mui/icons-material/Star";
 
-import check from "../../assets/images/check.svg";
-
 import {
   locationDetails,
   locationIcon,
@@ -239,7 +237,11 @@ export default function JsJobsCard({
               >
                 {isAppliedJobs ? (
                   <Typography variant="body2" className={jobStatusDetails}>
-                    <img className={checkImage} src={check} alt="" />
+                    <img
+                      className={checkImage}
+                      src={`../../assets/images/check.svg`}
+                      alt=""
+                    />
                     Application Status: {job.status}
                   </Typography>
                 ) : (

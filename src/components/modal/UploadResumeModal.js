@@ -17,7 +17,7 @@ import { JsLogin as Resume } from "../../util/helper";
 
 import colors from "../../vars.module.scss";
 import styles from "./CreateCoverLetter.module.scss";
-import "./UploadResume.scss";
+// import "./UploadResume.scss";
 import { INFO, PLACEHOLDERS } from "../../util/Labels";
 
 const useStyles = makeStyles((theme) => ({

@@ -12,7 +12,7 @@ import clsx from "clsx";
 
 import ProgressBar from "./ProgressBar";
 import classes from "./JsHomePageProfileProgress.module.scss";
-import { Link } from "react-router-dom";
+import { Link } from "next/link";
 
 const JsHomePageProfileProgress = (props) => {
   const [progressPercent] = useState({

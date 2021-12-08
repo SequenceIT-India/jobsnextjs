@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "next/link";
 
 import { Divider, IconButton } from "@mui/material";
 import Collapse from "@mui/material/Collapse";
@@ -11,10 +11,6 @@ import ProfileBadge from "./ProfileBadge";
 import CustomSwitch from "../switch/CustomSwitch";
 
 import clsx from "clsx";
-
-import jobsIcon from "../../assets/images/jobsIcon.svg";
-import profileIcon from "../../assets/images/profileIcon.svg";
-import additionalInfoIcon from "../../assets/images/additionalInfoIcon.svg";
 
 import useMediaQuery from "@mui/material/useMediaQuery";
 
@@ -66,7 +62,11 @@ const JsHomePageProfile = (props) => {
           </div>
           <Divider className={classes.divider} />
           <div className={classes["jobs-div"]}>
-            <img className={classes.image} src={jobsIcon} alt="jobs" />
+            <img
+              className={classes.image}
+              src={"../../assets/images/jobsIcon.svg"}
+              alt="jobs"
+            />
             <Link className={classes.link} to="/jobseeker/jobs">
               <span className={classes["jobs-link"]}>Jobs</span>
             </Link>
@@ -89,7 +89,11 @@ const JsHomePageProfile = (props) => {
           </div>
           <Divider className={classes.divider} />
           <div className={classes["profile-div"]}>
-            <img className={classes.image} src={profileIcon} alt="Profile" />
+            <img
+              className={classes.image}
+              src={"../../assets/images/profileIcon.svg"}
+              alt="Profile"
+            />
             <Link className={classes.link} to="/jobseeker/create-profile">
               <span className={classes["jobs-link"]}>Profile</span>
             </Link>
@@ -98,7 +102,7 @@ const JsHomePageProfile = (props) => {
           <div className={classes["additional-info-div"]}>
             <img
               className={classes.image}
-              src={additionalInfoIcon}
+              src={"../../assets/images/additionalInfoIcon.svg"}
               alt="additional info"
             />
             <Link className={classes.link} to="/jobseeker/additional-info">

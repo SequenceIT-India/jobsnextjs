@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const withImages = require('next-images')
+const withImages = require("next-images");
 module.exports = withImages({
   reactStrictMode: true,
   swcMinify: true,
@@ -23,5 +23,10 @@ module.exports = withImages({
         ],
       },
     ];
+  },
+  eslint: {
+    // Warning: This allows production builds to successfully complete even if
+    // your project has ESLint errors.
+    ignoreDuringBuilds: true,
   },
 });

@@ -10,7 +10,7 @@ const logoutAction = (data) => {
     type: "LOGOUT",
   };
 };
-const showSnackbar = (message = null, severity = "", open = true) => {
+const showSnackbar = (message = "", severity = "", open = true) => {
   return {
     type: "SNACKBAR",
     payload: { message, severity, open },

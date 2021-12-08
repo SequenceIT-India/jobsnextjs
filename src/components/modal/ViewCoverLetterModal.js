@@ -10,7 +10,6 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { useOutlinedInputStyles } from "../../util/CustomInputField";
 import CustomEditor from "../Editor/CustomEditor";
 import { JsLogin as CoverLetter } from "../../util/helper";
-import fileEditIcon from "../../assets/images/fileEdit.svg";
 
 import colors from "../../vars.module.scss";
 import styles from "./CreateCoverLetter.module.scss";
@@ -123,7 +122,7 @@ function ViewCoverLetterModal(props) {
               >
                 <img
                   className={styles["file-edit"]}
-                  src={fileEditIcon}
+                  src={"../../assets/images/fileEdit.svg"}
                   alt=""
                 />
               </div>
