@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { Button, Grid, Typography } from "@mui/material";
 import Divider from "@mui/material/Divider";
 import FormControl from "@mui/material/FormControl";
@@ -58,7 +59,7 @@ const CustomRadio = withStyles({
 function register() {
   const classes = useStyles();
   const [showJsRegisterPassword, setShowJsRegisterPassword] = useState(false);
-  const [errors, setErrors] = useState({ emailId: '', password: '' });
+  const [errors, setErrors]: any = useState({ emailId: '', password: '' })
   const router = useRouter();
   const dispatch = useDispatch();
   const initialState = {
@@ -66,7 +67,7 @@ function register() {
     emailId: "",
     jobAlerts: "Y",
   };
-  const [values, setValues] = useState(initialState);
+  const [values, setValues]: any = useState(initialState);
   const handleClickShowJsRegisterPassword = () => {
     setShowJsRegisterPassword(!showJsRegisterPassword);
   };
@@ -90,7 +91,7 @@ function register() {
   const isValid = () => {
     let isValidChk = true;
     Object.keys(errors).forEach((element: any) => {
-      isValidChk = isValidChk && !Boolean(errors?.[element]);
+      isValidChk = isValidChk && !Boolean(errors ? errors?.[element] : 'false');
     });
     Object.keys(values).forEach((element) => {
       isValidChk = isValidChk && Boolean(values?.[element]);
@@ -247,12 +248,12 @@ function register() {
                       value="Y"
                       control={
                         <CustomRadio
-                          onChange={(evt: any, checked: any) => {
-                            setValues({
-                              ...values,
-                              jobAlerts: checked ? "Y" : "N",
-                            });
-                          }}
+                          // onChange={(evt: any, checked: any): any => {
+                          //   return setValues({
+                          //     ...values,
+                          //     jobAlerts: checked ? "Y" : "N",
+                          //   });
+                          // }}
                         />
                       }
                       label="Yes"
@@ -264,12 +265,12 @@ function register() {
                       value="N"
                       control={
                         <CustomRadio
-                          onChange={(evt: any, checked: any) => {
-                            setValues({
-                              ...values,
-                              jobAlerts: checked ? "N" : "Y",
-                            });
-                          }}
+                          // onChange={(evt: any, checked: any): any => {
+                          //   setValues({
+                          //     ...values,
+                          //     jobAlerts: checked ? "N" : "Y",
+                          //   });
+                          // }}
                         />
                       }
                       label="No"

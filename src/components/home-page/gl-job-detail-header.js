@@ -10,7 +10,7 @@ const JobDetailHeader = (props) => {
   const [copiedMessageIsOpen, setCopiedMessageIsOpen] = useState(false);
 
   const goToDetailPage = () => {
-    router.push(`/job-detail/${props.job.jobId}`);
+    router.push(`/jobdetail/${props.job.jobID}`);
   };
   return (
     <>
@@ -31,7 +31,7 @@ const JobDetailHeader = (props) => {
               {props.basePage || "Home"}
             </Typography>
             <Typography color="textPrimary" className="breadcrumb-item active">
-              {props.job.jobTitle}
+              {props?.job?.jobTitle}
             </Typography>
           </Breadcrumbs>
         </Grid>

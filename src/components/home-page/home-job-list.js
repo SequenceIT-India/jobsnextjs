@@ -41,7 +41,7 @@ import {
 import style from "./gl-home.module.scss";
 import axios from "axios";
 
-const styles =  makeStyles((theme) => ({
+const styles = makeStyles((theme) => ({
   jobList: {
     [theme.breakpoints.up("sm")]: {
       marginBottom: "70px",
@@ -69,8 +69,9 @@ const styles =  makeStyles((theme) => ({
 }));
 
 const HomeListItem = (props) => {
+  const router = useRouter();
   const jobs = props.jobs || [];
-  const selectedJob = props.selectedJob|| props.jd;
+  const selectedJob = props.selectedJob || props.jd;
   const [errors, setErrors] = useState({});
   const [pageOfItems, setPageOfItems] = useState([]);
   const [page, setPage] = useState(0);
@@ -80,7 +81,7 @@ const HomeListItem = (props) => {
   const [cityOpts, setCityOpts] = useState([]);
   const [open, setOpen] = useState(false);
 
- 
+
 
 
   useEffect(() => {
@@ -172,7 +173,7 @@ const HomeListItem = (props) => {
             item
             md={4}
             xs={12}
-           
+
           >
             <Typography className="page-header large" display="block">
               Latest jobs
@@ -181,16 +182,29 @@ const HomeListItem = (props) => {
               {jobs && jobs?.map((job) => (
                 <Link href={`/jobdetail/${job.jobID}`} key={job.jobID} prefetch={false}>
                   <a key={job.jobID}>
-                    <JobCard
-                      key={job.jobId}
-                      selectJob={selectJob}
-                      selectedJob={selectedJob}
-                      saveJobClickHandler={saveJobClickHandler}
-                      applyJobClickHandler={applyJobClickHandler}
-                      showDeleteBtn={false}
-                      isLandingPage={true}
-                      job={job}
-                    />
+                    <Hidden only={["xs", "sm"]}>
+                      <JobCard
+                        selectJob={selectJob}
+                        selectedJob={selectedJob}
+                        saveJobClickHandler={saveJobClickHandler}
+                        applyJobClickHandler={applyJobClickHandler}
+                        showDeleteBtn={false}
+                        isLandingPage={true}
+                        job={job}
+                      />
+                    </Hidden>
+                    <Hidden only={["md", "lg", "xl"]}>
+                      <JobCard
+                        selectJob={selectJob}
+                        selectedJob={selectedJob}
+                        saveJobClickHandler={saveJobClickHandler}
+                        applyJobClickHandler={applyJobClickHandler}
+                        showDeleteBtn={false}
+                        isLandingPage={true}
+                        job={job}
+                        showDrawer={true}
+                      />
+                    </Hidden>
                   </a>
                 </Link>
 
@@ -220,11 +234,14 @@ const HomeListItem = (props) => {
               <JobDetailHeader
                 job={selectedJob}
                 onCloseClickHandler={() => {
-                  setSelectedJob(null);
+                  router.push(`/`, undefined, { shallow: false });
                 }}
               />
               <Divider component="div" className="divider" />
-              {selectedJob?.jobTitle}
+              <JobDetailComponent
+                job={selectedJob}
+                setSelectedJob={setSelectedJob}
+              />
             </Grid>
           ) : (
             ""
@@ -233,7 +250,7 @@ const HomeListItem = (props) => {
             item
             md={4}
             xs={12}
-            className={`${classes.search} ${selectedJob ? '' : ""
+            className={`${classes.search} ${selectedJob ? 'job-selected' : ""
               } partition desktop-right`}
           >
             <Typography className="page-header" display="block">
