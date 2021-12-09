@@ -289,7 +289,7 @@ const Header = (props) => {
                 title={"Employers"}
                 items={[
                   {
-                    href: "/employer/register/page/one",
+                    href: "/employer/register/",
                     title: "Register",
                   },
                   {
@@ -315,7 +315,7 @@ const Header = (props) => {
                 variant="outlined"
                 className="login-btn header-actions"
                 onClick={() => {
-                  history.push("/jobseeker/login");
+                  history.push("/job-seeker/login");
                 }}
               >
                 Login
@@ -325,7 +325,7 @@ const Header = (props) => {
                 variant="contained"
                 className="register-btn  header-actions"
                 onClick={() => {
-                  history.push("/jobseeker/register");
+                  history.push("/job-seeker/register");
                 }}
               >
                 Register
@@ -439,7 +439,7 @@ const Header = (props) => {
                   title: "Popular Searches",
                 },
                 {
-                  href: "/jobseeker/register",
+                  href: "/job-seeker/register",
                   title: "Register",
                 },
               ]}
@@ -455,7 +455,7 @@ const Header = (props) => {
               title={"Employers"}
               items={[
                 {
-                  href: "/employer/register/page/one",
+                  href: "/employer/register/",
                   title: "Register",
                 },
                 {

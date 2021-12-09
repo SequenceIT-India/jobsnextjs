@@ -248,12 +248,12 @@ function register() {
                       value="Y"
                       control={
                         <CustomRadio
-                          // onChange={(evt: any, checked: any): any => {
-                          //   return setValues({
-                          //     ...values,
-                          //     jobAlerts: checked ? "Y" : "N",
-                          //   });
-                          // }}
+                        // onChange={(evt: any, checked: any): any => {
+                        //   return setValues({
+                        //     ...values,
+                        //     jobAlerts: checked ? "Y" : "N",
+                        //   });
+                        // }}
                         />
                       }
                       label="Yes"
@@ -265,12 +265,12 @@ function register() {
                       value="N"
                       control={
                         <CustomRadio
-                          // onChange={(evt: any, checked: any): any => {
-                          //   setValues({
-                          //     ...values,
-                          //     jobAlerts: checked ? "N" : "Y",
-                          //   });
-                          // }}
+                        // onChange={(evt: any, checked: any): any => {
+                        //   setValues({
+                        //     ...values,
+                        //     jobAlerts: checked ? "N" : "Y",
+                        //   });
+                        // }}
                         />
                       }
                       label="No"
@@ -341,7 +341,7 @@ function register() {
                 <div className="employerRegisterLink">
                   <Typography className={styles?.loginLinkText}>
                     <Link
-                      href="/employer/register/page/one"
+                      href="/employer/register/"
                     >
                       <a className={styles?.link} style={{ fontWeight: "bold" }}>Employer Registration, click here</a>
                     </Link>

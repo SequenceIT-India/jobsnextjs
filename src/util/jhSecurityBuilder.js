@@ -75,18 +75,31 @@ class JobsHornEncryptAndDecrypt {
   hashTransmission = async (passData) => {
     //admin@123
   };
-  getFinalOutput = (values, DATETIMEFORMAT, type, comingFromProfile = false) => {
-    type = type !== "EMP" ? sessionStorage.getItem('isEmployee') ? 'EMP' : 'CAND' : type;
+  getFinalOutput = (
+    values,
+    DATETIMEFORMAT,
+    type,
+    comingFromProfile = false
+  ) => {
+    type =
+      type !== "EMP"
+        ? sessionStorage.getItem("isEmployee")
+          ? "EMP"
+          : "CAND"
+        : type;
     const { REACT_APP_RandamString_Length } = process.env;
     const saltRandom20Char = this.randomKey(REACT_APP_RandamString_Length);
     const timeStamp = moment
       .utc()
       .subtract(DATETIMEFORMAT.DURATION_ZONE, DATETIMEFORMAT.HOURS)
       .format(DATETIMEFORMAT.DATETIME); //2
+      console.log(type, "----");
+
     const shared_Salt_key = process.env[`REACT_APP_${type}_Shared_Salt_key`]; //1
     const shared_Secret_key =
       process.env[`REACT_APP_${type}_Shared_Secret_key`]; //3
     const pepperKey = process.env[`REACT_APP_${type}_PEPPER`]; //3
+    console.log(pepperKey, "----");
     let dataSet = values;
     const uiPepperKey = CryptoJS.enc.Base64.parse(pepperKey);
 
@@ -94,17 +107,24 @@ class JobsHornEncryptAndDecrypt {
       const finalHasData = this.sha512Password(values.password, uiPepperKey); //salt
       if (values.emailId) {
         dataSet = { setText: finalHasData, emailId: values.emailId };
-      }
-      else {
+      } else {
         dataSet = { setText: finalHasData };
       }
-    }
-    else {
+    } else {
       if (values.oldPassword && values.newPassword) {
-        const finalHasDataOldPassword = this.sha512Password(values.oldPassword, uiPepperKey); //salt
-        const finalHasDataNewPassword = this.sha512Password(values.newPassword, uiPepperKey); //salt\
+        const finalHasDataOldPassword = this.sha512Password(
+          values.oldPassword,
+          uiPepperKey
+        ); //salt
+        const finalHasDataNewPassword = this.sha512Password(
+          values.newPassword,
+          uiPepperKey
+        ); //salt\
 
-        dataSet = { oldPassword: finalHasDataOldPassword, newPassword: finalHasDataNewPassword };
+        dataSet = {
+          oldPassword: finalHasDataOldPassword,
+          newPassword: finalHasDataNewPassword,
+        };
       }
       if (values.newEmail) {
         const finalHasData = this.sha512Password(values.password, uiPepperKey); //salt
