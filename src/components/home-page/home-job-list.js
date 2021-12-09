@@ -266,22 +266,22 @@ const HomeListItem = (props) => {
                   fullWidth
                   variant="outlined"
                   size="small"
-                  error={errors.category}
+                  error={errors?.category}
                 >
                   <OutlinedInput
                     name="category"
                     id="search-category"
                     onChange={onSubscribeDataChange}
                     className="inputwithoutRightBorder"
-                    value={subscribeData.category}
+                    value={subscribeData?.category}
                     required
                     type="text"
                     placeholder="Skill or Job Title"
 
                   />
-                  {errors.category ? (
+                  {errors?.category ? (
                     <FormHelperText id="search-email-text">
-                      {errors.category}
+                      {errors?.category}
                     </FormHelperText>
                   ) : (
                     ""
@@ -289,7 +289,7 @@ const HomeListItem = (props) => {
                 </FormControl>
               </Grid>
               <Grid item xs={12} className="searchbar-input2-col">
-                <FormControl fullWidth variant="outlined" size="small">
+                {/* <FormControl fullWidth variant="outlined" size="small">
                   <Autocomplete
                     name="locationDetails"
                     id="search-location-auto"
@@ -297,15 +297,15 @@ const HomeListItem = (props) => {
                     required
                     options={cityOpts}
                     getOptionLabel={(option) =>
-                      `${option.name}, ${option.country}`
+                      `${option?.name}, ${option?.country}`
                     }
                     type="text"
                     size="small"
                     placeholder="City, Country"
                     onInputChange={(evt, value) => {
                       setCityOpts(
-                        cities.filter((ct) =>
-                          ct.name.toLowerCase().includes(value.toLowerCase())
+                        cities?.filter((ct) =>
+                          ct?.name?.toLowerCase().includes(value?.toLowerCase())
                         )
                       );
                     }}
@@ -325,21 +325,21 @@ const HomeListItem = (props) => {
                       />
                     )}
                   />
-                </FormControl>
+                </FormControl> */}
               </Grid>
               <Grid item xs={12} className="searchbar-input2-col">
                 <FormControl
                   fullWidth
                   variant="outlined"
                   size="small"
-                  error={errors.email}
+                  error={errors?.email}
                 >
                   <OutlinedInput
                     name="email"
                     id="search-email"
                     onChange={onSubscribeDataChange}
                     className="inputwithoutRightBorder"
-                    value={subscribeData.email}
+                    value={subscribeData?.email}
                     required
                     type="email"
                     placeholder="Email"
@@ -351,7 +351,7 @@ const HomeListItem = (props) => {
                   />
                   {errors.email ? (
                     <FormHelperText id="search-email-text">
-                      {errors.email}
+                      {errors?.email}
                     </FormHelperText>
                   ) : (
                     ""
