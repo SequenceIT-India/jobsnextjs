@@ -286,7 +286,7 @@ const HomeListItem = (props) => {
                 </FormControl>
               </Grid>
               <Grid item xs={12} className="searchbar-input2-col">
-                {/* <FormControl fullWidth variant="outlined" size="small">
+                <FormControl fullWidth variant="outlined" size="small">
                   <Autocomplete
                     name="locationDetails"
                     id="search-location-auto"
@@ -322,7 +322,7 @@ const HomeListItem = (props) => {
                       />
                     )}
                   />
-                </FormControl> */}
+                </FormControl>
               </Grid>
               <Grid item xs={12} className="searchbar-input2-col">
                 <FormControl
