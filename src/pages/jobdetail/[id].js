@@ -27,10 +27,6 @@ export async function getServerSideProps(context) {
   const res = await axios.post('http://104.131.121.145:8080/employer-service/jobs', {
     "pageNo": 1,
     "pageSize": 5,
-    "searchTerm": "java",
-    "city": "Hyd",
-    "state": "Telangana",
-    "zipCode": 1234,
     "jobStatus": [
       0
     ]
