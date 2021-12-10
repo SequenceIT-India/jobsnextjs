@@ -29,6 +29,7 @@ import {
   WhatsappIcon,
   WhatsappShareButton,
 } from "react-share";
+import { useRouter } from "next/router";
 import { getJobLocation, getJobType, validateField } from "../../util/helper";
 //import ApplyJobDetail from "../job-detail/apply-job-detail";
 import ReportJobDetail from "../job-detail/report-job-detail";
@@ -55,7 +56,7 @@ import {
 const JobDetailComponent = (props) => {
   const description =
     "Cloud engineer, Devops, Cloud specialist, High Availability, MEAN, Shell Scription, Big Data, Windows Administration, Jenkins, Linux, Docker, AppEngine, terraform, AWS, Vitualization, AMI";
-
+  const routes = useRouter();
   const [showApplyJob, setShowApplyJob] = useState(false);
   const [showReportJob, setShowReportJob] = useState(false);
   const [open, setOpen] = useState(false);
@@ -106,7 +107,7 @@ const JobDetailComponent = (props) => {
     setOpen(false);
   };
 
-  const submitBtnClickHandler = () => {};
+  const submitBtnClickHandler = () => { };
 
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -120,7 +121,7 @@ const JobDetailComponent = (props) => {
 
   const copy = () => {
     const el = document.createElement("input");
-    el.value = `${window.location.protocol}//${window.location.hostname}/job-detail/${props.job.jobID}`;
+    el.value = `/job-detail/${props?.job?.jobID}`;
     document.body.appendChild(el);
     el.select();
     document.execCommand("copy");
@@ -164,15 +165,15 @@ const JobDetailComponent = (props) => {
       <div className="job-detail">
         <Grid container className="container">
           <Grid item xs={9}>
-            <Typography className="job-title">{props.job.jobTitle}</Typography>
+            <Typography className="job-title">{props?.job?.jobTitle}</Typography>
           </Grid>
           <Grid item xs={3}>
-            <img src={props.job.logo} className="company-logo" alt="" />
+            <img src={props?.job?.logo} className="company-logo" alt="" />
           </Grid>
           <Grid item xs={12} className="job-inline-content-item ">
             <OfficeBuilding />{" "}
             <Typography variant="subtitle1" className="text">
-              {props.job.companyName}
+              {props?.job?.companyName}
             </Typography>
           </Grid>
           <Grid item xs={12} className="job-inline-content-item ">
@@ -184,7 +185,7 @@ const JobDetailComponent = (props) => {
           <Grid item xs={12} className="job-inline-content-item ">
             <Blocks fontSize="small" className="job-icon" />
             <Typography variant="subtitle1" className="text description">
-              {props.job.description || description}
+              {props?.job?.description || description}
             </Typography>
           </Grid>
           {/* <Grid item xs={12}>
@@ -197,13 +198,13 @@ const JobDetailComponent = (props) => {
               > 
                 <Money  width="18" height="14" fontSize="small" className="job-icon" />
                 <Typography variant="subtitle1" className="text">
-                  {props.job.maxCompensation}
+                  {props?.job?.maxCompensation}
                 </Typography>
               </Grid>
               <Grid xs={4} md={"auto"} item className="job-inline-content-item">
                 <CalendarMonth fontSize="small" className="job-icon" />
                 <Typography variant="subtitle1" className="text">
-                  {moment(props.job.postedOn).format("DD MMM, YYYY")}
+                  {moment(props?.job?.postedOn).format("DD MMM, YYYY")}
                 </Typography>
               </Grid>
               <Grid
@@ -214,7 +215,7 @@ const JobDetailComponent = (props) => {
               >
                 <Time fontSize="small" className="job-icon secondary" />
                 <Typography variant="subtitle1" className="text secondary">
-                  {props.job.notice}
+                  {props?.job?.notice}
                 </Typography>
               </Grid>
             </Grid>
@@ -247,7 +248,7 @@ const JobDetailComponent = (props) => {
                   className="job-icon"
                 />
                 <Typography variant="subtitle1" className="text">
-                  Posted on : {props.job.postedOn}
+                  Posted on : {props?.job?.postedOn}
                 </Typography>
               </Grid>
             </Grid>
@@ -258,25 +259,25 @@ const JobDetailComponent = (props) => {
           <Grid xs={12} item className="job-inline-content-item ">
             <WorkType fontSize="small" className="job-icon" />
             <Typography variant="subtitle1" className="text">
-              Work type: {props.job.workType}
+              Work type: {props?.job?.workType}
             </Typography>
           </Grid>
           <Grid xs={12} item className="job-inline-content-item ">
             <WorkAuthorization fontSize="small" className="job-icon" />
             <Typography variant="subtitle1" className="text">
-              Work authorization: {props.job.workAuthorizaton}
+              Work authorization: {props?.job?.workAuthorizaton}
             </Typography>
           </Grid>
           <Grid xs={6} item className="job-inline-content-item ">
             <CalendarClock fontSize="small" className="job-icon" />
             <Typography variant="subtitle1" className="text">
-              Duration: {props.job.duration}
+              Duration: {props?.job?.duration}
             </Typography>
           </Grid>
           <Grid xs={6} item className="job-inline-content-item ">
             <AccountCowBoyOutline fontSize="small" className="job-icon" />
             <Typography variant="subtitle1" className="text">
-              Veteran Service: {props.job.veteranService}
+              Veteran Service: {props?.job?.veteranService}
             </Typography>
           </Grid>
           <Grid xs={12} item className="job-inline-content-item ">
@@ -289,7 +290,7 @@ const JobDetailComponent = (props) => {
           <Grid xs={12} item className="job-inline-content-item ">
             <AccountInjuryOutline fontSize="small" className="job-icon" />
             <Typography variant="subtitle1" className="text">
-              Disability: {props.job.disability}
+              Disability: {props?.job?.disability}
             </Typography>
           </Grid>
         </Grid>
@@ -363,89 +364,7 @@ const JobDetailComponent = (props) => {
             </Grid>
             <Grid xs={12} item className="job-inline-content-item">
               <div className="container text description">
-                <div>
-                  Laculis posuere amet sit sed sem purus neque, nisl. Est
-                  penatibus faucibus pellentesque arcu sem vulputate ullamcorper
-                  duis pulvinar. In morbi venenatis, egestas pellentesque
-                  sagittis, et mauris. At eu, mi ut elit. Molestie rhoncus mi
-                  faucibus facilisi.
-                </div>
-                <div>
-                  Est penatibus faucibus pellentesque arcu sem vulputate
-                  ullamcorper duis pulvinar. In morbi venenatis, egestas
-                  pellentesque sagittis, et mauris. At eu, mi ut elit. Molestie
-                  rhoncus mi faucibus facilisi.
-                </div>
-                <br />
-                <div>
-                  Laculis posuere amet sit sed sem purus neque, nisl. Est
-                  penatibus faucibus pellentesque arcu sem vulputate ullamcorper
-                  duis pulvinar. In morbi venenatis, egestas pellentesque
-                  sagittis, et mauris. At eu, mi ut elit. Molestie rhoncus mi
-                  faucibus facilisi.
-                </div>
-                <div>
-                  Est penatibus faucibus pellentesque arcu sem vulputate
-                  ullamcorper duis pulvinar. In morbi venenatis, egestas
-                  pellentesque sagittis, et mauris. At eu, mi ut elit. Molestie
-                  rhoncus mi faucibus facilisi.
-                </div>
-                <br />
-                <div>
-                  Laculis posuere amet sit sed sem purus neque, nisl. Est
-                  penatibus faucibus pellentesque arcu sem vulputate ullamcorper
-                  duis pulvinar. In morbi venenatis, egestas pellentesque
-                  sagittis, et mauris. At eu, mi ut elit. Molestie rhoncus mi
-                  faucibus facilisi.
-                </div>
-                <div>
-                  Est penatibus faucibus pellentesque arcu sem vulputate
-                  ullamcorper duis pulvinar. In morbi venenatis, egestas
-                  pellentesque sagittis, et mauris. At eu, mi ut elit. Molestie
-                  rhoncus mi faucibus facilisi.
-                </div>
-                <br />
-                <div>
-                  Laculis posuere amet sit sed sem purus neque, nisl. Est
-                  penatibus faucibus pellentesque arcu sem vulputate ullamcorper
-                  duis pulvinar. In morbi venenatis, egestas pellentesque
-                  sagittis, et mauris. At eu, mi ut elit. Molestie rhoncus mi
-                  faucibus facilisi.
-                </div>
-                <div>
-                  Est penatibus faucibus pellentesque arcu sem vulputate
-                  ullamcorper duis pulvinar. In morbi venenatis, egestas
-                  pellentesque sagittis, et mauris. At eu, mi ut elit. Molestie
-                  rhoncus mi faucibus facilisi.
-                </div>
-                <br />
-                <div>
-                  Laculis posuere amet sit sed sem purus neque, nisl. Est
-                  penatibus faucibus pellentesque arcu sem vulputate ullamcorper
-                  duis pulvinar. In morbi venenatis, egestas pellentesque
-                  sagittis, et mauris. At eu, mi ut elit. Molestie rhoncus mi
-                  faucibus facilisi.
-                </div>
-                <div>
-                  Est penatibus faucibus pellentesque arcu sem vulputate
-                  ullamcorper duis pulvinar. In morbi venenatis, egestas
-                  pellentesque sagittis, et mauris. At eu, mi ut elit. Molestie
-                  rhoncus mi faucibus facilisi.
-                </div>
-                <br />
-                <div>
-                  Laculis posuere amet sit sed sem purus neque, nisl. Est
-                  penatibus faucibus pellentesque arcu sem vulputate ullamcorper
-                  duis pulvinar. In morbi venenatis, egestas pellentesque
-                  sagittis, et mauris. At eu, mi ut elit. Molestie rhoncus mi
-                  faucibus facilisi.
-                </div>
-                <div>
-                  Est penatibus faucibus pellentesque arcu sem vulputate
-                  ullamcorper duis pulvinar. In morbi venenatis, egestas
-                  pellentesque sagittis, et mauris. At eu, mi ut elit. Molestie
-                  rhoncus mi faucibus facilisi.
-                </div>
+               {props.job?.jobDesc}
               </div>
             </Grid>
             <Grid xs={12} item className="job-inline-content-item main-header">
@@ -684,36 +603,36 @@ const JobDetailComponent = (props) => {
           </ListItem>
           <ListItem>
             <FacebookShareButton
-              url={`${window.location.protocol}//${window.location.hostname}/job-detail/${props.job.jobID}`}
+              url={`/job-detail/${props?.job?.jobID}`}
             >
               <FacebookIcon round={true} size={50} />
             </FacebookShareButton>
           </ListItem>
           <ListItem>
             <LinkedinShareButton
-              url={`${window.location.protocol}//${window.location.hostname}/job-detail/${props.job.jobID}`}
-              source={`${window.location.protocol}//${window.location.hostname}/job-detail/${props.job.jobID}`}
+              url={`/job-detail/${props?.job?.jobID}`}
+              source={`/job-detail/${props?.job?.jobID}`}
             >
               <LinkedinIcon round={true} size={50} />
             </LinkedinShareButton>
           </ListItem>
           <ListItem>
             <WhatsappShareButton
-              url={`${window.location.protocol}//${window.location.hostname}/job-detail/${props.job.jobID}`}
+              url={`/job-detail/${props?.job?.jobID}`}
             >
               <WhatsappIcon round={true} size={50} />
             </WhatsappShareButton>
           </ListItem>
           <ListItem>
             <TwitterShareButton
-              url={`${window.location.protocol}//${window.location.hostname}/job-detail/${props.job.jobID}`}
+              url={`/job-detail/${props?.job?.jobID}`}
             >
               <TwitterIcon round={true} size={50} />
             </TwitterShareButton>
           </ListItem>
           <ListItem>
             <EmailShareButton
-              body={`${window.location.protocol}//${window.location.hostname}/job-detail/${props.job.jobID}`}
+              body={`/job-detail/${props?.job?.jobID}`}
             >
               <EmailIcon round={true} size={50} />
             </EmailShareButton>
@@ -733,7 +652,7 @@ const JobDetailComponent = (props) => {
         }}
       />
       <ReportJobDetail open={showReportJob} handleClose={onReportJobClose} />
-     {/* <ApplyJobDetail open={showApplyJob} handleClose={onApplyJobClose} />*/}
+      {/* <ApplyJobDetail open={showApplyJob} handleClose={onApplyJobClose} />*/}
       <GetRemainderModal
         cancelBtnClickHandler={cancelBtnClickHandler}
         values={values}

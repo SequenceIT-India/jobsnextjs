@@ -229,7 +229,7 @@ const HomeListItem = (props) => {
               </Grid>
             </Grid>
           </Grid>
-          {selectedJob ? (
+          {selectedJob && Object.keys(selectedJob).length ? (
             <Grid item md={8} className="partition desktop-right">
               <JobDetailHeader
                 job={selectedJob}
@@ -240,12 +240,9 @@ const HomeListItem = (props) => {
               <Divider component="div" className="divider" />
               <JobDetailComponent
                 job={selectedJob}
-                setSelectedJob={setSelectedJob}
               />
             </Grid>
-          ) : (
-            ""
-          )}
+          ) : null}
           <Grid
             item
             md={4}

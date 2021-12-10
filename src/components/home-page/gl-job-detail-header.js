@@ -10,7 +10,7 @@ const JobDetailHeader = (props) => {
   const [copiedMessageIsOpen, setCopiedMessageIsOpen] = useState(false);
 
   const goToDetailPage = () => {
-    router.push(`/jobdetail/${props.job.jobID}`);
+    router.push(`/jobdetail/${props?.job?.jobID}`);
   };
   return (
     <>
@@ -26,9 +26,9 @@ const JobDetailHeader = (props) => {
           >
             <Typography
               className="breadcrumb-item non-active"
-              onClick={props.onCloseClickHandler}
+              onClick={props?.onCloseClickHandler}
             >
-              {props.basePage || "Home"}
+              {props?.basePage || "Home"}
             </Typography>
             <Typography color="textPrimary" className="breadcrumb-item active">
               {props?.job?.jobTitle}
@@ -38,11 +38,11 @@ const JobDetailHeader = (props) => {
         <Grid item xs={"auto"}>
           <Grid container spacing={2} className="top-actions">
             <Grid item>
-              {props.isDetailPage ? (
+              {props?.isDetailPage ? (
                 <Button
                   variant="outlined"
                   onClick={() => {
-                    if (props.onCloseClickHandler) {
+                    if (props?.onCloseClickHandler) {
                       props.onCloseClickHandler(true);
                     }
                   }}
