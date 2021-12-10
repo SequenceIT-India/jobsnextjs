@@ -31,7 +31,7 @@ import JobsHornEncryptAndDecrypt from "../../../util/jhSecurityBuilder";
 import styles from "../../job-seeker/login/JsLogin.module.scss";
 import colors from "../../../vars.module.scss";
 
-// import empRegisterContainerBgImage from "../Login/EmpLogin.module.scss";
+import style from "../../employer/login/EmpLogin.module.scss";
 
 var CryptoJS = require("crypto-js");
 
@@ -215,7 +215,7 @@ function EmpRegister() {
 
   return (
     <>
-      <div className={`${styles?.empRegisterContainer} ${styles?.empRegisterContainerBgImage}`}>
+      <div className={`${styles?.empRegisterContainer} ${style?.empRegisterContainerBgImage}`}>
         <Grid
           container
           className={`${classes.registerFormGrid} ${styles?.registerFormGrid}`}
@@ -223,7 +223,7 @@ function EmpRegister() {
           <Grid item lg={4} md={5} sm={8} xs={11} className={styles?.formGrid}>
             <div className={styles?.registerFormDiv}>
               <div className={styles?.employerImageAvatar}>
-                <img alt="" src={'../../../assets/images/employer.png'} />
+                <img alt="" src={'../../../../assets/images/employer.png'} />
               </div>
               <div className={styles?.registerTitleDiv}>
                 <Typography className={styles?.title}>Employer Registration</Typography>

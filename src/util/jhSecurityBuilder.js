@@ -93,13 +93,13 @@ class JobsHornEncryptAndDecrypt {
       .utc()
       .subtract(DATETIMEFORMAT.DURATION_ZONE, DATETIMEFORMAT.HOURS)
       .format(DATETIMEFORMAT.DATETIME); //2
-      console.log(type, "----");
+    console.log(type, "----");
 
     const shared_Salt_key = process.env[`REACT_APP_${type}_Shared_Salt_key`]; //1
     const shared_Secret_key =
       process.env[`REACT_APP_${type}_Shared_Secret_key`]; //3
     const pepperKey = process.env[`REACT_APP_${type}_PEPPER`]; //3
-    console.log(pepperKey, "----");
+    console.log(pepperKey, "----", type);
     let dataSet = values;
     const uiPepperKey = CryptoJS.enc.Base64.parse(pepperKey);
 

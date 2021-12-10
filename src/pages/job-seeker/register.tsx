@@ -150,7 +150,7 @@ function register() {
           <Grid item lg={4} md={5} sm={8} xs={11} className={styles?.formGrid}>
             <div className={styles?.registerFormDiv}>
               <div className={styles?.userImageAvatar}>
-                <img alt="" src={`./../../../public/assets/images/user.png`} />
+                <img alt="" src={`../../../../assets/images/user.png`} />
               </div>
               <div className={styles?.registerTitleDiv}>
                 <Typography className={styles?.title}>
