@@ -24,7 +24,7 @@ import { userRegister } from "../../service/auth";
 import { DATETIMEFORMAT, RESPONSE_CODE } from "../../util/constants";
 import { JsLogin as jsRegister, validateField } from "../../util/helper";
 import colors from "./../../vars.module.scss";
-import styles from "./Login/JsLogin.module.scss";
+import styles from "../../components/login/JsLogin.module.scss";
 
 
 

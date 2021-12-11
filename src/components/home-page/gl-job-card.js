@@ -31,7 +31,7 @@ const JobCard = (props) => {
     <>
       <Card
         className={`job-card ${
-          props.selectedJob && props.selectedJob.jobId === props.job.jobId
+          props.selectedJob && props.selectedJob.jobID === props.job.jobID
             ? "selected"
             : ""
         }`}

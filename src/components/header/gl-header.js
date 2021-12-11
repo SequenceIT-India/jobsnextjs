@@ -19,6 +19,8 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
+
+import makeStyles from "@mui/styles/makeStyles";
 import withStyles from "@mui/styles/withStyles";
 import SearchBar from "../home-page/gl-search-bar";
 import ListItemText from "@mui/material/ListItemText";
@@ -151,7 +153,7 @@ const HeaderMenu = (props) => {
   );
 };
 
-const styles = (theme) => ({
+const styles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
   },
@@ -186,7 +188,7 @@ const styles = (theme) => ({
     paddingRight: 0,
     color: colors.primaryColor,
   },
-});
+}));
 
 function ListItemLink(props) {
   return <ListItem button component="a" {...props} />;
@@ -195,7 +197,7 @@ function ListItemLink(props) {
 const Header = (props) => {
   const history = useRouter();
   const [showDrawer, setShowDrawer] = useState(false);
-  const { classes } = props;
+  const classes = styles();
   const auth = useSelector((state) => state.auth);
 
   const dispatch = useDispatch();
@@ -211,7 +213,7 @@ const Header = (props) => {
     getPhoto();
   }, []);
 
-  const onFindJobsBtnHandler = () => {};
+  const onFindJobsBtnHandler = () => { };
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const toggleDrawer = () => {
@@ -545,4 +547,4 @@ Header.propTypes = {
   onClick: PropTypes.func,
   setShowDrawer: PropTypes.func,
 };
-export default withStyles(styles)(Header);
+export default Header;

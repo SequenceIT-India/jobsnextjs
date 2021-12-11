@@ -28,7 +28,7 @@ import { employerRegister } from "../../../service/auth";
 import { RESPONSE_CODE, DATETIMEFORMAT } from "../../../util/constants";
 import JobsHornEncryptAndDecrypt from "../../../util/jhSecurityBuilder";
 
-import styles from "../../job-seeker/login/JsLogin.module.scss";
+import styles from "../../../components/login/JsLogin.module.scss";
 import colors from "../../../vars.module.scss";
 
 import style from "../../employer/login/EmpLogin.module.scss";

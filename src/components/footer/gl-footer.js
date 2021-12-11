@@ -1,19 +1,22 @@
-import React, { Fragment } from "react";
+
+import { default as React, useEffect, useRef, useState, Fragment } from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import CopyRightFooter from "./gl-copy-right-footer";
-import styles from "./gl-footer.module.scss";
+import "./gl-footer.module.scss";
 import Link from "next/link";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { Grid } from "@mui/material";
 
+import withStyles from "@mui/styles/withStyles";
+
 import colors from "../../vars.module.scss";
 
-const useStyles = makeStyles((theme) => ({
+const styles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
@@ -53,11 +56,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Footer() {
-  const classes = useStyles();
+function Footer() {
 
+  const classes = styles();
   return (
-    <Fragment>
+    <>
       <div className={classes.root}>
         <AppBar position="static" className={classes.footer}>
           <Toolbar variant="dense">
@@ -162,6 +165,8 @@ export default function Footer() {
         </AppBar>
       </div>
       <CopyRightFooter />
-    </Fragment>
+    </>
   );
 }
+
+export default Footer;

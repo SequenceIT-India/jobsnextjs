@@ -1,3 +1,5 @@
+
+const baseURL = 'http://104.131.121.145:8080'
 export const API_URL = {
   AUTH: {
     USER_REGISTER: "/user/register",
@@ -6,7 +8,7 @@ export const API_URL = {
     RECRUITER_REGISTER: "/employer/register",
   },
   JOBS: {
-    DEFAULT_LIST: "/employer/default-job-listing",
+    DEFAULT_LIST: `${baseURL}/employer-service/jobs`,
   },
   PROFILE: {
     GET_PROFILE: "/profile/getFullProfile",

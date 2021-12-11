@@ -1,9 +1,14 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
 import { AppProps } from 'next/app';
+
+import { createWrapper } from 'next-redux-wrapper';
 import store from "../redux/store";
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import Router from 'next/router';
+import NetworkInter from '../service/interceptor';
+import ProgressBar from '@badrap/bar-of-progress';
 import Header from '../components/header/gl-header';
 
 import Footer from '../components/footer/gl-footer';
@@ -23,8 +28,25 @@ interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
 }
 
-export default function MyApp(props: MyAppProps) {
 
+const MyApp=(props: MyAppProps)=> {
+
+  useEffect(() => {
+    const progress = new ProgressBar({
+      size: 2,
+      color: 'rgb(0, 0, 0)',
+      className: 'bar-of-progress',
+      delay: 100,
+    });
+    Router.events.on('routeChangeStart', progress.start);
+    Router.events.on('routeChangeComplete', progress.finish);
+    Router.events.on('routeChangeError', progress.finish);
+    return () => {
+      Router.events.off('routeChangeStart', progress.start);
+      Router.events.off('routeChangeComplete', progress.finish);
+      Router.events.off('routeChangeError', progress.finish);
+    };
+  }, []);
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   return (
     <CacheProvider value={emotionCache}>
@@ -48,3 +70,6 @@ export default function MyApp(props: MyAppProps) {
   );
 }
 reportWebVitals();
+NetworkInter.setupInterceptors(store);
+export default createWrapper(() => store).withRedux(MyApp);
+

@@ -1,36 +1,30 @@
 import React, { useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/router";
-import makeStyles from "@mui/styles/makeStyles";
+import Link from "next/link";
 import { Button, FormHelperText, Grid, Typography } from "@mui/material";
 import Divider from "@mui/material/Divider";
-import InputAdornment from "@mui/material/InputAdornment";
 import FormControl from "@mui/material/FormControl";
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import OutlinedInput from "@mui/material/OutlinedInput";
 import IconButton from "@mui/material/IconButton";
+import InputAdornment from "@mui/material/InputAdornment";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import makeStyles from "@mui/styles/makeStyles";
 import LockIcon from "@mui/icons-material/Lock";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
-import JobsHornEncryptAndDecrypt from "../../../util/jhSecurityBuilder";
-import { DATETIMEFORMAT, RESPONSE_CODE } from "../../../util/constants";
+import { DATETIMEFORMAT, RESPONSE_CODE } from "../../util/constants";
 
+import JobsHornEncryptAndDecrypt from "../../util/jhSecurityBuilder.js";
+
+import { login } from "../../service/auth";
 import { useDispatch } from "react-redux";
-import {
-  JsLogin as empLogin,
-  onCopyPasteHandler,
-  validateField,
-} from "../../../util/helper";
-import { employerLogin } from "../../../service/auth";
-import { loginAction, showSnackbar } from "../../../redux/actions";
+import { loginAction, showSnackbar } from "../../redux/actions";
+import { JsLogin as jsLogin, validateField } from "../../util/helper";
 
-import styles from "../../../components/login/JsLogin.module.scss";
+import styles from "./JsLogin.module.scss";
 
-import style from "./EmpLogin.module.scss";
-import colors from "../../../vars.module.scss";
-
-const useStyles = makeStyles((theme: any) => ({
+const useStyles = makeStyles((theme) => ({
   textFieldDiv: {
     "& > *": {
       margin: theme.spacing(1),
@@ -43,28 +37,27 @@ const useStyles = makeStyles((theme: any) => ({
     },
   },
   iconColor: {
-    color: colors.disableColor,
+    color: '#5b5b5b',
   },
 }));
 
-const EmpLogin = () => {
+function JsLogin() {
   const classes = useStyles();
-  const [showEmpLoginPassword, setShowLoginPassword] = useState(false);
-  const [errors, setErrors]: any = useState({ password: '', emailId: '' });
-  const history = useRouter();
+  const [showJsLoginPassword, setShowJsLoginPassword] = useState(false);
   const dispatch = useDispatch();
-
+  const history = useRouter();
   const initialState = {
     password: "",
     emailId: "",
   };
-  const [values, setValues]: any = useState(initialState);
+  const [values, setValues] = useState(initialState);
+  const [errors, setErrors] = useState({ password: '', emailId: '' });
 
   const handleClickShowPassword = () => {
-    setShowLoginPassword(!showEmpLoginPassword);
+    setShowJsLoginPassword(!showJsLoginPassword);
   };
 
-  const handleChange = (prop: any) => (event: any) => {
+  const handleChange = (prop) => (event) => {
     const type = prop === "password" ? prop : event.target.type;
     setErrors({
       ...errors,
@@ -73,21 +66,36 @@ const EmpLogin = () => {
         event.target.value,
         type,
         event.target.required,
-        true
+        false
       ),
     });
     setValues({ ...values, [prop]: event.target.value });
   };
 
-  const handleMouseDownPassword = (event: any) => {
+  const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
 
-  const onLoginBtnClick = (event: any) => {
+  const isValid = () => {
+    let isValidChk = true;
+    Object.keys(errors).forEach((element) => {
+      // eslint-disable-next-line
+      isValidChk = isValidChk && !Boolean(errors[element]);
+    });
+
+    Object.keys(values).forEach((element) => {
+      // eslint-disable-next-line
+      isValidChk = isValidChk && Boolean(values[element]);
+    });
+
+    return isValidChk;
+  };
+
+  const onLoginBtnClick = async (event) => {
     let aesJobsHorn = new JobsHornEncryptAndDecrypt();
-    const output = aesJobsHorn.getFinalOutput(values, DATETIMEFORMAT, "EMP");
+    const output = aesJobsHorn.getFinalOutput(values, DATETIMEFORMAT, "CAND");
     const { timeStamp, saltRandom20Char, cipherText } = output;
-    const result = employerLogin({
+    const result = login({
       timeStamp: timeStamp.toString(),
       systemId: saltRandom20Char,
       dataSet: cipherText,
@@ -108,10 +116,8 @@ const EmpLogin = () => {
           ) {
             dispatch(showSnackbar(response?.data.message, "warning"));
           } else {
-            sessionStorage.setItem("isEmployee", JSON.stringify(true));
-
             if (response?.data?.code === RESPONSE_CODE.SUCCESSFUL_LOGIN) {
-              history.push("/logged-in");
+              history.push("/jobseeker/homepage");
             } else if (
               response?.data?.code === RESPONSE_CODE.INCOMPLETE_PROFILE
             ) {
@@ -130,42 +136,31 @@ const EmpLogin = () => {
       });
   };
 
-  const isValid = () => {
-    let isValidChk = true;
-    Object.keys(errors).forEach((element) => {
-      isValidChk = isValidChk && !Boolean(errors[element]);
-    });
-
-    Object.keys(values).forEach((element) => {
-      isValidChk = isValidChk && Boolean(values[element]);
-    });
-    return isValidChk;
-  };
-
   return (
     <>
-      <div className={`${styles?.empLoginContainer} ${style?.empLoginContainerBgImage}`}>
+      <div className={styles?.jsLoginContainer}>
         <Grid container className={styles?.loginFormGrid}>
-          <Grid item lg={4} md={5} sm={8} xs={11} className={styles?.formGrid}>
+          <Grid item lg={4} md={5} sm={7} xs={11} className={styles?.formGrid}>
             <div className={styles?.loginFormDiv}>
-              <div className={styles?.employerImageAvatar}>
-                <img alt="" src={'../../../assets/images/employer.png'} />
+              <div className={styles?.userImageAvatar}>
+                <img alt="" src={`../../../assets/images/user.png`} />
               </div>
               <div className={styles?.loginTitleDiv}>
-                <Typography className={styles?.title}>Employer Login</Typography>
+                <Typography className={styles?.title}>Job Seeker Login</Typography>
               </div>
               <form autoComplete="off" className={styles?.form}>
                 <div className={`${classes.textFieldDiv} ${styles?.textFieldDiv}`}>
                   <label className={styles?.required}>Email</label>
                   <FormControl variant="outlined">
                     <OutlinedInput
-                      id="employer-login-email"
+                      id="jobseeker-login-email"
                       placeholder="Eg: maria@gmail.com"
                       type="email"
                       onChange={handleChange("emailId")}
                       value={values.emailId}
-                      name={empLogin.email}
+                      name={jsLogin.email}
                       required
+                      error={Boolean(errors.emailId)}
                       startAdornment={
                         <InputAdornment position="start">
                           <MailOutlineIcon className={classes.iconColor} />
@@ -183,15 +178,18 @@ const EmpLogin = () => {
                   <label className={styles?.required}>Password</label>
                   <FormControl variant="outlined">
                     <OutlinedInput
-                      id="employer-login-password"
+                      id="jobseeker-login-password"
                       value={values.password}
-                      type={showEmpLoginPassword ? "text" : "password"}
+                      type={showJsLoginPassword ? "text" : "password"}
                       onChange={handleChange("password")}
-                      onCopy={onCopyPasteHandler}
-                      onPaste={onCopyPasteHandler}
                       placeholder="password"
-                      name={empLogin.password}
+                      name={jsLogin.password}
                       required
+                      inputProps={{
+                        maxLength: 128,
+                        minLength: 8,
+                      }}
+                      error={Boolean(errors.password)}
                       startAdornment={
                         <InputAdornment position="start">
                           <LockIcon className={classes.iconColor} />
@@ -206,7 +204,7 @@ const EmpLogin = () => {
                             onMouseDown={handleMouseDownPassword}
                             size="large"
                           >
-                            {showEmpLoginPassword ? (
+                            {showJsLoginPassword ? (
                               <Visibility />
                             ) : (
                               <VisibilityOff />
@@ -238,7 +236,7 @@ const EmpLogin = () => {
                       }
                       onClick={() => {
                         setValues(initialState);
-                        setErrors({ emailId: '', password: '' });
+                        setErrors({ password: '', emailId: '' });
                       }}
                       disabled={values.emailId === "" && values.password === ""}
                     >
@@ -255,37 +253,50 @@ const EmpLogin = () => {
                     </Button>
                   </div>
                   <div className={styles?.forgotPasswordDiv}>
-                    <Link href="/employer/forgot/password"><a className={styles?.link}>
-                      Forgot password ?</a></Link>
+                    <Link href="/jobseeker/forgot-password" >
+                      <a className={styles?.link} >Forgot password ?</a>
+                    </Link>
                   </div>
                 </div>
                 <div className={styles?.dontHaveAccountRegisterDiv}>
                   <Typography className={styles?.registerLinkText}>
                     Don't have an account?{" "}
-                    <Link href="/employer/register/page/one"><a className={styles?.link}>
-                      Register</a></Link>
+                    <Link href="/jobseeker/register" >
+                      <a className={styles?.link} >Register</a>
+                    </Link>
                   </Typography>
                 </div>
                 <div className={styles?.dividerDiv}>
                   <Divider className={styles?.divider} />
                 </div>
-                <div className="jobseekerLoginLinkDiv">
+                <div className="employerLoginLinkDiv">
                   <Typography className={styles?.loginLinkText}>
                     <Link
-                      href="/jobseeker/login"><a
-                        style={{ fontWeight: "bold" }}
-                        className={styles?.link}
-                      >Job Seeker Login, click here</a>
+                      href="/employer/login"
+
+                    >
+                      <a style={{ fontWeight: "bold" }}
+                        className={styles?.link} >Employer Login, click here</a>
                     </Link>
                   </Typography>
                 </div>
               </form>
             </div>
           </Grid>
+          <Grid item lg={5} md={5} sm={7} xs={12} className={styles?.imageTextGrid}>
+            <div className={styles?.loginBgImageTextDiv}>
+              <Typography className={styles?.imageText} variant="h4">
+                Welcome to Jobshorn
+              </Typography>
+              <Typography className={styles?.imageText} variant="body1">
+                Sign in to continue to your account
+              </Typography>
+            </div>
+          </Grid>
         </Grid>
       </div>
     </>
   );
-};
+}
 
-export default EmpLogin;
+export default JsLogin;

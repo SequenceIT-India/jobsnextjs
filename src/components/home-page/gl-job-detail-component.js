@@ -185,7 +185,7 @@ const JobDetailComponent = (props) => {
           <Grid item xs={12} className="job-inline-content-item ">
             <Blocks fontSize="small" className="job-icon" />
             <Typography variant="subtitle1" className="text description">
-              {props?.job?.description || description}
+              {props?.job?.jobSkills || description}
             </Typography>
           </Grid>
           {/* <Grid item xs={12}>

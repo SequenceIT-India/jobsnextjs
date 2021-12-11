@@ -164,7 +164,7 @@ const HomeListItem = (props) => {
   return (
     <>
       <CssBaseline />
-      <Hidden only={["xs", "sm"]}>
+       <Hidden only={["xs", "sm"]}>
         <SearchBar onFindJobsBtnHandler={onFindJobsBtnHandler} />
       </Hidden>
       <main>
@@ -180,12 +180,12 @@ const HomeListItem = (props) => {
             </Typography>
             <div className="cards">
               {jobs && jobs?.map((job) => (
-                <Link href={`/jobdetail/${job.jobID}`} key={job.jobID} prefetch={false}>
-                  <a key={job.jobID}>
+                <Link href={`/jobdetail/${job?.jobID}`} key={job?.jobID} >
+                  <a key={job?.jobID}>
                     <Hidden only={["xs", "sm"]}>
                       <JobCard
                         selectJob={selectJob}
-                        selectedJob={selectedJob}
+                        selectedJob={selectedJob && Object.keys(selectedJob).length ? selectedJob : null}
                         saveJobClickHandler={saveJobClickHandler}
                         applyJobClickHandler={applyJobClickHandler}
                         showDeleteBtn={false}
@@ -196,7 +196,7 @@ const HomeListItem = (props) => {
                     <Hidden only={["md", "lg", "xl"]}>
                       <JobCard
                         selectJob={selectJob}
-                        selectedJob={selectedJob}
+                        selectedJob={selectedJob && Object.keys(selectedJob).length ? selectedJob : null}
                         saveJobClickHandler={saveJobClickHandler}
                         applyJobClickHandler={applyJobClickHandler}
                         showDeleteBtn={false}
@@ -231,7 +231,7 @@ const HomeListItem = (props) => {
           </Grid>
           {selectedJob && Object.keys(selectedJob).length ? (
             <Grid item md={8} className="partition desktop-right">
-              <JobDetailHeader
+            <JobDetailHeader
                 job={selectedJob}
                 onCloseClickHandler={() => {
                   router.push(`/`, undefined, { shallow: false });
@@ -242,12 +242,12 @@ const HomeListItem = (props) => {
                 job={selectedJob}
               />
             </Grid>
-          ) : null}
+          ) : null}        
           <Grid
             item
             md={4}
             xs={12}
-            className={`${classes.search} ${selectedJob ? 'job-selected' : ""
+            className={`${classes.search} ${selectedJob && Object.keys(selectedJob).length ? 'job-selected' : ""
               } partition desktop-right`}
           >
             <Typography className="page-header" display="block">
@@ -383,4 +383,4 @@ const HomeListItem = (props) => {
     </>
   );
 };
-export default withStyles(styles)(HomeListItem);
+export default HomeListItem;

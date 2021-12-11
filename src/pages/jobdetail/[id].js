@@ -1,6 +1,8 @@
 
 import { default as React, useEffect, useState } from "react";
 import HomeListItem from "../../components/home-page/home-job-list.js";
+
+import { API_URL } from '../../service/urls';
 import axios from "axios";
 
 const DetailPage = (props) => {
@@ -17,25 +19,16 @@ const DetailPage = (props) => {
 export async function getServerSideProps(context) {
   const { id = 0 } = context.query;
   // Fetch data from external API
-  const options = {
-    headers: {
-      "Content-Type": "application/json",
-      token: 'jiuiuiiiiiiiiiiiiiiiiiiiiiii',
-    },
-    crossdomain: true
-  };
-  const res = await axios.post('http://104.131.121.145:8080/employer-service/jobs', {
+ 
+  const res = await axios.post(API_URL.JOBS.DEFAULT_LIST, {
     "pageNo": 1,
     "pageSize": 5,
     "jobStatus": [
       0
     ]
-  }, options);
-  console.log('context', res.data?.jobs)
-
+  }, {});
   const jd = res.data?.jobs?.find((job) => job.jobID == id);
-
-  return { props: { jd: jd || {}, jobs: res.data?.jobs } }
+  return { props: { jd: jd || {}, jobs: res.data?.jobs || []  } }
 
 }
 export default DetailPage

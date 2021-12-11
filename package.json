@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@badrap/bar-of-progress": "^0.1.2",
     "@date-io/date-fns": "^2.11.0",
     "@emotion/cache": "latest",
     "@emotion/react": "latest",
@@ -26,11 +27,13 @@
     "country-state-city": "1.0.5",
     "crypto-js": "^4.1.1",
     "date-fns": "^2.27.0",
+    "dotenv": "^10.0.0",
     "draft-js": "^0.11.7",
     "material-ui-dropzone": "^3.5.0",
     "moment": "^2.29.1",
     "next": "latest",
     "next-images": "^1.8.4",
+    "next-redux-wrapper": "^7.0.5",
     "react": "latest",
     "react-device-detect": "^2.1.2",
     "react-dom": "latest",
