@@ -3,10 +3,12 @@
   "version": "5.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3001",
+    "lint": "next lint",
+    "production": "NODE_ENV=production && npm run build",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "next dev -p 3001",
+    "start": "next start && -p 80",
+    "postexport": "node post-export.js"
   },
   "dependencies": {
     "@badrap/bar-of-progress": "^0.1.2",
