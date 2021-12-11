@@ -278,7 +278,7 @@ const Header = (props) => {
                     title: "Popular Searches",
                   },
                   {
-                    href: "/job-seeker/register",
+                    href: "/jobseeker/register",
                     title: "Register",
                   },
                 ]}
@@ -317,7 +317,7 @@ const Header = (props) => {
                 variant="outlined"
                 className="login-btn header-actions"
                 onClick={() => {
-                  history.push("/job-seeker/login");
+                  history.push("/jobseeker/login");
                 }}
               >
                 Login
@@ -327,7 +327,7 @@ const Header = (props) => {
                 variant="contained"
                 className="register-btn  header-actions"
                 onClick={() => {
-                  history.push("/job-seeker/register");
+                  history.push("/jobseeker/register");
                 }}
               >
                 Register
@@ -441,7 +441,7 @@ const Header = (props) => {
                   title: "Popular Searches",
                 },
                 {
-                  href: "/job-seeker/register",
+                  href: "/jobseeker/register",
                   title: "Register",
                 },
               ]}

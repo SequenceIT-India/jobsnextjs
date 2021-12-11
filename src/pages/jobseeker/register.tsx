@@ -329,7 +329,7 @@ function register() {
                 <div className={styles?.alreadyHaveAnAccountLoginDiv}>
                   <Typography className={styles?.registerLinkText}>
                     Already have an account?{" "}
-                    <Link href="/job-seeker/login" >
+                    <Link href="/jobseeker/login" >
                       <a className={styles?.link}>Login</a>
                     </Link>
 
