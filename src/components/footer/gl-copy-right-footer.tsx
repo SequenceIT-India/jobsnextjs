@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   copyRightFooter: {
-    background: colors.primaryColor,
+    background: `${colors.primaryColor} !important`,
     width: "100%",
     [theme.breakpoints.down("lg")]: {
       padding: "20px 0px",
