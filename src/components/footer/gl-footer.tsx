@@ -1,6 +1,6 @@
 
 import { default as React, useEffect, useRef, useState, Fragment } from "react";
-import makeStyles from "@mui/styles/makeStyles";
+import { makeStyles } from '@material-ui/core/styles';
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -73,13 +73,13 @@ function Footer() {
                   <Link href={"#"}>
                     <a className={classes.link}>Search Jobs</a>
                   </Link>
-                  <Link className={classes.link} href={"#"}>
+                  <Link href={"#"}>
                     <a className={classes.link}>Upload Resume</a>
                   </Link>
-                  <Link className={classes.link} href={"#"}>
+                  <Link href={"#"}>
                     <a className={classes.link}>Company Profile</a>
                   </Link>
-                  <Link className={classes.link} href={"#"}>
+                  <Link href={"#"}>
                     <a className={classes.link}>Help</a>
                   </Link>
                 </div>
@@ -89,19 +89,19 @@ function Footer() {
                   Employers
                 </Typography>
                 <div className={classes.sectionItems}>
-                  <Link className={classes.link} href={"#"}>
+                  <Link href={"#"}>
                     <a className={classes.link}>Solutions</a>
                   </Link>
-                  <Link className={classes.link} href={"#"}>
+                  <Link href={"#"}>
                     <a className={classes.link}>Pricing</a>
                   </Link>
-                  <Link className={classes.link} href={"#"}>
+                  <Link href={"#"}>
                     <a className={classes.link}>Contacts Management</a>
                   </Link>
-                  <Link className={classes.link} href={"#"}>
+                  <Link href={"#"}>
                     <a className={classes.link}>Search Talent</a>
                   </Link>
-                  <Link className={classes.link} href={"#"}>
+                  <Link href={"#"}>
                     <a className={classes.link}>Help</a>
                   </Link>
                 </div>
@@ -111,16 +111,16 @@ function Footer() {
                   Resources
                 </Typography>
                 <div className={classes.sectionItems}>
-                  <Link className={classes.link} href={"#"}>
+                  <Link href={"#"}>
                     <a className={classes.link}>Site Map</a>
                   </Link>
-                  <Link className={classes.link} href={"#"}>
+                  <Link href={"#"}>
                     <a className={classes.link}>Contact Us</a>
                   </Link>
-                  <Link className={classes.link} href={"#"}>
+                  <Link href={"#"}>
                     <a className={classes.link}>Contact Sales</a>
                   </Link>
-                  <Link className={classes.link} href={"#"}>
+                  <Link href={"#"}>
                     <a className={classes.link}>Schedule Demo</a>
                   </Link>
                 </div>
@@ -130,16 +130,16 @@ function Footer() {
                   About Jh
                 </Typography>
                 <div className={classes.sectionItems}>
-                  <Link className={classes.link} href={"/about-us"}>
+                  <Link href={"/about-us"}>
                     <a className={classes.link}>About Us</a>
                   </Link>
-                  <Link className={classes.link} href={"#"}>
+                  <Link href={"#"}>
                     <a className={classes.link}>Partner with Us</a>
                   </Link>
-                  <Link className={classes.link} href={"#"}>
+                  <Link href={"#"}>
                     <a className={classes.link}>VMS Integration</a>
                   </Link>
-                  <Link className={classes.link} href={"#"}>
+                  <Link href={"#"}>
                     <a className={classes.link}>API Integration</a>
                   </Link>
                 </div>
