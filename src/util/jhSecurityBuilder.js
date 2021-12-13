@@ -7,16 +7,16 @@ const { createHash } = require("crypto");
 class JobsHornEncryptAndDecrypt {
   constructor() {
     const {
-      REACT_APP_AES_METHOD_ALGO,
-      REACT_APP_AES_DIHEST,
-      REACT_APP_PEPPER,
+      NEXT_PUBLIC_REACT_APP_AES_METHOD_ALGO,
+      NEXT_PUBLIC_REACT_APP_AES_DIHEST,
+      NEXT_PUBLIC_REACT_APP_PEPPER,
     } = process.env;
     this._keySize = 256;
     this._ivSize = 128;
     this._iterationCount = 65536;
-    this._algorithm = REACT_APP_AES_METHOD_ALGO;
-    this._digest = REACT_APP_AES_DIHEST;
-    this._pepper = REACT_APP_PEPPER;
+    this._algorithm = NEXT_PUBLIC_REACT_APP_AES_METHOD_ALGO;
+    this._digest = NEXT_PUBLIC_REACT_APP_AES_DIHEST;
+    this._pepper = NEXT_PUBLIC_REACT_APP_PEPPER;
   }
 
   encrypt256(plainText, shared_Salt_key, secretKey) {
@@ -87,18 +87,20 @@ class JobsHornEncryptAndDecrypt {
           ? "EMP"
           : "CAND"
         : type;
-    const { NEXT_PUBLIC_REACT_APP_RandamString_Length } = process.env;
-    const saltRandom20Char = this.randomKey(REACT_APP_RandamString_Length);
+    const { NEXT_PUBLIC_REACT_APP_RandamString_Length, NEXT_PUBLIC_REACT_APP_CAND_PEPPER, NEXT_PUBLIC_REACT_APP_CAND_Shared_Salt_key, NEXT_PUBLIC_REACT_APP_CAND_Shared_Secret_key } = process.env;
+    let objectdata = { NEXT_PUBLIC_REACT_APP_RandamString_Length, NEXT_PUBLIC_REACT_APP_CAND_PEPPER, NEXT_PUBLIC_REACT_APP_CAND_Shared_Salt_key, NEXT_PUBLIC_REACT_APP_CAND_Shared_Secret_key };
+
+    const saltRandom20Char = this.randomKey(NEXT_PUBLIC_REACT_APP_RandamString_Length);
     const timeStamp = moment
       .utc()
       .subtract(DATETIMEFORMAT.DURATION_ZONE, DATETIMEFORMAT.HOURS)
       .format(DATETIMEFORMAT.DATETIME); //2
-    console.log(type, "----");
+    console.log(type, Object.keys(process.env));
 
-    const shared_Salt_key = process.env[`NEXT_PUBLIC_REACT_APP_${type}_Shared_Salt_key`]; //1
+    const shared_Salt_key = objectdata[`NEXT_PUBLIC_REACT_APP_${type}_Shared_Salt_key`]; //1
     const shared_Secret_key =
-      process.env[`NEXT_PUBLIC_REACT_APP_${type}_Shared_Secret_key`]; //3
-    const pepperKey = process.env[`NEXT_PUBLIC_REACT_APP_${type}_PEPPER`]; //3
+      objectdata[`NEXT_PUBLIC_REACT_APP_${type}_Shared_Secret_key`]; //3
+    const pepperKey = objectdata[`NEXT_PUBLIC_REACT_APP_${type}_PEPPER`]; //3
     console.log(pepperKey, "----", type);
     let dataSet = values;
     const uiPepperKey = CryptoJS.enc.Base64.parse(pepperKey);

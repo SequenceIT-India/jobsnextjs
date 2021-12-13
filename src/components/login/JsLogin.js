@@ -9,9 +9,12 @@ import InputAdornment from "@mui/material/InputAdornment";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import makeStyles from "@mui/styles/makeStyles";
 import LockIcon from "@mui/icons-material/Lock";
+import withStyles from "@mui/styles/withStyles";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
+
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 import { DATETIMEFORMAT, RESPONSE_CODE } from "../../util/constants";
 
@@ -24,7 +27,7 @@ import { JsLogin as jsLogin, validateField } from "../../util/helper";
 
 import styles from "./JsLogin.module.scss";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = (theme) => ({
   textFieldDiv: {
     "& > *": {
       margin: theme.spacing(1),
@@ -39,10 +42,10 @@ const useStyles = makeStyles((theme) => ({
   iconColor: {
     color: '#5b5b5b',
   },
-}));
+});
 
-function JsLogin() {
-  const classes = useStyles();
+function JsLogin(props) {
+  const { classes } = props;
   const [showJsLoginPassword, setShowJsLoginPassword] = useState(false);
   const dispatch = useDispatch();
   const history = useRouter();
@@ -138,6 +141,7 @@ function JsLogin() {
 
   return (
     <>
+      <CssBaseline />
       <div className={styles?.jsLoginContainer}>
         <Grid container className={styles?.loginFormGrid}>
           <Grid item lg={4} md={5} sm={7} xs={11} className={styles?.formGrid}>
@@ -299,4 +303,4 @@ function JsLogin() {
   );
 }
 
-export default JsLogin;
+export default withStyles(useStyles)(JsLogin);

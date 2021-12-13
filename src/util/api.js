@@ -7,7 +7,7 @@ import {
   osVersion,
   fullBrowserVersion,
 } from "react-device-detect";
-const baseURL = process.env.REACT_APP_API_URL;
+const baseURL = process.env.NEXT_PUBLIC_REACT_APP_API_URL;
 
 const apiToUseLocalData = ["/getAvailableSlots", "/getJobs", "/getJobDetails"];
 
@@ -40,6 +40,7 @@ api.interceptors.request.use(async (config) => {
   const localApi = apiToUseLocalData.indexOf(config.url) !== -1;
   const securityApi = securityUrls.indexOf(config.url) !== -1;
   const employerApi = employerServiceUrls.indexOf(config.url) !== -1;
+  config.crossdomain = true;
   if (config) {
     config.headers["BrowserName"] = browserName;
     config.headers["DeviceType"] = isDesktop ? "desktop" : deviceType;
@@ -49,8 +50,8 @@ api.interceptors.request.use(async (config) => {
     config.headers["IPAddress"] = sessionStorage.getItem("ip");
   }
   config.headers["jwtToken"] = null;
-  config.headers["AppID"] = process.env.REACT_APP_JOBSEEKER_TOKEN;
-  config.headers["token"] = process.env.REACT_APP_JOBSEEKER_TOKEN;
+  config.headers["AppID"] = process.env.NEXT_PUBLIC_REACT_APP_JOBSEEKER_TOKEN;
+  config.headers["token"] = process.env.NEXT_PUBLIC_REACT_APP_JOBSEEKER_TOKEN;
   if (sessionStorage.getItem("token")) {
     const token = sessionStorage.getItem("token");
     config.headers["jwtToken"] = token;
@@ -60,12 +61,12 @@ api.interceptors.request.use(async (config) => {
   } else if (securityApi) {
     return {
       ...config,
-      baseURL: process.env.REACT_APP_SECURITY_API_URL,
+      baseURL: `http://104.131.121.145:8080${process.env.NEXT_PUBLIC_REACT_APP_SECURITY_API_URL}`,
     };
   } else if (employerApi) {
-    config.headers["AppID"] = process.env.REACT_API_EMPLOYER_TOKEN;
-    config.headers["token"] = process.env.REACT_API_EMPLOYER_TOKEN;
-    return { ...config, baseURL: process.env.REACT_APP_EMPLOYER_API_URL };
+    config.headers["AppID"] = process.env.NEXT_PUBLIC_REACT_API_EMPLOYER_TOKEN;
+    config.headers["token"] = process.env.NEXT_PUBLIC_REACT_API_EMPLOYER_TOKEN;
+    return { ...config, baseURL: process.env.NEXT_PUBLIC_REACT_APP_EMPLOYER_API_URL };
   } else {
     return { ...config };
   }

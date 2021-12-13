@@ -1,12 +1,12 @@
 import api from "../util/api";
 import { API_URL } from "./urls";
-const { REACT_APP_TOKEN_URL } = process.env;
+const { NEXT_PUBLIC_REACT_APP_TOKEN_URL } = process.env;
 
 export const userRegister = async (data) => {
   const options = {
     headers: {
       "Content-Type": "application/json",
-      token: REACT_APP_TOKEN_URL,
+      token: NEXT_PUBLIC_REACT_APP_TOKEN_URL,
     },
   };
 
@@ -29,7 +29,7 @@ export const login = async (data) => {
   const options = {
     headers: {
       "Content-Type": "application/json",
-      token: REACT_APP_TOKEN_URL,
+      token: NEXT_PUBLIC_REACT_APP_TOKEN_URL,
     },
   };
   const result = await api.post(API_URL.AUTH.USER_LOGIN, data, options);
@@ -40,7 +40,7 @@ export const employerLogin = async (data) => {
   const options = {
     headers: {
       "Content-Type": "application/json",
-      token: REACT_APP_TOKEN_URL,
+      token: NEXT_PUBLIC_REACT_APP_TOKEN_URL,
     },
   };
   const result = await api.post(API_URL.AUTH.RECRUITER_LOGIN, data, options);
@@ -51,7 +51,7 @@ export const employerRegister = async (data) => {
   const options = {
     headers: {
       "Content-Type": "application/json",
-      token: REACT_APP_TOKEN_URL,
+      token: NEXT_PUBLIC_REACT_APP_TOKEN_URL,
     },
   };
 

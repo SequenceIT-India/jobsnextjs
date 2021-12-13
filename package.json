@@ -7,7 +7,7 @@
     "production": "NODE_ENV=production && npm run build",
     "build": "next build",
     "dev": "next dev -p 3001",
-    "start": "next start && -p 80",
+    "start": "next start -p 80",
     "postexport": "node post-export.js"
   },
   "dependencies": {
@@ -31,6 +31,7 @@
     "date-fns": "^2.27.0",
     "dotenv": "^10.0.0",
     "draft-js": "^0.11.7",
+    "http-proxy-middleware": "^2.0.1",
     "material-ui-dropzone": "^3.5.0",
     "moment": "^2.29.1",
     "next": "latest",
@@ -46,6 +47,7 @@
     "react-redux": "^7.2.6",
     "react-share": "^4.4.0",
     "redux-thunk": "^2.4.1",
+    "sharp": "^0.29.3",
     "tailwindcss": "^2.2.19",
     "typeface-poppins": "^1.1.13",
     "use-places-autocomplete": "^1.11.0",
@@ -58,5 +60,6 @@
     "node-sass": "^6.0.1",
     "sass": "^1.44.0",
     "typescript": "latest"
-  }
+  },
+  "proxy": "http://104.131.121.145:8080"
 }
