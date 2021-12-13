@@ -20,7 +20,7 @@ import {
   Typography,
 } from "@mui/material";
 
-import makeStyles from "@mui/styles/makeStyles";
+import { makeStyles } from '@material-ui/core/styles';
 import withStyles from "@mui/styles/withStyles";
 import SearchBar from "../home-page/gl-search-bar";
 import ListItemText from "@mui/material/ListItemText";
@@ -160,7 +160,7 @@ const styles = makeStyles((theme: any) => ({
     flexGrow: 1,
   },
   menuButtonMix: {
-    display: "flex",
+    display: "flex !important",
     [theme.breakpoints.up("sm")]: {
       display: "none",
     },

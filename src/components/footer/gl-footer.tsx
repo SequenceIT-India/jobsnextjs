@@ -1,6 +1,6 @@
 
 import { default as React, useEffect, useRef, useState, Fragment } from "react";
-import makeStyles from "@mui/styles/makeStyles";
+import { makeStyles } from '@material-ui/core/styles';
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -12,21 +12,21 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { Grid } from "@mui/material";
 
-import withStyles from "@mui/styles/withStyles";
 
 import colors from "../../vars.module.scss";
 
-const styles = makeStyles((theme: any) => ({
+
+const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  footer: {
+  footerPrimaryDarkColor: {
+    background: `${colors.primaryDarkColor} !important`,
     [theme.breakpoints.up("md")]: {
       height: "209px",
     },
     width: "100%",
     left: "0px",
-    background: colors.primaryDarkColor,
   },
   footerItems: {
     display: "flex",
@@ -56,13 +56,13 @@ const styles = makeStyles((theme: any) => ({
   },
 }));
 
-function Footer() {
+export default function Footer() {
 
-  const classes = styles();
+  const classes = useStyles();
   return (
     <>
       <div className={classes.root}>
-        <AppBar position="static" className={classes.footer}>
+        <AppBar position="static" className={classes.footerPrimaryDarkColor}>
           <Toolbar variant="dense">
             <Grid container className={classes.footerItems}>
               <Grid item xs={6} md={"auto"} className="jobseeker-section">
@@ -168,5 +168,3 @@ function Footer() {
     </>
   );
 }
-
-export default Footer;
