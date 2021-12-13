@@ -21,7 +21,7 @@ import {
 } from "@mui/material";
 
 import { makeStyles } from '@material-ui/core/styles';
-import withStyles from "@mui/styles/withStyles";
+import withStyles from "@material-ui/styles/withStyles";
 import SearchBar from "../home-page/gl-search-bar";
 import ListItemText from "@mui/material/ListItemText";
 import { Close, ExpandLess, ExpandMore, Search } from "@mui/icons-material";
