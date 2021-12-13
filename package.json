@@ -22,7 +22,7 @@
     "@material-ui/pickers": "^3.3.10",
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
-    "@mui/styles": "^5.2.2",
+    "@mui/styles": "^5.2.3",
     "@reach/combobox": "^0.16.4",
     "@react-google-maps/api": "^2.7.0",
     "axios": "^0.24.0",

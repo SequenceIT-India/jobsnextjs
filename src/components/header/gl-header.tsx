@@ -61,7 +61,7 @@ const StyledMenu = withStyles({
   />
 ));
 
-const StyledMenuItem = withStyles((theme) => ({
+const StyledMenuItem = withStyles((theme: any) => ({
   root: {
     "&:focus": {
       backgroundColor: "#3d8a94",
@@ -72,7 +72,7 @@ const StyledMenuItem = withStyles((theme) => ({
   },
 }))(MenuItem);
 
-const AccordionMenu = (props) => {
+const AccordionMenu = (props: any) => {
   return (
     <Accordion className="accordion-menu">
       <AccordionSummary
@@ -84,7 +84,7 @@ const AccordionMenu = (props) => {
         <Typography className="accordion-menu-title">{props.title}</Typography>
       </AccordionSummary>
       <AccordionDetails className="accordion-menu-details">
-        {props.items.map((item, idx) => {
+        {props.items.map((item: any, idx: any) => {
           return (
             <StyledMenuItem
               onClick={() => {
@@ -103,11 +103,11 @@ const AccordionMenu = (props) => {
   );
 };
 
-const HeaderMenu = (props) => {
-  const anchorEl = useRef();
+const HeaderMenu = (props: any) => {
+  const anchorEl = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleClick = (event) => {
+  const handleClick = (event: any) => {
     setIsOpen(true);
   };
 
@@ -117,6 +117,7 @@ const HeaderMenu = (props) => {
 
   return (
     <div>
+
       <Button
         aria-controls={props.id}
         aria-haspopup="true"
@@ -126,6 +127,7 @@ const HeaderMenu = (props) => {
       >
         {props.title} {isOpen ? <ExpandLess /> : <ExpandMore />}
       </Button>
+
       <StyledMenu
         id={props.id}
         anchorEl={anchorEl.current}
@@ -133,7 +135,7 @@ const HeaderMenu = (props) => {
         open={isOpen}
         onClose={handleClose}
       >
-        {props.items.map((item, idx) => {
+        {props.items.map((item: any, idx: any) => {
           return (
             <StyledMenuItem
               onClick={() => {
@@ -149,11 +151,11 @@ const HeaderMenu = (props) => {
           );
         })}
       </StyledMenu>
-    </div>
+    </div >
   );
 };
 
-const styles = makeStyles((theme) => ({
+const styles = makeStyles((theme: any) => ({
   grow: {
     flexGrow: 1,
   },
@@ -190,11 +192,11 @@ const styles = makeStyles((theme) => ({
   },
 }));
 
-function ListItemLink(props) {
+function ListItemLink(props: any) {
   return <ListItem button component="a" {...props} />;
 }
 
-const Header = (props) => {
+const Header = (props: any) => {
   const history = useRouter();
   const [showDrawer, setShowDrawer] = useState(false);
   const classes = styles();
@@ -242,11 +244,11 @@ const Header = (props) => {
           <div className="main-header-space"></div>
           {auth.token ? (
             <div className={classes.sectionDesktop}>
-              <Link to="#" className="link">
-                Careers
+              <Link href="#"><a className="link">
+                Careers</a>
               </Link>
-              <Link to="#" className="link">
-                Company Search
+              <Link href="#"><a className="link">
+                Company Search</a>
               </Link>
               <IconButton
                 aria-label="alerts"
@@ -263,7 +265,7 @@ const Header = (props) => {
           ) : (
             <div className={classes.sectionDesktop}>
               <HeaderMenu
-                onClick={(item) => {
+                onClick={(item: any) => {
                   history.push(item.href);
                 }}
                 id={"jobs"}
@@ -284,7 +286,7 @@ const Header = (props) => {
                 ]}
               />
               <HeaderMenu
-                onClick={(item) => {
+                onClick={(item: any) => {
                   history.push(item.href);
                 }}
                 id={"employers"}
@@ -425,7 +427,7 @@ const Header = (props) => {
           )}
           {!auth.token && (
             <AccordionMenu
-              onClick={(item) => {
+              onClick={(item: any) => {
                 history.push(item.href);
                 setShowDrawer(false);
               }}
@@ -449,7 +451,7 @@ const Header = (props) => {
           )}
           {!auth.token && (
             <AccordionMenu
-              onClick={(item) => {
+              onClick={(item: any) => {
                 history.push(item.href);
                 setShowDrawer(false);
               }}

@@ -1,6 +1,6 @@
 
 import { default as React, useEffect, useRef, useState, Fragment } from "react";
-import { makeStyles } from '@material-ui/core/styles';
+import makeStyles from "@mui/styles/makeStyles";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -16,7 +16,7 @@ import withStyles from "@mui/styles/withStyles";
 
 import colors from "../../vars.module.scss";
 
-const styles = makeStyles((theme) => ({
+const styles = makeStyles((theme: any) => ({
   root: {
     flexGrow: 1,
   },
