@@ -20,8 +20,7 @@ import {
   Typography,
 } from "@mui/material";
 
-import { makeStyles } from '@material-ui/core/styles';
-import withStyles from "@material-ui/styles/withStyles";
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import SearchBar from "../home-page/gl-search-bar";
 import ListItemText from "@mui/material/ListItemText";
 import { Close, ExpandLess, ExpandMore, Search } from "@mui/icons-material";
@@ -45,10 +44,11 @@ const StyledMenu = withStyles({
   paper: {
     border: "1px solid #d3d4d5",
   },
-})((props) => (
+})((props: any) => (
   <Menu
+    open={false}
     elevation={0}
-    getcontentanchorel={null}
+    anchorEl={null}
     anchorOrigin={{
       vertical: "bottom",
       horizontal: "center",
@@ -155,7 +155,7 @@ const HeaderMenu = (props: any) => {
   );
 };
 
-const styles = makeStyles((theme: any) => ({
+const useStyles = makeStyles((theme: any) => ({
   grow: {
     flexGrow: 1,
   },
@@ -190,6 +190,9 @@ const styles = makeStyles((theme: any) => ({
     paddingRight: 0,
     color: colors.primaryColor,
   },
+  paper: {
+    border: "1px solid #d3d4d5",
+  },
 }));
 
 function ListItemLink(props: any) {
@@ -199,8 +202,8 @@ function ListItemLink(props: any) {
 const Header = (props: any) => {
   const history = useRouter();
   const [showDrawer, setShowDrawer] = useState(false);
-  const classes = styles();
-  const auth = useSelector((state) => state.auth);
+  const classes = useStyles();
+  const auth = useSelector((state: any) => state.auth);
 
   const dispatch = useDispatch();
 
@@ -227,9 +230,9 @@ const Header = (props: any) => {
       <AppBar
         className={classes.appBar}
         position="sticky"
-        bg="light"
-        expand="lg"
-        sticky="top"
+      // bg="light"
+      // expand="lg"
+      // sticky="top"
       >
         <Toolbar className="app-header">
           <Link href="/">
@@ -347,19 +350,20 @@ const Header = (props: any) => {
             >
               <Search />
             </IconButton>
+            <IconButton
+              edge="start"
+              className={`${classes.menuButtonMix} menu-button-mix`}
+              color="inherit"
+              arial-label="Open Menu"
+              onClick={() => {
+                setShowDrawer(true);
+              }}
+              size="large"
+            >
+              <MenuIcon />
+            </IconButton>
           </Hidden>
-          <IconButton
-            edge="start"
-            className={`${classes.menuButtonMix} menu-button-mix`}
-            color="inherit"
-            arial-label="Open Menu"
-            onClick={() => {
-              setShowDrawer(true);
-            }}
-            size="large"
-          >
-            <MenuIcon />
-          </IconButton>
+
         </Toolbar>
       </AppBar>
       <Dialog
@@ -372,7 +376,12 @@ const Header = (props: any) => {
         className="mobile-dialog"
       >
         <DialogTitle className="mobile-dialog-title">
-          <AppBar position="sticky" bg="light" expand="lg" sticky="top">
+          <AppBar
+            position="sticky"
+          // bg="light"
+          // expand="lg"
+          // sticky="top"
+          >
             <Toolbar className="app-header">
               <Link href="/">
                 <img className="nav-logo" src={logo} alt="logo" />
@@ -531,7 +540,7 @@ const Header = (props: any) => {
         open={isDrawerOpen}
         onClose={toggleDrawer}
         classes={{
-          paper: classes.paper,
+          paper: classes.paper
         }}
       >
         <div className="job-detail-drawer">

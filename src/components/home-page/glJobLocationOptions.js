@@ -9,7 +9,7 @@ import {
   ComboboxOption,
 } from "@reach/combobox";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import makeStyles from "@mui/styles/makeStyles";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 
 import "@reach/combobox/styles.css";
 import { DoubleByteCharacters, EmojiRegex } from "../../util/helper";
@@ -19,7 +19,7 @@ const libraries = ["places"];
 
 const useStyles = makeStyles((theme) => ({
   comoboxInput: {
-    height: "2.3rem",
+    height: "2.45rem !important",
     border: "none",
     paddingLeft: "2.2rem",
     [theme.breakpoints.down("lg")]: {
@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function App() {
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: 'AIzaSyDEif-fvOkXkd2iSSfuPUljxDRyzL_uTqI',
+    googleMapsApiKey: "AIzaSyDEif-fvOkXkd2iSSfuPUljxDRyzL_uTqI",
     libraries,
   });
 

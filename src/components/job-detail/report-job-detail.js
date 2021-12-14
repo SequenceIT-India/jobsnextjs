@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import Backdrop from "@mui/material/Backdrop";
 import Modal from "@mui/material/Modal";
-import makeStyles from "@mui/styles/makeStyles";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 import React, { useState } from "react";
 import "./apply-job-detail.module.scss";
 import PropTypes from "prop-types";

@@ -1,5 +1,5 @@
 import React from "react";
-import makeStyles from "@mui/styles/makeStyles";
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Modal from "@mui/material/Modal";
 import Backdrop from "@mui/material/Backdrop";
 import {

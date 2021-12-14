@@ -4,9 +4,9 @@ import {
   LocationOnOutlined,
 } from "@mui/icons-material";
 
-import makeStyles from "@mui/styles/makeStyles";
-import Link from 'next/link'
-import CssBaseline from '@material-ui/core/CssBaseline';
+import { makeStyles, withStyles } from "@material-ui/core/styles";
+import Link from "next/link";
+import CssBaseline from "@material-ui/core/CssBaseline";
 import {
   Autocomplete,
   Button,
@@ -22,7 +22,6 @@ import {
   Typography,
 } from "@mui/material";
 import { useSelector } from "react-redux";
-import withStyles from "@mui/styles/withStyles";
 import csc, { Country, State, City } from "country-state-city";
 import { default as React, useEffect, useState } from "react";
 import { useRouter } from "next/router";
@@ -81,9 +80,6 @@ const HomeListItem = (props) => {
   const [cityOpts, setCityOpts] = useState([]);
   const [open, setOpen] = useState(false);
 
-
-
-
   useEffect(() => {
     setPage(0);
     if (jobs.length > 0) {
@@ -96,7 +92,6 @@ const HomeListItem = (props) => {
 
     setCities([]);
   }, []);
-
 
   const selectJob = props.selectJob;
   const handleChangePage = (evt, newPage) => {
@@ -128,9 +123,7 @@ const HomeListItem = (props) => {
     }
   };
 
-  const onFindJobsBtnHandler = () => { };
-
-
+  const onFindJobsBtnHandler = () => {};
 
   const [subscribeData, setSubsribeData] = useState({});
 
@@ -158,57 +151,59 @@ const HomeListItem = (props) => {
   const onCloseHandler = () => {
     setOpen(false);
   };
-  const classes = styles()
-
+  const classes = styles();
 
   return (
     <>
       <CssBaseline />
-       <Hidden only={["xs", "sm"]}>
+      <Hidden only={["xs", "sm"]}>
         <SearchBar onFindJobsBtnHandler={onFindJobsBtnHandler} />
       </Hidden>
       <main>
         <Grid container className="jobseeker-home main-padded-container">
-          <Grid
-            item
-            md={4}
-            xs={12}
-
-          >
+          <Grid item md={4} xs={12}>
             <Typography className="page-header large" display="block">
               Latest jobs
             </Typography>
             <div className="cards">
-              {jobs && jobs?.map((job) => (
-                <Link href={`/jobdetail/${job?.jobID}`} key={job?.jobID} >
-                  <a key={job?.jobID}>
-                    <Hidden only={["xs", "sm"]}>
-                      <JobCard
-                        selectJob={selectJob}
-                        selectedJob={selectedJob && Object.keys(selectedJob).length ? selectedJob : null}
-                        saveJobClickHandler={saveJobClickHandler}
-                        applyJobClickHandler={applyJobClickHandler}
-                        showDeleteBtn={false}
-                        isLandingPage={true}
-                        job={job}
-                      />
-                    </Hidden>
-                    <Hidden only={["md", "lg", "xl"]}>
-                      <JobCard
-                        selectJob={selectJob}
-                        selectedJob={selectedJob && Object.keys(selectedJob).length ? selectedJob : null}
-                        saveJobClickHandler={saveJobClickHandler}
-                        applyJobClickHandler={applyJobClickHandler}
-                        showDeleteBtn={false}
-                        isLandingPage={true}
-                        job={job}
-                        showDrawer={true}
-                      />
-                    </Hidden>
-                  </a>
-                </Link>
-
-              ))}
+              {jobs &&
+                jobs?.map((job) => (
+                  <Link href={`/jobdetail/${job?.jobID}`} key={job?.jobID}>
+                    <a key={job?.jobID}>
+                      <Hidden only={["xs", "sm"]}>
+                        <JobCard
+                          selectJob={selectJob}
+                          selectedJob={
+                            selectedJob && Object.keys(selectedJob).length
+                              ? selectedJob
+                              : null
+                          }
+                          saveJobClickHandler={saveJobClickHandler}
+                          applyJobClickHandler={applyJobClickHandler}
+                          showDeleteBtn={false}
+                          isLandingPage={true}
+                          job={job}
+                        />
+                      </Hidden>
+                      <Hidden only={["md", "lg", "xl"]}>
+                        <JobCard
+                          selectJob={selectJob}
+                          selectedJob={
+                            selectedJob && Object.keys(selectedJob).length
+                              ? selectedJob
+                              : null
+                          }
+                          saveJobClickHandler={saveJobClickHandler}
+                          applyJobClickHandler={applyJobClickHandler}
+                          showDeleteBtn={false}
+                          isLandingPage={true}
+                          job={job}
+                          showDrawer={true}
+                        />
+                      </Hidden>
+                    </a>
+                  </Link>
+                ))}
             </div>
             <Grid
               container
@@ -231,24 +226,25 @@ const HomeListItem = (props) => {
           </Grid>
           {selectedJob && Object.keys(selectedJob).length ? (
             <Grid item md={8} className="partition desktop-right">
-            <JobDetailHeader
+              <JobDetailHeader
                 job={selectedJob}
                 onCloseClickHandler={() => {
                   router.push(`/`, undefined, { shallow: false });
                 }}
               />
               <Divider component="div" className="divider" />
-              <JobDetailComponent
-                job={selectedJob}
-              />
+              <JobDetailComponent job={selectedJob} />
             </Grid>
-          ) : null}        
+          ) : null}
           <Grid
             item
             md={4}
             xs={12}
-            className={`${classes.search} ${selectedJob && Object.keys(selectedJob).length ? 'job-selected' : ""
-              } partition desktop-right`}
+            className={`${classes.search} ${
+              selectedJob && Object.keys(selectedJob).length
+                ? "job-selected"
+                : ""
+            } partition desktop-right`}
           >
             <Typography className="page-header" display="block">
               Subscribe for new jobs
@@ -274,7 +270,6 @@ const HomeListItem = (props) => {
                     required
                     type="text"
                     placeholder="Skill or Job Title"
-
                   />
                   {errors?.category ? (
                     <FormHelperText id="search-email-text">
@@ -317,7 +312,6 @@ const HomeListItem = (props) => {
                         placeholder="City, Country"
                         InputProps={{
                           ...params.InputProps,
-
                         }}
                       />
                     )}
@@ -371,9 +365,9 @@ const HomeListItem = (props) => {
                   align="left"
                 >
                   {" "}
-                  By creating a job alert, you agree to our Terms. You can change
-                  your consent settings at any time by unsubscribing or as
-                  detailed in our terms.{" "}
+                  By creating a job alert, you agree to our Terms. You can
+                  change your consent settings at any time by unsubscribing or
+                  as detailed in our terms.{" "}
                 </Typography>
               </Grid>
             </Grid>

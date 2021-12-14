@@ -1,5 +1,5 @@
 import { Button, Grid, InputAdornment, TextField } from "@mui/material";
-import withStyles from "@mui/styles/withStyles";
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import SearchIcon from "@mui/icons-material/Search";
 import { Autocomplete } from "@mui/material";
 import React, { useEffect, useState } from "react";

@@ -1,8 +1,8 @@
 import React from "react";
 import { useRouter } from "next/router";
-import Link from 'next/link'
+import Link from "next/link";
 import Popover from "@mui/material/Popover";
-import makeStyles from "@mui/styles/makeStyles";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 import { Avatar } from "@mui/material";
 
 import { useDispatch } from "react-redux";
@@ -62,7 +62,7 @@ export default function AvatarDropdown(props) {
   return (
     <div className={classes.profileDiv}>
       {sessionStorage.getItem("email") !== undefined ||
-        sessionStorage.getItem("email") !== null ? (
+      sessionStorage.getItem("email") !== null ? (
         <Avatar
           onMouseEnter={handlePopoverOpen}
           alt={sessionStorage.getItem("email")}
@@ -114,11 +114,17 @@ export default function AvatarDropdown(props) {
           <Link
             onClick={onClickHandler}
             className={classes.link}
-            href={`/${sessionStorage.getItem('isEmployee') ? 'employee' : 'jobseeker'}/settings`}
+            href={`/${
+              sessionStorage.getItem("isEmployee") ? "employee" : "jobseeker"
+            }/settings`}
           >
             Settings
           </Link>
-          <Link onClick={onLogoutClickHandler} className={classes.link} href="/#">
+          <Link
+            onClick={onLogoutClickHandler}
+            className={classes.link}
+            href="/#"
+          >
             Logout
           </Link>
         </div>

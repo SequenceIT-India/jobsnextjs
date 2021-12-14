@@ -1,5 +1,5 @@
 import { Card, CardContent, Drawer, Grid, Typography } from "@mui/material";
-import makeStyles from "@mui/styles/makeStyles";
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 import { getJobLocation, getJobType } from "../../util/helper";

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import makeStyles from "@mui/styles/makeStyles";
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import { Button, Grid, Typography } from "@mui/material";
 import Divider from "@mui/material/Divider";
 import InputAdornment from "@mui/material/InputAdornment";

@@ -1,8 +1,7 @@
 import IconButton from "@mui/material/IconButton";
 import { useTheme } from "@mui/material/styles";
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 
-import withStyles from "@mui/styles/withStyles";
 import FirstPageIcon from "@mui/icons-material/FirstPage";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
@@ -10,7 +9,7 @@ import LastPageIcon from "@mui/icons-material/LastPage";
 import { default as React } from "react";
 import PropTypes from "prop-types";
 
-const useStyles1 = makeStyles(theme => ({
+const useStyles1 = makeStyles((theme) => ({
   root: {
     flexShrink: 0,
     marginLeft: theme.spacing(2.5),
@@ -90,6 +89,5 @@ TablePaginationActions.propTypes = {
   rowsPerPage: PropTypes.number.isRequired,
   onChangePage: PropTypes.func,
 };
-
 
 export default TablePaginationActions;
