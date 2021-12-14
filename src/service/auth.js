@@ -12,8 +12,8 @@ export const userRegister = async (data) => {
 
   const requestData = {
     userPrivacyPolicyVersion:
-      process.env.REACT_APP_JOBSEEKER_REGISTER_PRIVACY_POL_VERSION,
-    userTermsVersion: process.env.REACT_APP_JOBSEEKER_REGISTER_TERMS_VERSION,
+      process.env.NEXT_PUBLIC_REACT_APP_JOBSEEKER_REGISTER_PRIVACY_POL_VERSION,
+    userTermsVersion: process.env.NEXT_PUBLIC_REACT_APP_JOBSEEKER_REGISTER_TERMS_VERSION,
     ...data,
   };
 

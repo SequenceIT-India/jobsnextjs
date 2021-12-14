@@ -116,7 +116,7 @@ function register() {
       ALREADY_EXISTS_IN_SYSTEM:
         "Email already registered in system, try with another email",
     };
-    if (
+    if (registrationResponse &&
       registrationResponse.data &&
       registrationResponse.data.code === RESPONSE_CODE.SUCCESSFUL_REGISTRATION
     ) {
@@ -126,7 +126,7 @@ function register() {
       dispatch(
         loginAction({ ...registrationResponse.data, email: values.emailId })
       );
-    } else if (
+    } else if (registrationResponse &&
       registrationResponse.data &&
       [
         RESPONSE_CODE.INVALID_CREDENTIALS,
