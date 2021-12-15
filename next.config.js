@@ -1,7 +1,5 @@
 /** @type {import('next').NextConfig} */
 const withImages = require("next-images");
-const { createProxyMiddleware } = require('http-proxy-middleware');
-
 module.exports = {
   reactStrictMode: true,
   transpileModules: ["react-bulma-components"],
