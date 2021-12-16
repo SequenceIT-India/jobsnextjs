@@ -149,7 +149,7 @@ function EmpRegister() {
         "Email already registered in system, try with another email",
     };
 
-    if (
+    if (registrationResponse &&
       registrationResponse.data &&
       registrationResponse.data.code === RESPONSE_CODE.SUCCESSFUL_REGISTRATION
     ) {
@@ -163,7 +163,7 @@ function EmpRegister() {
       // });
 
       history.push("/employer/register/page/two");
-    } else if (
+    } else if (registrationResponse &&
       registrationResponse.data &&
       (registrationResponse.data.code ===
         RESPONSE_CODE.FAILED_REGISTRATION_101 ||

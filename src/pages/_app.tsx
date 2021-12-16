@@ -29,9 +29,22 @@ interface MyAppProps extends AppProps {
 }
 
 
-const MyApp=(props: MyAppProps)=> {
+const MyApp = (props: MyAppProps) => {
+
 
   useEffect(() => {
+    fetch("https://geolocation-db.com/json/", {
+      method: "GET",
+      headers: {},
+    })
+      .then((res) => {
+        return res.text();
+      })
+      .then((location) => {
+        let response = JSON.parse(location);
+        sessionStorage.setItem("ip", response.IPv4);
+        sessionStorage.setItem("country_code", response.country_code);
+      });
     const progress = new ProgressBar({
       size: 2,
       color: 'rgb(0, 0, 0)',
@@ -46,6 +59,7 @@ const MyApp=(props: MyAppProps)=> {
       Router.events.off('routeChangeComplete', progress.finish);
       Router.events.off('routeChangeError', progress.finish);
     };
+
   }, []);
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   return (
