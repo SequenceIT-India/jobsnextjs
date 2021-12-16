@@ -11,7 +11,7 @@ import Backdrop from "@mui/material/Backdrop";
 import Modal from "@mui/material/Modal";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import React, { useState } from "react";
-import "./apply-job-detail.module.scss";
+import styles from "./apply-job-detail.module.scss";
 import PropTypes from "prop-types";
 
 const useStyles = makeStyles((theme) => ({
@@ -19,18 +19,21 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-between",
   },
+  modal: {
+
+  },
 }));
 
-const ReportJobDetail = (props) => {
+const ReportJobDetail = (props: any) => {
   const classes = useStyles();
-  const [reportData, setReportData] = useState({});
+  const [reportData, setReportData]: any = useState({});
 
   return (
     <div>
       <Modal
         aria-labelledby="modal-title"
         aria-describedby="modal-description"
-        className={`${classes.modal} apply-job-detail`}
+        className={`${classes.modal} ${styles[`apply-job-detail`]}`}
         open={props.open}
         onClose={props.handleClose}
         closeAfterTransition
@@ -39,14 +42,14 @@ const ReportJobDetail = (props) => {
           timeout: 500,
         }}
       >
-        <div className="content">
+        <div className={`${styles[`content`]}`}>
           <Grid
             container
             spacing={2}
             justifyContent="space-between"
-            className="field-row-container"
+            className={`${styles[`field-row-container`]}`}
           >
-            <Grid item xs={12} md={12} className="field">
+            <Grid item xs={12} md={12} className={`${styles[`field`]}`}>
               <h2
                 style={{ marginTop: "0.75rem", marginBottom: "0.75rem" }}
                 id="modal-title"
@@ -59,9 +62,9 @@ const ReportJobDetail = (props) => {
             container
             spacing={2}
             justifyContent="space-between"
-            className="field-row-container"
+            className={`${styles[`field-row-container`]}`}
           >
-            <Grid item xs={12} md={12} className="field">
+            <Grid item xs={12} md={12} className={`${styles[`field`]}`}>
               <RadioGroup
                 aria-label="reason"
                 name="reason"
@@ -95,10 +98,12 @@ const ReportJobDetail = (props) => {
             container
             spacing={2}
             justifyContent="space-between"
-            className="field-row-container"
+            className={`${styles[`field-row-container`]}`}
           >
-            <Grid item xs={12} md={12} className="field">
-              <InputLabel className="field-label">Report detail</InputLabel>
+            <Grid item xs={12} md={12} className={`${styles[`field`]}`}>
+              <InputLabel className={`${styles[`field-label`]}`}>
+                Report detail
+              </InputLabel>
               <TextField
                 name="notes"
                 id="notes"
@@ -117,14 +122,14 @@ const ReportJobDetail = (props) => {
             container
             spacing={2}
             justifyContent="space-between"
-            className="field-row-container"
+            className={`${styles[`field-row-container`]}`}
           >
-            <Grid item xs={12} md={3} className="field">
+            <Grid item xs={12} md={3} className={`${styles[`field`]}`}>
               <Button className="cancel-btn" onClick={props.handleClose}>
                 Cancel
               </Button>
               &nbsp; &nbsp;
-              <Button className="apply-btn">Report</Button>
+              <Button className={`${styles[`apply-btn`]}`}>Report</Button>
             </Grid>
           </Grid>
         </div>

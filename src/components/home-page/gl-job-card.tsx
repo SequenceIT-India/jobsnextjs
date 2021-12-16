@@ -1,5 +1,5 @@
 import { Card, CardContent, Drawer, Grid, Typography } from "@mui/material";
-import { makeStyles, withStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 import { getJobLocation, getJobType } from "../../util/helper";
@@ -21,20 +21,20 @@ const paperStyle = makeStyles((theme) => ({
   },
 }));
 
-const JobCard = (props) => {
+const JobCard = (props: any) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const classes = paperStyle();
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
   };
+  
   return (
     <>
       <Card
-        className={`job-card ${
-          props.selectedJob && props.selectedJob.jobID === props.job.jobID
-            ? "selected"
-            : ""
-        }`}
+        className={`job-card ${props.selectedJob && props.selectedJob.jobID === props.job.jobID
+          ? "selected"
+          : ""
+          }`}
         onClick={() => {
           if (props.showDrawer) {
             toggleDrawer();
@@ -69,6 +69,7 @@ const JobCard = (props) => {
                   <Location fontSize="small" className="job-icon" />
                   <Typography variant="subtitle1" className="text job-location">
                     {getJobLocation(props.job)}
+                    {`${props?.job?.city}, ${props?.job?.cntryId}`}
                   </Typography>
                 </Grid>
                 <Grid item xs={12} className="job-card-inline-content-item">
@@ -84,7 +85,7 @@ const JobCard = (props) => {
                 >
                   <Money fontSize="small" className="job-icon" />
                   <Typography variant="subtitle1" className="text">
-                    {props.job.maxCompensation}
+                    {`${props.job.maxCompensation}-${props.job.maxCompensation} ${props.job.compensationCurrType} `}
                   </Typography>
                 </Grid>
               </Grid>
@@ -95,13 +96,15 @@ const JobCard = (props) => {
                 <Grid item xs={6} className="job-card-inline-content-item">
                   <CalendarMonth fontSize="small" className="job-icon" />
                   <Typography variant="subtitle1" className="text job-type">
-                    {props.job.postedOn}
+                    {new Date(props.job.postedOn).toLocaleString("en-US", {
+                      timeZone: "UTC",
+                    })}
                   </Typography>
                 </Grid>
                 <Grid item xs={6} className="job-card-inline-content-item last">
                   <Time fontSize="small" className="job-icon secondary" />
                   <Typography variant="subtitle1" className="text secondary">
-                    {props.job.notice}
+                    {props.job.urgentHiring}
                   </Typography>
                 </Grid>
               </Grid>

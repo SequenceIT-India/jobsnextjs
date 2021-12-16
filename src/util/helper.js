@@ -100,6 +100,7 @@ export const validateField = (
 };
 
 export const getJobLocation = (job) => {
+  console.log(job, "----");
   return `${csc?.getCityById(job?.cityId?.toString()).name || ""} ${
     csc?.getStateById(job?.stateId?.toString()).name || ""
   }, ${csc?.getCountryById(job?.cntryId?.toString()).name || ""}`;

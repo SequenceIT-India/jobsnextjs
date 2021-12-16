@@ -53,7 +53,7 @@ import {
   WorkType,
 } from "./icons";
 
-const JobDetailComponent = (props) => {
+const JobDetailComponent = (props: any) => {
   const description =
     "Cloud engineer, Devops, Cloud specialist, High Availability, MEAN, Shell Scription, Big Data, Windows Administration, Jenkins, Linux, Docker, AppEngine, terraform, AWS, Vitualization, AMI";
   const routes = useRouter();
@@ -82,7 +82,7 @@ const JobDetailComponent = (props) => {
 
   const [errors, setErrors] = useState({});
 
-  const handleChange = (prop) => (event) => {
+  const handleChange = (prop: any) => (event: any) => {
     const type = prop === "password" ? prop : event.target.type;
     setErrors({
       ...errors,
@@ -111,7 +111,7 @@ const JobDetailComponent = (props) => {
 
   const [anchorEl, setAnchorEl] = useState(null);
 
-  const handleOpen = (event) => {
+  const handleOpen = (event: any) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -364,7 +364,7 @@ const JobDetailComponent = (props) => {
             </Grid>
             <Grid xs={12} item className="job-inline-content-item">
               <div className="container text description">
-               {props.job?.jobDesc}
+                {props.job?.jobDesc}
               </div>
             </Grid>
             <Grid xs={12} item className="job-inline-content-item main-header">
@@ -598,7 +598,10 @@ const JobDetailComponent = (props) => {
               component="span"
               size="large"
             >
-              <FileCopyOutlined round={true} size={50} />
+              <FileCopyOutlined
+              // round={true}
+              // size={50}
+              />
             </IconButton>
           </ListItem>
           <ListItem>
@@ -633,6 +636,7 @@ const JobDetailComponent = (props) => {
           <ListItem>
             <EmailShareButton
               body={`/job-detail/${props?.job?.jobID}`}
+              url={`/job-detail/${props?.job?.jobID}`}
             >
               <EmailIcon round={true} size={50} />
             </EmailShareButton>
@@ -668,6 +672,7 @@ const JobDetailComponent = (props) => {
 
 JobDetailComponent.propTypes = {
   job: PropTypes.any.isRequired,
+  setSelectedJob: PropTypes.any.isRequired,
 };
 
 export default JobDetailComponent;
