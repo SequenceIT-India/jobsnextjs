@@ -28,6 +28,7 @@
   .field-row-container {
     margin-top: 10px;
     .field {
+      width: 100%;
       .field-label {
         color: $disable-color;
         font-size: $label-large-font-size;
@@ -80,4 +81,7 @@
       }
     }
   }
+}
+.testWidth {
+  width: 100%;
 }

@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import Backdrop from "@mui/material/Backdrop";
 import Modal from "@mui/material/Modal";
-import makeStyles from "@mui/styles/makeStyles";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 import {
   Attachment,
   EmailOutlined,
@@ -22,14 +22,16 @@ import PropTypes from "prop-types";
 import React, { useState } from "react";
 import { defaultStyles, FileIcon } from "react-file-icon";
 import { useDispatch } from "react-redux";
-import { Link } from "next/link";
+import Link from "next/link";
 import { loginAction } from "../../redux/actions";
 import { login } from "../../service/auth";
 import { RESPONSE_CODE } from "../../util/constants";
 import { validateField } from "../../util/helper";
-import "./apply-job-detail.module.scss";
+import styles from "./apply-job-detail.module.scss";
 
 const useStyles = makeStyles((theme) => ({
+  input: {},
+  modal: {},
   helperText: {
     marginLeft: 0,
     color: "red",
@@ -40,17 +42,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ApplyJobDetail = (props) => {
+const ApplyJobDetail = (props: any) => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
   const [loginData, setLoginData] = useState({
     password: "",
     emailId: "",
+    fullname: '',
+    notes: ''
   });
-  const [loginDataErr, setLoginDataErr] = useState({});
+  const [loginDataErr, setLoginDataErr]: any = useState({});
 
-  const onLoginChange = (prop) => (event) => {
+  const onLoginChange = (prop: any) => (event: any) => {
     setLoginDataErr({
       ...loginDataErr,
       [prop]: validateField(
@@ -64,14 +68,14 @@ const ApplyJobDetail = (props) => {
     setLoginData({ ...loginData, [prop]: event.target.value });
   };
 
-  const [file, setFile] = useState(null);
+  const [file, setFile]: any = useState(null);
 
   const [showJsLoginPassword, setShowJsLoginPassword] = useState(false);
   const handleClickShowPassword = () => {
     setShowJsLoginPassword(!showJsLoginPassword);
   };
 
-  const onLoginBtnClick = (event) => {
+  const onLoginBtnClick = (event: any) => {
     const emailErr = validateField(
       "emailId",
       loginData.emailId,
@@ -123,7 +127,7 @@ const ApplyJobDetail = (props) => {
     }
   };
 
-  const getIconStyle = (filename) => {
+  const getIconStyle = (filename: any) => {
     const extension = filename.split(".").pop().toLowerCase();
     return defaultStyles[extension] || defaultStyles.txt;
   };
@@ -133,7 +137,7 @@ const ApplyJobDetail = (props) => {
       <Modal
         aria-labelledby="modal-title"
         aria-describedby="modal-description"
-        className={`${classes.modal} apply-job-detail`}
+        className={`${classes.modal} ${styles[`apply-job-detail`]}`}
         open={props.open}
         onClose={props.handleClose}
         closeAfterTransition
@@ -142,7 +146,7 @@ const ApplyJobDetail = (props) => {
           timeout: 500,
         }}
       >
-        <div className="content">
+        <div className={`${styles[`content`]}`}>
           <h2
             style={{ marginTop: 0, marginBottom: "0.75rem" }}
             id="modal-title"
@@ -153,10 +157,10 @@ const ApplyJobDetail = (props) => {
             container
             spacing={2}
             justifyContent="space-between"
-            className="field-row-container"
+            className={`${styles[`field-row-container`]}`}
           >
-            <Grid item xs={12} md={6} className="field">
-              <InputLabel className="field-label">Username or email</InputLabel>
+            <Grid item xs={12} md={6} className={`${styles[`field`]}`}>
+              <InputLabel className={`${styles[`field-label`]}`}>Username or email</InputLabel>
               <TextField
                 name="email"
                 id="email"
@@ -165,12 +169,12 @@ const ApplyJobDetail = (props) => {
                 required
                 placeholder="Enter username or email"
                 size="medium"
-                value={loginData.email}
+                value={loginData.emailId}
                 error={Boolean(loginDataErr.emailId)}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
-                      <EmailOutlined className="icon" />
+                      <EmailOutlined className={`${styles[`icon`]}`} />
                     </InputAdornment>
                   ),
                 }}
@@ -181,8 +185,8 @@ const ApplyJobDetail = (props) => {
                 </FormHelperText>
               )}
             </Grid>
-            <Grid item xs={12} md={6} className="field">
-              <InputLabel className="field-label">Password</InputLabel>
+            <Grid item xs={12} md={6} className={`${styles[`field`]} `}>
+              <InputLabel className={`${styles[`field-label`]}`}>Password</InputLabel>
               <TextField
                 type={showJsLoginPassword ? "text" : "password"}
                 name="password"
@@ -197,7 +201,7 @@ const ApplyJobDetail = (props) => {
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
-                      <LockOutlined className="icon" />
+                      <LockOutlined className={`${styles[`icon`]}`} />
                     </InputAdornment>
                   ),
                   endAdornment: (
@@ -229,22 +233,22 @@ const ApplyJobDetail = (props) => {
             container
             spacing={2}
             justifyContent="space-between"
-            className="field-row-container"
+            className={`${styles[`field-row-container`]}`}
           >
-            <Grid item xs={12} md={3} className="field">
-              <Button className="login-btn" onClick={onLoginBtnClick}>
+            <Grid item xs={12} md={3} className={`${styles[`field`]}`}>
+              <Button className={`${styles[`login-btn`]}`} onClick={onLoginBtnClick}>
                 Login
               </Button>
             </Grid>
-            <Grid item xs={12} md={3} className="field">
+            <Grid item xs={12} md={3} className={`${styles[`field`]} `}>
               Dont have an account? &nbsp;{" "}
-              <Link to="/jobseeker/register" className="link">
-                Register
+              <Link href="/jobseeker/register"><a className={`${styles[`link`]}`}>
+                Register</a>
               </Link>
             </Grid>
-            <Grid item xs={12} md={6} className="field">
-              <Link to="/jobseeker/register" className="link">
-                Forgot Password ?
+            <Grid item xs={12} md={6} className={`${styles[`field`]}`}>
+              <Link href="/jobseeker/register"><a className={`${styles[`link`]}`}>
+                Forgot Password ?</a>
               </Link>
             </Grid>
           </Grid>
@@ -252,9 +256,9 @@ const ApplyJobDetail = (props) => {
             container
             spacing={2}
             justifyContent="space-between"
-            className="field-row-container"
+            className={`${styles[`field-row-container`]}`}
           >
-            <Grid item xs={12} md={12} className="field">
+            <Grid item xs={12} md={12} className={`${styles[`field`]}`}>
               <h2
                 style={{ marginTop: "0.75rem", marginBottom: "0.75rem" }}
                 id="modal-title"
@@ -267,10 +271,10 @@ const ApplyJobDetail = (props) => {
             container
             spacing={2}
             justifyContent="space-between"
-            className="field-row-container"
+            className={`${styles[`field-row-container`]}`}
           >
-            <Grid item xs={12} md={6} className="field">
-              <InputLabel className="field-label">Full name</InputLabel>
+            <Grid item xs={12} md={6} className={`${styles[`field`]}`}>
+              <InputLabel className={`${styles[`field-label`]}`}>Full name</InputLabel>
               <TextField
                 name="email"
                 id="email"
@@ -289,8 +293,8 @@ const ApplyJobDetail = (props) => {
                 }}
               />
             </Grid>
-            <Grid item xs={12} md={6} className="field">
-              <InputLabel className="field-label">Email</InputLabel>
+            <Grid item xs={12} md={6} className={`${styles[`field`]}`}>
+              <InputLabel className={`${styles[`field-label`]}`}>Email</InputLabel>
               <TextField
                 type="password"
                 name="email"
@@ -300,7 +304,7 @@ const ApplyJobDetail = (props) => {
                 required
                 placeholder="Enter email"
                 size="medium"
-                value={loginData.email}
+                value={loginData.emailId}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
@@ -315,10 +319,10 @@ const ApplyJobDetail = (props) => {
             container
             spacing={2}
             justifyContent="space-between"
-            className="field-row-container"
+            className={`${styles[`field-row-container`]}`}
           >
-            <Grid item xs={12} md={12} className="field">
-              <InputLabel className="field-label">Notes</InputLabel>
+            <Grid item xs={12} md={12} className={`${styles[`field`]}`}>
+              <InputLabel className={`${styles[`field-label`]}`}>Notes</InputLabel>
               <TextField
                 name="notes"
                 id="notes"
@@ -338,34 +342,34 @@ const ApplyJobDetail = (props) => {
             container
             spacing={2}
             justifyContent="space-between"
-            className="field-row-container"
+            className={`${styles[`field-row-container`]}`}
           >
-            <Grid item xs={12} md={12} className="field">
-              <InputLabel className="field-label">Attach file</InputLabel>
+            <Grid item xs={12} md={12} className={`${styles[`field`]}`}>
+              <InputLabel className={`${styles[`field-label`]}`}>Attach file</InputLabel>
               <input
                 accept="image/*"
                 className={classes.input}
                 style={{ display: "none" }}
                 id="raised-button-file"
                 multiple={false}
-                onChange={(evt) => {
+                onChange={(evt: any) => {
                   setFile(evt.target.files.length ? evt.target.files[0] : null);
                 }}
                 type="file"
               />
               <label
-                className="raised-button-file"
+                className={`${styles[`raised-button-file`]}`}
                 htmlFor="raised-button-file"
               >
                 <Grid
                   container
                   spacing={2}
                   justifyContent="space-between"
-                  className="field-row-container"
+                  className={`${styles[`field-row-container`]}`}
                 >
-                  <Grid item xs={12} md={6} className="field">
+                  <Grid item xs={12} md={6} className={`${styles[`field`]}`}>
                     {file && file != null ? (
-                      <span className="attach-file-label">
+                      <span className={`${styles[`attach-file-label`]}`}>
                         <FileIcon
                           extension={
                             file && file?.name
@@ -375,10 +379,10 @@ const ApplyJobDetail = (props) => {
                           {...getIconStyle(file?.name)}
                         />
                         &nbsp;
-                        <span className="file-name">{file?.name}</span>
+                        <span className={`${styles[`file-name`]}`}>{file?.name}</span>
                       </span>
                     ) : (
-                      <span className="attach-file-label">
+                      <span className={`${styles[`attach-file-label`]}`}>
                         <Attachment /> &nbsp; Attach your file
                       </span>
                     )}
@@ -387,12 +391,12 @@ const ApplyJobDetail = (props) => {
                     item
                     xs={12}
                     md={6}
-                    className="field browse-btn-container"
+                    className={`${styles[`field`]} ${styles[`browse-btn-container`]}`}
                   >
                     <Button
-                      variant="raised"
+                      // variant="raised"
                       component="span"
-                      className="browse-btn"
+                      className={`${styles[`browse-btn`]}`}
                     >
                       Browse
                     </Button>
@@ -405,14 +409,14 @@ const ApplyJobDetail = (props) => {
             container
             spacing={2}
             justifyContent="space-between"
-            className="field-row-container"
+            className={`${styles[`field-row-container`]}`}
           >
-            <Grid item xs={12} className="field">
-              <Button className="cancel-btn" onClick={props.handleClose}>
+            <Grid item xs={12} className={`${styles[`field`]}`}>
+              <Button className={`${styles[`cancel-btn`]}`} onClick={props.handleClose}>
                 Cancel
               </Button>
               &nbsp; &nbsp;
-              <Button className="apply-btn">Apply for this job</Button>
+              <Button className={`${styles[`apply-btn`]}`}>Apply for this job</Button>
             </Grid>
           </Grid>
         </div>
