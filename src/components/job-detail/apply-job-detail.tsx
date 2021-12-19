@@ -20,7 +20,7 @@ import {
 } from "@mui/icons-material";
 import PropTypes from "prop-types";
 import React, { useState } from "react";
-import { defaultStyles, FileIcon } from "react-file-icon";
+import { DefaultExtensionType, defaultStyles, FileIcon } from "react-file-icon";
 import { useDispatch } from "react-redux";
 import Link from "next/link";
 import { loginAction } from "../../redux/actions";
@@ -128,8 +128,8 @@ const ApplyJobDetail = (props: any) => {
   };
 
   const getIconStyle = (filename: any) => {
-    const extension = filename.split(".").pop().toLowerCase();
-    return defaultStyles[extension] || defaultStyles.txt;
+    const extension: DefaultExtensionType = filename.split(".").pop().toLowerCase();
+    return defaultStyles[extension as DefaultExtensionType] || defaultStyles.txt;
   };
 
   return (
