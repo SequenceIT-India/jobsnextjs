@@ -269,7 +269,13 @@ const Header = (props: any) => {
             <div className={classes.sectionDesktop}>
               <HeaderMenu
                 onClick={(item: any) => {
-                  history.push(item.href);
+                  if (item && item?.href.indexOf('http') > -1) {
+                    window.location.href = item?.href;
+                  }
+                  else {
+                    history.push(item.href);
+                    setShowDrawer(false);
+                  }
                 }}
                 id={"jobs"}
                 title={"Jobs"}
@@ -283,24 +289,30 @@ const Header = (props: any) => {
                     title: "Popular Searches",
                   },
                   {
-                    href: "/jobseeker/register",
+                    href: "http://jobseeker.onebigtech.com/register",
                     title: "Register",
                   },
                 ]}
               />
               <HeaderMenu
                 onClick={(item: any) => {
-                  history.push(item.href);
+                  if (item && item?.href.indexOf('http') > -1) {
+                    window.location.href = item?.href;
+                  }
+                  else {
+                    history.push(item.href);
+                    setShowDrawer(false);
+                  }
                 }}
                 id={"employers"}
                 title={"Employers"}
                 items={[
                   {
-                    href: "/employer/register/",
+                    href: "http://employer.onebigtech.com/register/",
                     title: "Register",
                   },
                   {
-                    href: "/employer/login",
+                    href: "http://employer.onebigtech.com/login",
                     title: "Login",
                   },
                   {
@@ -322,7 +334,7 @@ const Header = (props: any) => {
                 variant="outlined"
                 className="login-btn header-actions"
                 onClick={() => {
-                  history.push("/jobseeker/login");
+                  window.location.href = "http://jobseeker.onebigtech.com/login";
                 }}
               >
                 Login
@@ -332,7 +344,7 @@ const Header = (props: any) => {
                 variant="contained"
                 className="register-btn  header-actions"
                 onClick={() => {
-                  history.push("/jobseeker/register");
+                  window.location.href = "http://jobseeker.onebigtech.com/login";
                 }}
               >
                 Register
@@ -416,19 +428,19 @@ const Header = (props: any) => {
               </ListItemLink>
               <ListItemLink
                 className={classes.headerItem}
-                href="/jobseeker/homepage"
+                href="http://jobseeker.onebigtech.com/homepage"
               >
                 <ListItemText primary="Home" />
               </ListItemLink>
               <ListItemLink
                 className={classes.headerItem}
-                href="/jobseeker/jobs"
+                href="http://jobseeker.onebigtech.com/jobs"
               >
                 <ListItemText primary="Jobs" />
               </ListItemLink>
               <ListItemLink
                 className={classes.headerItem}
-                href="/jobseeker/settings"
+                href="http://jobseeker.onebigtech.com/settings"
               >
                 <ListItemText primary="Settings" />
               </ListItemLink>
@@ -437,7 +449,13 @@ const Header = (props: any) => {
           {!auth.token && (
             <AccordionMenu
               onClick={(item: any) => {
-                history.push(item.href);
+                if (item && item?.href.indexOf('http') > -1) {
+                    window.location.href = item?.href;
+                  }
+                  else {
+                    history.push(item.href);
+                    setShowDrawer(false);
+                  }
                 setShowDrawer(false);
               }}
               id={"jobs"}
@@ -452,7 +470,7 @@ const Header = (props: any) => {
                   title: "Popular Searches",
                 },
                 {
-                  href: "/jobseeker/register",
+                  href: "http://jobseeker.onebigtech.com/register",
                   title: "Register",
                 },
               ]}
@@ -461,18 +479,24 @@ const Header = (props: any) => {
           {!auth.token && (
             <AccordionMenu
               onClick={(item: any) => {
-                history.push(item.href);
+                if (item && item?.href.indexOf('http') > -1) {
+                    window.location.href = item?.href;
+                  }
+                  else {
+                    history.push(item.href);
+                    setShowDrawer(false);
+                  }
                 setShowDrawer(false);
               }}
               id={"employers"}
               title={"Employers"}
               items={[
                 {
-                  href: "/employer/register/",
+                  href: "http://employer.onebigtech.com/register/",
                   title: "Register",
                 },
                 {
-                  href: "/employer/login",
+                  href: "http://employer.onebigtech.com/login",
                   title: "Login",
                 },
                 {
@@ -498,7 +522,7 @@ const Header = (props: any) => {
               fullWidth
               className="register-btn  header-actions"
               onClick={() => {
-                history.push("/jobseeker/register");
+                window.location.href = "http://jobseeker.onebigtech.com/login";
                 setShowDrawer(false);
               }}
             >
@@ -511,7 +535,7 @@ const Header = (props: any) => {
               fullWidth
               className="login-btn header-actions"
               onClick={() => {
-                history.push("/jobseeker/login");
+                window.location.href = "http://jobseeker.onebigtech.com/login";
                 setShowDrawer(false);
               }}
             >
@@ -526,8 +550,7 @@ const Header = (props: any) => {
               className="login-btn header-actions"
               onClick={() => {
                 dispatch(logoutAction());
-                setShowDrawer(false);
-                history.push("/jobseeker/login");
+                window.location.href = "http://jobseeker.onebigtech.com/login";
               }}
             >
               Logout
