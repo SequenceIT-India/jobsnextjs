@@ -70,7 +70,7 @@ const styles = makeStyles((theme) => ({
 const HomeListItem = (props) => {
   const router = useRouter();
   const jobs = props.jobs || [];
-  const selectedJob = props.selectedJob || props.jd;
+  const selectedJob = props?.selectedJob || props?.jd;
   const [errors, setErrors] = useState({});
   const [pageOfItems, setPageOfItems] = useState([]);
   const [page, setPage] = useState(0);
@@ -93,7 +93,7 @@ const HomeListItem = (props) => {
     setCities([]);
   }, []);
 
-  const selectJob = props.selectJob;
+  const selectJob = props?.selectJob;
   const handleChangePage = (evt, newPage) => {
     setPage(newPage);
     setPageOfItems(
@@ -148,9 +148,6 @@ const HomeListItem = (props) => {
     setOpen(true);
   };
 
-  const onCloseHandler = () => {
-    setOpen(false);
-  };
   const classes = styles();
 
   return (
@@ -224,7 +221,7 @@ const HomeListItem = (props) => {
               </Grid>
             </Grid>
           </Grid>
-          {selectedJob && Object.keys(selectedJob).length ? (
+          {selectedJob && Object.keys(selectedJob)?.length ? (
             <Grid item md={8} className="partition desktop-right">
               <JobDetailHeader
                 job={selectedJob}
@@ -241,7 +238,7 @@ const HomeListItem = (props) => {
             md={4}
             xs={12}
             className={`${classes.search} ${
-              selectedJob && Object.keys(selectedJob).length
+              selectedJob && Object.keys(selectedJob)?.length
                 ? "job-selected"
                 : ""
             } partition desktop-right`}
@@ -297,22 +294,19 @@ const HomeListItem = (props) => {
                     onInputChange={(evt, value) => {
                       setCityOpts(
                         cities?.filter((ct) =>
-                          ct?.name?.toLowerCase().includes(value?.toLowerCase())
+                          ct?.name?.toLowerCase()?.includes(value?.toLowerCase())
                         )
                       );
                     }}
                     renderInput={(params) => (
                       <TextField
-                        {...params}
                         name="locationDetails"
                         variant="outlined"
                         id="search-location"
                         className="inputwithoutRightBorder"
                         required
+                        sx={{ width: 300 }}
                         placeholder="City, Country"
-                        InputProps={{
-                          ...params.InputProps,
-                        }}
                       />
                     )}
                   />
@@ -340,7 +334,7 @@ const HomeListItem = (props) => {
                       </InputAdornment>
                     }
                   />
-                  {errors.email ? (
+                  {errors?.email ? (
                     <FormHelperText id="search-email-text">
                       {errors?.email}
                     </FormHelperText>

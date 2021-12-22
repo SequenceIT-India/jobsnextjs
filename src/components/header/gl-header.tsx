@@ -267,75 +267,8 @@ const Header = (props: any) => {
             </div>
           ) : (
             <div className={classes.sectionDesktop}>
-              <HeaderMenu
-                onClick={(item: any) => {
-                  if (item && item?.href.indexOf('http') > -1) {
-                    window.open(
-                      item?.href,
-                      '_blank' // <- This is what makes it open in a new window.
-                    );
-                  }
-                  else {
-                    history.push(item.href);
-                    setShowDrawer(false);
-                  }
-                }}
-                id={"jobs"}
-                title={"Jobs"}
-                items={[
-                  {
-                    href: "/",
-                    title: "Search Jobs",
-                  },
-                  {
-                    href: "/",
-                    title: "Popular Searches",
-                  },
-                  {
-                    href: "http://jobseeker.onebigtech.com/register",
-                    title: "Register",
-                  },
-                ]}
-              />
-              <HeaderMenu
-                onClick={(item: any) => {
-                  if (item && item?.href.indexOf('http') > -1) {
-                    window.open(
-                      item?.href,
-                      '_blank' // <- This is what makes it open in a new window.
-                    );
-                  }
-                  else {
-                    history.push(item.href);
-                    setShowDrawer(false);
-                  }
-                }}
-                id={"employers"}
-                title={"Employers"}
-                items={[
-                  {
-                    href: "http://employer.onebigtech.com/register/",
-                    title: "Register",
-                  },
-                  {
-                    href: "http://employer.onebigtech.com/login",
-                    title: "Login",
-                  },
-                  {
-                    href: "/",
-                    title: "Search Talent",
-                  },
-                  {
-                    href: "/",
-                    title: "Contact Sales",
-                  },
-                  {
-                    href: "/",
-                    title: "Pricing",
-                  },
-                ]}
-              />
-
+              <Link href="/" className="allpostjob">Careers</Link>
+              <Link href="/" className="allpostjob">Company Search</Link>
               <Button
                 variant="outlined"
                 className="login-btn header-actions"
@@ -402,9 +335,6 @@ const Header = (props: any) => {
         <DialogTitle className="mobile-dialog-title">
           <AppBar
             position="sticky"
-          // bg="light"
-          // expand="lg"
-          // sticky="top"
           >
             <Toolbar className="app-header">
               <Link href="/">
@@ -427,70 +357,7 @@ const Header = (props: any) => {
           </AppBar>
         </DialogTitle>
         <DialogContent>
-          {auth.token && (
-            <List component="nav" aria-label="header-items">
-              <ListItemLink className={classes.headerItem} href="/#">
-                <ListItemText primary="Carrers" />
-              </ListItemLink>
-              <ListItemLink className={classes.headerItem} href="/#">
-                <ListItemText primary="Company Search" />
-              </ListItemLink>
-              <ListItemLink className={classes.headerItem} href="/#">
-                <ListItemText primary="Alerts" />
-              </ListItemLink>
-              <ListItemLink
-                className={classes.headerItem}
-                href="http://jobseeker.onebigtech.com/homepage"
-              >
-                <ListItemText primary="Home" />
-              </ListItemLink>
-              <ListItemLink
-                className={classes.headerItem}
-                href="http://jobseeker.onebigtech.com/jobs"
-              >
-                <ListItemText primary="Jobs" />
-              </ListItemLink>
-              <ListItemLink
-                className={classes.headerItem}
-                href="http://jobseeker.onebigtech.com/settings"
-              >
-                <ListItemText primary="Settings" />
-              </ListItemLink>
-            </List>
-          )}
-          {!auth.token && (
-            <AccordionMenu
-              onClick={(item: any) => {
-                if (item && item?.href.indexOf('http') > -1) {
-                  window.open(
-                    item?.href,
-                    '_blank' // <- This is what makes it open in a new window.
-                  );
-                }
-                else {
-                  history.push(item.href);
-                  setShowDrawer(false);
-                }
-                setShowDrawer(false);
-              }}
-              id={"jobs"}
-              title={"Jobs"}
-              items={[
-                {
-                  href: "/",
-                  title: "Search Jobs",
-                },
-                {
-                  href: "/",
-                  title: "Popular Searches",
-                },
-                {
-                  href: "http://jobseeker.onebigtech.com/register",
-                  title: "Register",
-                },
-              ]}
-            />
-          )}
+
           {!auth.token && (
             <AccordionMenu
               onClick={(item: any) => {
