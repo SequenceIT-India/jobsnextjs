@@ -267,8 +267,75 @@ const Header = (props: any) => {
             </div>
           ) : (
             <div className={classes.sectionDesktop}>
-              <Link href="/" className="allpostjob">Careers</Link>
-              <Link href="/" className="allpostjob">Company Search</Link>
+              <HeaderMenu
+                onClick={(item: any) => {
+                  if (item && item?.href.indexOf('http') > -1) {
+                    window.open(
+                      item?.href,
+                      '_blank' // <- This is what makes it open in a new window.
+                    );
+                  }
+                  else {
+                    history.push(item.href);
+                    setShowDrawer(false);
+                  }
+                }}
+                id={"jobs"}
+                title={"Jobs"}
+                items={[
+                  {
+                    href: "/",
+                    title: "Search Jobs",
+                  },
+                  {
+                    href: "/",
+                    title: "Popular Searches",
+                  },
+                  {
+                    href: "http://jobseeker.onebigtech.com/register",
+                    title: "Register",
+                  },
+                ]}
+              />
+              <HeaderMenu
+                onClick={(item: any) => {
+                  if (item && item?.href.indexOf('http') > -1) {
+                    window.open(
+                      item?.href,
+                      '_blank' // <- This is what makes it open in a new window.
+                    );
+                  }
+                  else {
+                    history.push(item.href);
+                    setShowDrawer(false);
+                  }
+                }}
+                id={"employers"}
+                title={"Employers"}
+                items={[
+                  {
+                    href: "http://employer.onebigtech.com/register/",
+                    title: "Register",
+                  },
+                  {
+                    href: "http://employer.onebigtech.com/login",
+                    title: "Login",
+                  },
+                  {
+                    href: "/",
+                    title: "Search Talent",
+                  },
+                  {
+                    href: "/",
+                    title: "Contact Sales",
+                  },
+                  {
+                    href: "/",
+                    title: "Pricing",
+                  },
+                ]}
+              />
+
               <Button
                 variant="outlined"
                 className="login-btn header-actions"
@@ -357,7 +424,7 @@ const Header = (props: any) => {
           </AppBar>
         </DialogTitle>
         <DialogContent>
-
+         
           {!auth.token && (
             <AccordionMenu
               onClick={(item: any) => {
