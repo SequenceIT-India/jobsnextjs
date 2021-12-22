@@ -270,7 +270,10 @@ const Header = (props: any) => {
               <HeaderMenu
                 onClick={(item: any) => {
                   if (item && item?.href.indexOf('http') > -1) {
-                    window.location.href = item?.href;
+                    window.open(
+                      item?.href,
+                      '_blank' // <- This is what makes it open in a new window.
+                    );
                   }
                   else {
                     history.push(item.href);
@@ -297,7 +300,10 @@ const Header = (props: any) => {
               <HeaderMenu
                 onClick={(item: any) => {
                   if (item && item?.href.indexOf('http') > -1) {
-                    window.location.href = item?.href;
+                    window.open(
+                      item?.href,
+                      '_blank' // <- This is what makes it open in a new window.
+                    );
                   }
                   else {
                     history.push(item.href);
@@ -334,7 +340,10 @@ const Header = (props: any) => {
                 variant="outlined"
                 className="login-btn header-actions"
                 onClick={() => {
-                  window.location.href = "http://jobseeker.onebigtech.com/login";
+                  window.open(
+                    "http://jobseeker.onebigtech.com/login",
+                    '_blank' // <- This is what makes it open in a new window.
+                  );
                 }}
               >
                 Login
@@ -344,7 +353,10 @@ const Header = (props: any) => {
                 variant="contained"
                 className="register-btn  header-actions"
                 onClick={() => {
-                  window.location.href = "http://jobseeker.onebigtech.com/login";
+                  window.open(
+                    "http://jobseeker.onebigtech.com/login",
+                    '_blank' // <- This is what makes it open in a new window.
+                  );
                 }}
               >
                 Register
@@ -450,12 +462,15 @@ const Header = (props: any) => {
             <AccordionMenu
               onClick={(item: any) => {
                 if (item && item?.href.indexOf('http') > -1) {
-                    window.location.href = item?.href;
-                  }
-                  else {
-                    history.push(item.href);
-                    setShowDrawer(false);
-                  }
+                  window.open(
+                    item?.href,
+                    '_blank' // <- This is what makes it open in a new window.
+                  );
+                }
+                else {
+                  history.push(item.href);
+                  setShowDrawer(false);
+                }
                 setShowDrawer(false);
               }}
               id={"jobs"}
@@ -480,12 +495,15 @@ const Header = (props: any) => {
             <AccordionMenu
               onClick={(item: any) => {
                 if (item && item?.href.indexOf('http') > -1) {
-                    window.location.href = item?.href;
-                  }
-                  else {
-                    history.push(item.href);
-                    setShowDrawer(false);
-                  }
+                  window.open(
+                    item?.href,
+                    '_blank' // <- This is what makes it open in a new window.
+                  );
+                }
+                else {
+                  history.push(item.href);
+                  setShowDrawer(false);
+                }
                 setShowDrawer(false);
               }}
               id={"employers"}
@@ -522,7 +540,10 @@ const Header = (props: any) => {
               fullWidth
               className="register-btn  header-actions"
               onClick={() => {
-                window.location.href = "http://jobseeker.onebigtech.com/login";
+                window.open(
+                  "http://jobseeker.onebigtech.com/register",
+                  '_blank' // <- This is what makes it open in a new window.
+                );
                 setShowDrawer(false);
               }}
             >
@@ -535,7 +556,10 @@ const Header = (props: any) => {
               fullWidth
               className="login-btn header-actions"
               onClick={() => {
-                window.location.href = "http://jobseeker.onebigtech.com/login";
+                window.open(
+                  "http://jobseeker.onebigtech.com/login",
+                  '_blank' // <- This is what makes it open in a new window.
+                );
                 setShowDrawer(false);
               }}
             >
@@ -550,7 +574,10 @@ const Header = (props: any) => {
               className="login-btn header-actions"
               onClick={() => {
                 dispatch(logoutAction());
-                window.location.href = "http://jobseeker.onebigtech.com/login";
+                window.open(
+                  "http://jobseeker.onebigtech.com/login",
+                  '_blank' // <- This is what makes it open in a new window.
+                );
               }}
             >
               Logout
