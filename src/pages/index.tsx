@@ -6,7 +6,7 @@ import { API_URL } from '../service/urls';
 
 const HomeList: NextPage = (props) => {
   const [selectedJob, setSelectedJob] = useState(null);
-  const propsItem = props || { jd: {}, jobs: [] };
+  const propsItem = props 
 
   const selectJob = (job: any) => {
     setSelectedJob(job);
