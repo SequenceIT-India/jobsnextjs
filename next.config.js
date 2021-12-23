@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: true,
-  swcMinify: true,
   transpileModules: ["react-bulma-components"],
   sassLoaderOptions: {
     includePaths: ["./src/components"]
