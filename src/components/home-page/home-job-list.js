@@ -38,7 +38,6 @@ import {
   validateField,
 } from "../../util/helper";
 import style from "./gl-home.module.scss";
-import axios from "axios";
 
 const styles = makeStyles((theme) => ({
   jobList: {

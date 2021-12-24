@@ -1,25 +1,20 @@
-import api from "../util/api";
-import { API_URL } from "./urls";
+
 import axios from "axios";
 
-export const getDefaultJobs = async () => {
-  
+export const getDefaultJobs = async (url) => {
   const options = {
     headers: {
       "Content-Type": "application/json",
-      token: 'jiuiuiiiiiiiiiiiiiiiiiiiiiii',
+      appID: process.env.NEXT_PUBLIC_REACT_APP_JOBSEEKER_TOKEN,
+      token: process.env.NEXT_PUBLIC_REACT_APP_JOBSEEKER_TOKEN,
     },
     crossdomain: true
   };
-  const res = await axios.post('/employer-service/jobs', {
+  const res = await axios.post(url, {
     "pageNo": 1,
     "pageSize": 5,
-    "searchTerm": "java",
-    "city": "Hyd",
-    "state": "Telangana",
-    "zipCode": 1234,
     "jobStatus": [
-      0
+      "active"
     ]
   }, options);
   return res;

@@ -67,19 +67,15 @@ export default {
     Axios.interceptors.request.use(
       (config) => {
         const { silent = false } = config;
-
         config.timeout = 10000 * 5; // Wait for 5 seconds
         if (!silent) showLoader(store);
-        config.headers.jwtToken = `jiuiuiiiiiiiiiiiiiiiiiiiiiii`;
-        config.headers['Content-Type'] = 'application/json';
-        config.headers.token = `ffsrewrw`;
         config.headers['Access-Control-Allow-Origin'] = '*';
-        config.crossdomain=true;
+        config.crossdomain = true;
         console.log('config', config)
         return config;
       },
       (error) => {
-        return Promise.resolve({ data: [], success: false, message: error ? error['response'] : null });
+       return Promise.resolve({ data: [], success: false, message: error ? error['response'] : null });
       }
     );
 
@@ -99,7 +95,7 @@ export default {
       },
       (error) => {
         const err = prepareErrorObject(error);
-
+        console.log('dsdad?????????????????', JSON.stringify(error), err)
         return Promise.resolve({ data: [], success: false, message: err.message });
       }
     );
