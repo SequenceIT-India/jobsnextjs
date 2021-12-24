@@ -21,8 +21,6 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { useSelector } from "react-redux";
-import csc, { Country, State, City } from "country-state-city";
 import { default as React, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import JobCard from "./gl-job-card";
@@ -31,13 +29,11 @@ import JobDetailHeader from "./gl-job-detail-header";
 import SearchBar from "./gl-search-bar";
 import TablePaginationActions from "./gl-table-pagination";
 import EmailSubscriptionModal from "../modal/EmailSubscriptionModal";
-import { latestJobs } from "../../data/jobs";
 import {
   DoubleByteCharacters,
   EmojiRegex,
   validateField,
 } from "../../util/helper";
-import style from "./gl-home.module.scss";
 
 const styles = makeStyles((theme) => ({
   jobList: {

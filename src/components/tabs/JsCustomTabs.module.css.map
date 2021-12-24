@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,MAAM,EAAE,SAAS,EAAE,KAAK;EACtB,AACE,UADQ,CACR,IAAI,CAAC;IACH,OAAO,EAAE,OAAO;GACjB",
-    "sources": [
-        "JsCustomTabs.module.scss"
-    ],
-    "names": [],
-    "file": "JsCustomTabs.module.css"
-}

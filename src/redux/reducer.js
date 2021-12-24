@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
-
+import Cookies from 'js-cookie';
 const authReducer = (
   state = {
-    token: '',
-    email: '',
+    token: Cookies.get('token'),
+    email: Cookies.get('email')
   },
   action
 ) => {
@@ -19,6 +19,8 @@ const authReducer = (
       };
     }
     case "LOGOUT": {
+      Cookies.remove('token');
+      Cookies.remove('email');
       sessionStorage.removeItem("token");
       sessionStorage.removeItem("email");
       sessionStorage.removeItem("isEmployee");

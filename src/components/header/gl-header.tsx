@@ -508,10 +508,6 @@ const Header = (props: any) => {
               className="login-btn header-actions"
               onClick={() => {
                 dispatch(logoutAction());
-                window.open(
-                  "http://jobseeker.onebigtech.com/login",
-                  '_blank' // <- This is what makes it open in a new window.
-                );
               }}
             >
               Logout
