@@ -4,7 +4,7 @@ import Link from "next/link";
 import Popover from "@mui/material/Popover";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import { Avatar } from "@mui/material";
-
+import Cookies from 'js-cookie';
 import { useDispatch } from "react-redux";
 import { logoutAction } from "../../redux/actions";
 
@@ -51,6 +51,8 @@ export default function AvatarDropdown(props) {
   };
 
   const onLogoutClickHandler = () => {
+    Cookies.remove('token', { path: '/', domain: '.onebigtech.com' });
+    Cookies.remove('email', { path: '/', domain: '.onebigtech.com' });
     dispatch(logoutAction());
     window.location.href='/';
   };
