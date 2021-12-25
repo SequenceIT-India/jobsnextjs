@@ -52,6 +52,7 @@ export default function AvatarDropdown(props) {
 
   const onLogoutClickHandler = () => {
     dispatch(logoutAction());
+    window.location.href='/';
   };
 
   const open = Boolean(anchorEl);
@@ -62,7 +63,7 @@ export default function AvatarDropdown(props) {
   return (
     <div className={classes.profileDiv}>
       {sessionStorage.getItem("email") !== undefined ||
-      sessionStorage.getItem("email") !== null ? (
+        sessionStorage.getItem("email") !== null ? (
         <Avatar
           onMouseEnter={handlePopoverOpen}
           alt={sessionStorage.getItem("email")}
@@ -97,29 +98,6 @@ export default function AvatarDropdown(props) {
         disableRestoreFocus
       >
         <div className={classes.items}>
-          <Link
-            className={classes.link}
-            onClick={onClickHandler}
-            href="/jobseeker/homepage"
-          >
-            Home
-          </Link>
-          <Link
-            className={classes.link}
-            onClick={onClickHandler}
-            href="/jobseeker/jobs"
-          >
-            Jobs
-          </Link>
-          <Link
-            onClick={onClickHandler}
-            className={classes.link}
-            href={`/${
-              sessionStorage.getItem("isEmployee") ? "employee" : "jobseeker"
-            }/settings`}
-          >
-            Settings
-          </Link>
           <Link
             onClick={onLogoutClickHandler}
             className={classes.link}

@@ -9,8 +9,8 @@ const authReducer = (
 ) => {
   switch (action.type) {
     case "LOGOUT": {
-      Cookies.remove('token', { domain: '.onebigtech.com' });
-      Cookies.remove('email', { domain: '.onebigtech.com' });
+      Cookies.remove('token', { path: '/', domain: '.onebigtech.com' });
+      Cookies.remove('email', { path: '/', domain: '.onebigtech.com' });
       sessionStorage.removeItem("isEmployee");
       return {
         ...state,
