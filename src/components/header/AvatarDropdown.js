@@ -100,13 +100,12 @@ export default function AvatarDropdown(props) {
         disableRestoreFocus
       >
         <div className={classes.items}>
-          <Link
+          <div
             onClick={onLogoutClickHandler}
             className={classes.link}
-            href="/#"
           >
             Logout
-          </Link>
+          </div>
         </div>
       </Popover>
     </div>
