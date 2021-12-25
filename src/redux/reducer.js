@@ -8,21 +8,9 @@ const authReducer = (
   action
 ) => {
   switch (action.type) {
-    case "LOGIN": {
-      sessionStorage.setItem("token", action.payload.token);
-      sessionStorage.setItem("email", action.payload.email);
-
-      return {
-        ...state,
-        email: action.payload.email,
-        token: action.payload.token,
-      };
-    }
     case "LOGOUT": {
-      Cookies.remove('token');
-      Cookies.remove('email');
-      sessionStorage.removeItem("token");
-      sessionStorage.removeItem("email");
+      Cookies.remove('token', { domain: '.onebigtech.com' });
+      Cookies.remove('email', { domain: '.onebigtech.com' });
       sessionStorage.removeItem("isEmployee");
       return {
         ...state,
