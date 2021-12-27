@@ -61,7 +61,7 @@ api.interceptors.request.use(async (config) => {
   } else if (securityApi) {
     return {
       ...config,
-      baseURL: `http://104.248.9.38:8080${process.env.NEXT_PUBLIC_REACT_APP_SECURITY_API_URL}`,
+      baseURL: `https://dev-app.onebigtech.com:8443${process.env.NEXT_PUBLIC_REACT_APP_SECURITY_API_URL}`,
     };
   } else if (employerApi) {
     config.headers["AppID"] = process.env.NEXT_PUBLIC_REACT_API_EMPLOYER_TOKEN;

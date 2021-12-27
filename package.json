@@ -61,5 +61,5 @@
     "sass": "^1.44.0",
     "typescript": "latest"
   },
-  "proxy": "http://104.248.9.38:8080"
+  "proxy": "https://dev-app.onebigtech.com:8443"
 }

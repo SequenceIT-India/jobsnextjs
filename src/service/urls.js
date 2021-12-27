@@ -1,5 +1,5 @@
 
-const baseURL = 'http://104.248.9.38:8080'
+const baseURL = 'https://dev-app.onebigtech.com:8443'
 export const API_URL = {
   AUTH: {
     USER_REGISTER: "/user/register",
